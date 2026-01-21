@@ -358,6 +358,195 @@
             line-height: 1.6;
             margin-bottom: 10px;
         }
+
+        /* 新增视觉优化样式 */
+        body {
+            background-image: linear-gradient(rgba(10, 30, 60, 0.7), rgba(10, 30, 60, 0.9)), 
+                            url('assets/background_main.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #f0f4f8;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 10, 30, 0.3);
+            padding: 30mm 20mm;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.4);
+        }
+        
+        /* 导航栏增强 */
+        .navbar {
+            background: linear-gradient(135deg, #1a3c8b 0%, #2a5caa 100%);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(26, 60, 139, 0.3);
+        }
+        
+        .nav-tabs {
+            gap: 5px;
+        }
+        
+        .nav-tab {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #c7d9ff;
+        }
+        
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .nav-tab:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab:hover::before {
+            left: 100%;
+        }
+        
+        .nav-tab.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 历史列表项悬停效果 */
+        .history-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+        }
+        
+        .history-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 30px rgba(26, 60, 139, 0.15);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
+        }
+        
+        /* 洞察卡片悬停效果 */
+        .insight-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+            position: relative;
+            padding: 20px;
+        }
+        
+        .insight-item:hover {
+            transform: translateY(-8px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(26, 60, 139, 0.2);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
+        }
+        
+        /* 洞察图片容器样式 */
+        .insight-image-container {
+            text-align: center;
+            margin: 20px 0 30px;
+            position: relative;
+            min-height: 160px;
+        }
+        
+        /* 洞察图片样式 */
+        .insight-image {
+            width: 220px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(0, 10, 30, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 4px solid white;
+            filter: brightness(0.95) contrast(1.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .insight-item:hover .insight-image {
+            transform: scale(1.1) rotate(1.5deg);
+            box-shadow: 0 25px 50px rgba(0, 15, 40, 0.4);
+            filter: brightness(1.08) contrast(1.25);
+        }
+        
+        /* 图片加载占位符 */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 150px;
+            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
+            border-radius: 12px;
+            opacity: 0.7;
+            z-index: 1;
+            transition: opacity 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-placeholder::after {
+            content: '加载中...';
+            color: #4a6fd9;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .insight-image.loaded ~ .image-placeholder {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15mm 10mm;
+            }
+            
+            .nav-tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .insight-image {
+                width: 160px;
+                height: 120px;
+            }
+        }
 </style>
 </head>
 <body>
@@ -397,6 +586,11 @@
                     <div class="insight-title">《外汇》贸易局势紧张 美元遭抛售下跌1%</div>
                 </div>
                 
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight1_dollar_chart.jpg" alt="美元指数图表" class="insight-image">
+                </div>
+                
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
                     <div class="summary-content" id="summary-1">
@@ -419,6 +613,11 @@
                     <div class="insight-title">《商品》黄金期货升穿4,750美元 白银又破顶</div>
                 </div>
                 
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight2_gold_chart.jpg" alt="黄金价格图表" class="insight-image">
+                </div>
+                
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
                     <div class="summary-content" id="summary-2">
@@ -438,7 +637,12 @@
             <div class="insight-item">
                 <div class="insight-header">
                     <div class="insight-number">3</div>
-                    <div class="insight-title">美股三大股指大幅收跌，道指急挫700点</div>
+                    <div class="insight-title">美股三大股指大幅收跌，道指急挫缓700点</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight3_stock_crash_chart.jpg" alt="股市崩盘图表" class="insight-image">
                 </div>
                 
                 <div class="summary-section">
@@ -463,6 +667,11 @@
                     <div class="insight-title">European stocks drop the most in two months on Trump tariff threat over Greenland</div>
                 </div>
                 
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight4_european_stocks_chart.jpg" alt="欧洲股市图表" class="insight-image">
+                </div>
+                
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
                     <div class="summary-content" id="summary-4">
@@ -483,6 +692,11 @@
                 <div class="insight-header">
                     <div class="insight-number">10</div>
                     <div class="insight-title">桥水创办人：特朗普举措或引发新一轮金融冲突</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight5_dalio.jpg" alt="雷·达利奥照片" class="insight-image">
                 </div>
                 
                 <div class="summary-section">
@@ -675,6 +889,9 @@
             const day = String(now.getDate()).padStart(2, '0');
             
             document.getElementById('report-date').textContent = `报告日期：${year}年${month}月${day}日`;
+            
+            // 初始化交互效果
+            initInteractiveEffects();
         });
     
     // Tab切换功能
@@ -700,6 +917,114 @@
             });
         });
     });
+    
+    // 交互效果初始化
+    function initInteractiveEffects() {
+        // 导航栏按钮悬停效果增强
+        const navTabs = document.querySelectorAll('.nav-tab');
+        navTabs.forEach(tab => {
+            tab.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                }
+            });
+            
+            tab.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.transform = '';
+                }
+            });
+        });
+        
+        // 历史报告列表项点击效果
+        const historyItems = document.querySelectorAll('.history-item');
+        historyItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(15px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+            
+            // 点击跳转效果
+            item.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'A') {
+                    const link = this.querySelector('.history-link');
+                    if (link) {
+                        link.click();
+                    }
+                }
+            });
+        });
+        
+        // 洞察卡片增强效果
+        const insightItems = document.querySelectorAll('.insight-item');
+        insightItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.zIndex = '';
+            });
+        });
+        
+        // 图片加载动画效果
+        const images = document.querySelectorAll('.insight-image');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transform = 'translateY(25px) scale(0.95)';
+            
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+                this.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                this.style.opacity = '1';
+                this.style.transform = 'translateY(0) scale(1)';
+                
+                // 添加微小的延迟确保动画播放
+                setTimeout(() => {
+                    this.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease';
+                }, 800);
+            });
+            
+            // 如果图片已经缓存并加载完成
+            if (img.complete) {
+                img.classList.add('loaded');
+                img.style.opacity = '1';
+                img.style.transform = '';
+            }
+        });
+        
+        // 滚动动画效果
+        window.addEventListener('scroll', function() {
+            const container = document.querySelector('.container');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                container.style.transform = 'translateY(-10px)';
+                container.style.boxShadow = '0 30px 80px rgba(0, 15, 40, 0.4)';
+            } else {
+                container.style.transform = '';
+                container.style.boxShadow = '';
+            }
+        });
+        
+        // 影响矩阵单元格悬停效果
+        const impactCells = document.querySelectorAll('.matrix-table td');
+        impactCells.forEach(cell => {
+            const icon = cell.querySelector('.impact-icon');
+            if (icon) {
+                cell.addEventListener('mouseenter', function() {
+                    icon.style.transform = 'scale(1.3) rotate(10deg)';
+                });
+                
+                cell.addEventListener('mouseleave', function() {
+                    icon.style.transform = '';
+                });
+            }
+        });
+    }
 </script>
 </body>
 </html>
