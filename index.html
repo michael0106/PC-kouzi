@@ -253,19 +253,136 @@
                 page-break-inside: avoid;
             }
         }
-    </style>
+    
+        /* 导航栏样式 */
+        .navbar {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .nav-tab:hover {
+            color: #1a3c8b;
+        }
+        .nav-tab.active {
+            color: #1a3c8b;
+            border-bottom-color: #1a3c8b;
+        }
+        /* Tab内容样式 */
+        .tab-content {
+            margin-top: 20px;
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        /* 历史报告列表样式 */
+        .history-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+        }
+        .history-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3c8b;
+            margin-bottom: 20px;
+        }
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .history-item {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+        .history-date {
+            font-weight: 600;
+            color: #1a3c8b;
+            margin-bottom: 5px;
+        }
+        .history-summary {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .history-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #1a3c8b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .history-link:hover {
+            background-color: #0d2a6e;
+        }
+        /* 每周占位样式 */
+        .weekly-placeholder {
+            padding: 40px;
+            text-align: center;
+            background-color: #f5f8ff;
+            border-radius: 8px;
+            border: 2px dashed #4a6fd9;
+        }
+        .weekly-placeholder h3 {
+            font-size: 24px;
+            color: #1a3c8b;
+            margin-bottom: 15px;
+        }
+        .weekly-placeholder p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+</style>
 </head>
 <body>
     <div class="container">
         <!-- 页眉 -->
-        <div class="header">
+        
+        <!-- 导航栏 -->
+        <div class="navbar">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="daily">每日洞察</button>
+                <button class="nav-tab" data-tab="weekly">每周要点总结</button>
+            </div>
+        </div>
+<div class="header">
             <h1 class="title">每日金融情报洞察简报</h1>
             <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
             <div class="date" id="report-date">报告日期：2026年01月21日</div>
         </div>
         
         <!-- 执行摘要 -->
-        <div class="executive-summary">
+        
+        <!-- Tab内容容器 -->
+        <div class="tab-content">
+            <div id="daily-tab" class="tab-pane active">
+<div class="executive-summary">
             <h2>核心摘要</h2>
             <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
         </div>
@@ -509,7 +626,38 @@
         </div>
         
         <!-- 页脚 -->
-        <div class="footer">
+        
+        <!-- 历史报告列表 -->
+        <div class="history-section">
+            <h3 class="history-title">历史报告</h3>
+            <div class="history-list">
+
+                <div class="history-item">
+                    <div class="history-date">2026年01月21日</div>
+                    <div class="history-summary">本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的...</div>
+                    <a class="history-link" href="2026-01-21.html" target="_blank">查看完整报告</a>
+                </div>
+
+                <div class="history-item">
+                    <div class="history-date">2026年01月20日</div>
+                    <div class="history-summary">本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的...</div>
+                    <a class="history-link" href="2026-01-20.html" target="_blank">查看完整报告</a>
+                </div>
+
+            </div>
+        </div>
+
+            </div> <!-- 关闭daily-tab -->
+            
+            <div id="weekly-tab" class="tab-pane">
+                <div class="weekly-placeholder">
+                    <h3>每周要点总结</h3>
+                    <p>首期每周总结将于本周五（1月27日）生成，届时将汇总当周5条最高价值洞察。</p>
+                    <p>每周总结旨在提炼当周最具影响力的金融动态，帮助您把握市场核心脉络。</p>
+                </div>
+            </div> <!-- 关闭weekly-tab -->
+        </div> <!-- 关闭tab-content -->
+<div class="footer">
             <p>数据来源：路透社、彭博社、金融时报、华尔街日报、财新网、IMF、世界银行等权威机构官方披露</p>
             <p>信息截止时间：每日15:00（北京时间）</p>
             <div class="disclaimer">
@@ -528,6 +676,30 @@
             
             document.getElementById('report-date').textContent = `报告日期：${year}年${month}月${day}日`;
         });
-    </script>
+    
+    // Tab切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const panes = document.querySelectorAll('.tab-pane');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // 更新激活的tab
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 显示对应的pane
+                panes.forEach(pane => {
+                    pane.classList.remove('active');
+                    if (pane.id === tabId + '-tab') {
+                        pane.classList.add('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
 </body>
 </html>
