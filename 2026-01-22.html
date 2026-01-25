@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日金融情报洞察简报</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm 15mm;
+            background-color: #fff;
+        }
+        
+        /* 页眉 */
+        .header {
+            border-bottom: 2px solid #1a3c8b;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a3c8b;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .date {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        /* 执行摘要 */
+        .executive-summary {
+            background-color: #f5f8ff;
+            border-left: 4px solid #1a3c8b;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .executive-summary h2 {
+            font-size: 18px;
+            color: #1a3c8b;
+            margin-bottom: 10px;
+        }
+        
+        /* 洞察条目 */
+        .insight-item {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .insight-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .insight-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background-color: #1a3c8b;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        
+        .insight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .summary-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid #4a6fd9;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+            color: #4a6fd9;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .summary-content {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .analysis-section {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .analysis-label {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .analysis-content {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* 影响矩阵 */
+        .impact-matrix {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .impact-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3c8b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .matrix-table th {
+            background-color: #f5f8ff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a3c8b;
+            border: 1px solid #ddd;
+        }
+        
+        .matrix-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .positive {
+            color: #1e8449;
+            font-weight: 600;
+            background-color: #e9f7ef;
+        }
+        
+        .negative {
+            color: #c0392b;
+            font-weight: 600;
+            background-color: #fdedec;
+        }
+        
+        .neutral {
+            color: #7d7d7d;
+            font-weight: 600;
+            background-color: #f8f9f9;
+        }
+        
+        .impact-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 50%;
+            margin-right: 6px;
+            font-weight: 700;
+        }
+        
+        .positive-icon {
+            background-color: #1e8449;
+            color: white;
+        }
+        
+        .negative-icon {
+            background-color: #c0392b;
+            color: white;
+        }
+        
+        .neutral-icon {
+            background-color: #7d7d7d;
+            color: white;
+        }
+        
+        /* 页脚 */
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #eaeaea;
+            color: #888;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            font-style: italic;
+            margin-top: 10px;
+            color: #999;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            .container {
+                padding: 15mm 10mm;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .insight-item {
+                page-break-inside: avoid;
+            }
+            
+            .impact-matrix {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* 视觉优化样式 */
+        body {
+            background-image: linear-gradient(rgba(10, 30, 60, 0.7), rgba(10, 30, 60, 0.9)), 
+                            url('assets/background_main.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #f0f4f8;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 10, 30, 0.3);
+            padding: 30mm 20mm;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.4);
+        }
+        
+        /* 导航栏增强 */
+        .navbar {
+            background: linear-gradient(135deg, #1a3c8b 0%, #2a5caa 100%);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(26, 60, 139, 0.3);
+        }
+        
+        .nav-tabs {
+            gap: 5px;
+        }
+        
+        .nav-tab {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #c7d9ff;
+        }
+        
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .nav-tab:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab:hover::before {
+            left: 100%;
+        }
+        
+        .nav-tab.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 历史列表项悬停效果 */
+        .history-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+        }
+        
+        .history-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 30px rgba(26, 60, 139, 0.15);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
+        }
+        
+        /* 洞察卡片悬停效果 */
+        .insight-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+            position: relative;
+            padding: 20px;
+        }
+        
+        .insight-item:hover {
+            transform: translateY(-8px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(26, 60, 139, 0.2);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
+        }
+        
+        /* 洞察图片容器 */
+        .insight-image-container {
+            text-align: center;
+            margin: 20px 0 30px;
+            position: relative;
+            min-height: 160px;
+        }
+        
+        /* 洞察图片样式 */
+        .insight-image {
+            width: 220px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(0, 10,30, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 4px solid white;
+            filter: brightness(0.95) contrast(1.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .insight-item:hover .insight-image {
+            transform: scale(1.1) rotate(1.5deg);
+            box-shadow: 0 25px 50px rgba(0, 15, 40, 0.4);
+            filter: brightness(1.08) contrast(1.25);
+        }
+        
+        /* 图片加载占位符 */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 150px;
+            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
+            border-radius: 12px;
+            opacity: 0.7;
+            z-index: 1;
+            transition: opacity 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .insight-image.loaded ~ .image-placeholder {
+            opacity: 0;
+        }
+        
+        /* 响应式调整 */
+        @media print {
+            body {
+                background-image: none;
+                background-color: #fff;
+                color: #333;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 15mm 10mm;
+            }
+            
+            .navbar, .history-list {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页眉 -->
+        
+        <!-- 导航栏 -->
+        <div class="navbar">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="daily">每日洞察</button>
+                <button class="nav-tab" data-tab="weekly">每周要点总结</button>
+            </div>
+        </div>
+        
+        <div class="header">
+            <h1 class="title">每日金融情报洞察简报</h1>
+            <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
+            <div class="date" id="report-date">报告日期：2026年01月22日</div>
+        </div>
+        
+        <!-- 执行摘要 -->
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
+        </div>
+        
+        <!-- Tab内容容器 -->
+        <div class="tab-content">
+            <div id="daily-tab" class="tab-pane active">
+                <!-- 历史报告列表 -->
+                <div class="history-list">
+                    <h3>历史报告</h3>
+                    <div id="history-items">
+                    <div class="history-item" onclick="window.location.href='2026-01-21.html'">
+                        <div class="history-date">2026年01月21日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='2026-01-20.html'">
+                        <div class="history-date">2026年01月20日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                </div></div>
+                </div>
+                
+                <!-- 洞察条目 -->
+                <div id="insights-container">
+
+            <!-- 洞察条目1 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">1</div>
+                    <div class="insight-title">美股周三收高 特朗普取消对欧新关税威胁</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight1_placeholder.png" alt="美股周三收高 特朗普取消对欧新关税威胁" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-1">
+                        特朗普取消对欧新关税威胁，美股三大指数收涨，国债收益率下降，美元指数上涨。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-1">
+                        <p>特朗普政府周三宣布取消对欧洲的新关税威胁，并声称已就格陵兰及北极地区未来协议达成框架共识。这一政策转变直接推动美股三大指数收涨，逆转了前一交易日因关税威胁引发的抛售潮。10年期国债收益率下降，美元指数同步上涨，反映出市场对贸易紧张缓和的积极反应。特朗普同时提议信用卡利率上限，推动银行股走高。美国财长对前一日抛售表示不担忧，但华盛顿最高法院大法官质疑特朗普解雇美联储理事的权力，显示政策不确定性依然存在。</p>
+<p>从市场反应看，此次政策转向短期内缓解了全球贸易战升级的担忧，有利于风险资产表现。然而，特朗普政策的反复性意味着贸易风险并未完全消除，后续仍需关注美欧在格陵兰问题上的具体谈判进展。技术面上，美元指数反弹但仍在99关口下方，若无法有效突破，可能继续承压。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目3 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">3</div>
+                    <div class="insight-title">热门中概股多数上涨 百度涨8.17%，网易跌4.07%</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight3_placeholder.png" alt="热门中概股多数上涨 百度涨8.17%" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-3">
+                        纳斯达克中国金龙指数收涨2.21%，百度涨8.17%，阿里巴巴涨3.87%，网易跌4.07%。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-3">
+                        <p>纳斯达克中国金龙指数周三收高2.21%，显示在美上市中概股整体表现强劲。其中百度大涨8.17%，阿里巴巴上涨3.87%，拼多多上涨1.39%，而网易下跌4.07%，台积电微跌0.32%。这种分化表明市场对不同公司基本面和增长前景的看法存在差异。</p>
+<p>中概股的强势表现可能受到多重因素驱动：一是特朗普取消对欧关税威胁改善全球风险偏好；二是中国国内政策环境对科技行业边际改善；三是部分公司财报季前的乐观预期。百度的大涨可能反映市场对其AI战略的重新评估，而网易的下跌可能与游戏业务担忧有关。</p>
+<p>从资金流向看，中概股近期波动较大，但周三的普涨显示外资对中国科技股的情绪有所修复。然而，地缘政治风险和监管不确定性仍然是压制中概股估值的主要因素。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目5 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">5</div>
+                    <div class="insight-title">现货黄金涨1.51%，报4835美元/盎司</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight5_placeholder.png" alt="现货黄金涨1.51%" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-5">
+                        现货黄金一度突破4888美元创历史新高，后因特朗普宣布格陵兰协议框架而回落至4835美元。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-5">
+                        <p>现货黄金周三经历剧烈波动，盘中一度突破4888美元/盎司，连续三个交易日创历史新高，但随后因特朗普宣布格陵兰协议框架而回落至4835美元，全天仍上涨1.51%。此次金价冲高回落反映了市场对地缘政治风险与贸易紧张缓和的复杂博弈。</p>
+<p>黄金上涨的驱动因素包括：一是美欧贸易紧张推升避险需求；二是美元指数走弱增强黄金吸引力；三是全球央行持续购金提供长期支撑。然而，特朗普取消关税威胁的消息削弱了避险情绪，导致金价从高位回落。</p>
+<p>技术面上，金价在4888美元附近遇到强阻力，但4835美元的收盘价仍站稳在前期高点之上，显示多头力量依然强劲。若金价能守住4800美元关口，后续仍有上行空间。但需警惕若贸易紧张持续缓和，可能引发获利回吐压力。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目6 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">6</div>
+                    <div class="insight-title">特斯拉交付量逆转，股价下跌6.1%</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight6_placeholder.png" alt="特斯拉交付量逆转" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-6">
+                        特斯拉第四季度交付量同比下降，首次出现年度下滑，股价下跌6.1%。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-6">
+                        <p>特斯拉周三下跌6.1%，此前公司报告2024年第四季度总交付量同比下降，这是特斯拉自成立以来首次出现年度交付量下滑，且数据低于StreetAccount编制的分析师共识预期。这一逆转对电动汽车行业具有标志性意义。</p>
+<p>特斯拉交付量下滑可能反映多重挑战：一是主要市场需求饱和；二是竞争加剧侵蚀市场份额；三是经济不确定性影响高价消费品需求。作为行业标杆，特斯拉的表现可能预示着整个电动汽车行业面临增长瓶颈。</p>
+<p>从市场影响看，特斯拉下跌拖累了整个科技和新能源汽车板块。投资者需要重新评估电动汽车行业的增长假设和估值水平。不过，特斯拉在自动驾驶和能源存储等其他业务领域的发展可能提供部分缓冲。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目8 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">8</div>
+                    <div class="insight-title">俄罗斯天然气停止流向欧洲</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight8_placeholder.png" alt="俄罗斯天然气停止流向欧洲" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-8">
+                        乌克兰停止俄罗斯天然气输往欧洲，可能影响欧洲能源供应和价格。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-8">
+                        <p>乌克兰在新年第一天停止了向多个欧洲国家的俄罗斯天然气输送，俄罗斯国有能源巨头Gazprom周三证实了这一消息。虽然此举在广泛预期之中，但实际执行仍引发市场对欧洲能源安全的担忧。欧洲天然气价格近期已因寒潮和库存低位而处于高位，此次中断可能进一步推高价格。</p>
+<p>此次中断发生在美欧因格陵兰问题贸易紧张之际，增加了欧洲能源供应的地缘政治风险。欧洲国家可能加快能源多元化步伐，增加对液化天然气(LNG)和美国能源的依赖，但也可能面临短期供应紧张和价格波动。</p>
+<p>从更广泛影响看，能源价格上涨可能推高欧洲通胀压力，迫使欧洲央行在经济增长放缓的背景下维持紧缩货币政策。同时，能源危机可能加速欧洲向可再生能源转型，但对传统能源的短期依赖仍难以避免。</p>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- 影响矩阵 -->
+                <div class="impact-matrix">
+                    <h2 class="impact-title">综合影响矩阵</h2>
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>洞察条目</th>
+                                <th>A股市场</th>
+                                <th>香港股市</th>
+                                <th>贵金属市场</th>
+                                <th>汇率市场</th>
+                                <th>综合影响</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <tr>
+                        <td><strong>洞察1</strong></td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td><strong>偏正面</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察3</strong></td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td><strong>偏正面</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察5</strong></td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察6</strong></td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察8</strong></td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                </tbody>
+                    </table>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon positive-icon">↑</span>
+                            </div>
+                            <span><strong>正面影响</strong>：预期将推动市场上涨或改善基本面</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon negative-icon">↓</span>
+                            </div>
+                            <span><strong>负面影响</strong>：预期将导致市场下跌或恶化环境</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon neutral-icon">→</span>
+                            </div>
+                            <span><strong>中性影响</strong>：影响有限或正负因素相互抵消</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 每周要点总结Tab内容 -->
+            <div id="weekly-tab" class="tab-pane">
+                <div style="text-align: center; padding: 60px 20px;">
+                    <h2>每周要点总结</h2>
+                    <p>每周五下午17:30生成，汇总当周5条最高价值洞察。</p>
+                    <p>首期每周要点总结将于2026年1月27日（周五）生成。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>数据来源：路透社、彭博社、金融时报、华尔街日报、财新网、IMF、世界银行等权威机构官方披露</p>
+            <p>信息截止时间：每日15:00（北京时间）</p>
+            <div class="disclaimer">
+                免责声明：本简报基于公开信息整理分析，仅供决策参考，不构成任何投资建议。市场有风险，决策需谨慎。
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 自动设置报告日期为当天
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            
+            document.getElementById('report-date').textContent = `报告日期：${year}年${month}月${day}日`;
+        });
+        
+        // Tab切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // 更新活跃Tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应内容
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                        if (pane.id === `${tabName}-tab`) {
+                            pane.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // 图片加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.insight-image');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
