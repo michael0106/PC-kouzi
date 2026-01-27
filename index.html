@@ -2,455 +2,699 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>每日金融情报洞察简报</title>
     <style>
-        /* 基础样式 */
+        /* ====== CSS重置与基础变量 ====== */
+        :root {
+            /* 颜色系统 - 金融科技深色主题 */
+            --primary: #1a3c8b;
+            --primary-light: #2a5caa;
+            --secondary: #4a6fd9;
+            --accent: #00d4aa;
+            --danger: #c0392b;
+            --success: #1e8449;
+            --warning: #f39c12;
+            --neutral: #7d7d7d;
+            
+            /* 背景与表面 */
+            --bg-dark: #0a1e3c;
+            --bg-darker: #07162b;
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --bg-glass-light: rgba(255, 255, 255, 0.12);
+            --bg-card: rgba(255, 255, 255, 0.95);
+            
+            /* 文字颜色 */
+            --text-primary: #ffffff;
+            --text-secondary: #c7d9ff;
+            --text-dark: #333333;
+            --text-light: #888888;
+            
+            /* 阴影与效果 */
+            --shadow-sm: 0 4px 12px rgba(0, 10, 30, 0.2);
+            --shadow-md: 0 8px 25px rgba(26, 60, 139, 0.3);
+            --shadow-lg: 0 20px 60px rgba(0, 15, 40, 0.4);
+            --shadow-xl: 0 25px 70px rgba(0, 15, 40, 0.5);
+            
+            /* 过渡动画 */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* 间距系统 */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-xxl: 4rem;
+            
+            /* 边框半径 */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50%;
+            
+            /* 字体大小 */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
         
         body {
-            color: #333;
-            background-color: #fff;
+            font-family: 'Segoe UI', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            font-size: 14px;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
         
+        /* 背景装饰元素 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(74, 111, 217, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 212, 170, 0.08) 0%, transparent 50%);
+            z-index: -2;
+        }
+        
+        /* ====== 主容器与布局 ====== */
         .container {
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 20mm 15mm;
-            background-color: #fff;
+            width: 100%;
+            min-height: 100vh;
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        /* 页眉 */
+        .main-content {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: var(--space-lg) var(--space-md);
+        }
+        
+        /* ====== 导航栏 - 响应式设计 ====== */
+        .navbar {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto var(--space-xl);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: var(--space-md);
+            z-index: 100;
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-weight: 600;
+            font-size: var(--text-lg);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .nav-brand::before {
+            content: '📊';
+            font-size: var(--text-xl);
+        }
+        
+        /* 桌面端导航标签 */
+        .nav-tabs {
+            display: flex;
+            gap: var(--space-xs);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 4px;
+        }
+        
+        .nav-tab {
+            padding: var(--space-xs) var(--space-lg);
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width var(--transition-normal);
+        }
+        
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-tab.active {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .nav-tab.active::after {
+            width: 60%;
+        }
+        
+        /* 移动端汉堡菜单按钮 */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            padding: var(--space-xs);
+            border-radius: var(--radius-sm);
+            transition: background var(--transition-fast);
+        }
+        
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* ====== 页眉区域 ====== */
         .header {
-            border-bottom: 2px solid #1a3c8b;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-sm);
         }
         
         .title {
-            font-size: 24px;
+            font-size: var(--text-3xl);
             font-weight: 700;
-            color: #1a3c8b;
-            margin-bottom: 5px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: var(--space-sm);
         }
         
         .subtitle {
-            font-size: 16px;
-            color: #666;
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
             font-weight: 500;
         }
         
         .date {
-            font-size: 14px;
-            color: #888;
-            margin-top: 5px;
+            font-size: var(--text-base);
+            color: var(--text-light);
+            margin-top: var(--space-sm);
         }
         
-        /* 执行摘要 */
+        /* ====== 执行摘要 ====== */
         .executive-summary {
-            background-color: #f5f8ff;
-            border-left: 4px solid #1a3c8b;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 0 4px 4px 0;
+            background: linear-gradient(135deg, var(--bg-glass) 0%, rgba(74, 111, 217, 0.15) 100%);
+            border-left: 4px solid var(--accent);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .executive-summary h2 {
-            font-size: 18px;
-            color: #1a3c8b;
-            margin-bottom: 10px;
-        }
-        
-        /* 洞察条目 */
-        .insight-item {
-            margin-bottom: 30px;
-            page-break-inside: avoid;
-        }
-        
-        .insight-header {
+            font-size: var(--text-xl);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eaeaea;
+            gap: var(--space-xs);
         }
         
-        .insight-number {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            background-color: #1a3c8b;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-weight: 700;
-            margin-right: 12px;
+        .executive-summary h2::before {
+            content: '📈';
         }
         
-        .insight-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #222;
+        .executive-summary p {
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
         
-        .summary-section {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            border-left: 3px solid #4a6fd9;
-        }
-        
-        .summary-label {
-            font-weight: 600;
-            color: #4a6fd9;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-        
-        .summary-content {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .analysis-section {
-            padding: 15px;
-            border: 1px solid #eaeaea;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
-        
-        .analysis-label {
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .analysis-content {
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        /* 影响矩阵 */
-        .impact-matrix {
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .impact-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a3c8b;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        .matrix-table {
+        /* ====== Tab内容区域 ====== */
+        .tab-content {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
         }
         
-        .matrix-table th {
-            background-color: #f5f8ff;
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 600;
-            color: #1a3c8b;
-            border: 1px solid #ddd;
+        .tab-pane {
+            display: none;
+            animation: fadeIn var(--transition-normal);
         }
         
-        .matrix-table td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: center;
+        .tab-pane.active {
+            display: block;
         }
         
-        .positive {
-            color: #1e8449;
-            font-weight: 600;
-            background-color: #e9f7ef;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .negative {
-            color: #c0392b;
-            font-weight: 600;
-            background-color: #fdedec;
+        /* ====== 历史报告列表 ====== */
+        .history-list {
+            margin-bottom: var(--space-xl);
         }
         
-        .neutral {
-            color: #7d7d7d;
-            font-weight: 600;
-            background-color: #f8f9f9;
+        .history-list h3 {
+            font-size: var(--text-xl);
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-xs);
+            border-bottom: 2px solid var(--bg-glass-light);
         }
         
-        .impact-icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            border-radius: 50%;
-            margin-right: 6px;
-            font-weight: 700;
+        #history-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-sm);
         }
         
-        .positive-icon {
-            background-color: #1e8449;
-            color: white;
-        }
-        
-        .negative-icon {
-            background-color: #c0392b;
-            color: white;
-        }
-        
-        .neutral-icon {
-            background-color: #7d7d7d;
-            color: white;
-        }
-        
-        /* 页脚 */
-        .footer {
-            margin-top: 40px;
-            padding-top: 15px;
-            border-top: 1px solid #eaeaea;
-            color: #888;
-            font-size: 12px;
-            text-align: center;
-        }
-        
-        .disclaimer {
-            font-style: italic;
-            margin-top: 10px;
-            color: #999;
-        }
-        
-        /* 打印优化 */
-        @media print {
-            .container {
-                padding: 15mm 10mm;
-            }
-            
-            .no-print {
-                display: none;
-            }
-            
-            .insight-item {
-                page-break-inside: avoid;
-            }
-            
-            .impact-matrix {
-                page-break-inside: avoid;
-            }
-        }
-        
-        /* 视觉优化样式 */
-        body {
-            background-image: linear-gradient(rgba(10, 30, 60, 0.7), rgba(10, 30, 60, 0.9)), 
-                            url('assets/background_main.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            color: #f0f4f8;
-        }
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 10, 30, 0.3);
-            padding: 30mm 20mm;
+        .history-item {
+            background: var(--bg-glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.4);
-        }
-        
-        /* 导航栏增强 */
-        .navbar {
-            background: linear-gradient(135deg, #1a3c8b 0%, #2a5caa 100%);
-            border-radius: 10px;
-            padding: 15px 25px;
-            margin-bottom: 35px;
-            box-shadow: 0 8px 25px rgba(26, 60, 139, 0.3);
-        }
-        
-        .nav-tabs {
-            gap: 5px;
-        }
-        
-        .nav-tab {
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            color: #c7d9ff;
-        }
-        
-        .nav-tab::before {
+        .history-item::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.6s;
         }
         
-        .nav-tab:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+        .history-item:hover {
+            transform: translateY(-4px);
+            background: var(--bg-glass-light);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-md);
         }
         
-        .nav-tab:hover::before {
+        .history-item:hover::before {
             left: 100%;
         }
         
-        .nav-tab.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        .history-date {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
         }
         
-        /* 历史列表项悬停效果 */
-        .history-item {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(74, 111, 217, 0.2);
-            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+        .history-summary {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
         }
         
-        .history-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 12px 30px rgba(26, 60, 139, 0.15);
-            border-color: #4a6fd9;
-            background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
+        /* ====== 洞察条目网格布局 ====== */
+        #insights-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
         }
         
-        /* 洞察卡片悬停效果 */
         .insight-item {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(74, 111, 217, 0.2);
-            background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            color: var(--text-dark);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
             position: relative;
-            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .insight-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
         .insight-item:hover {
-            transform: translateY(-8px) scale(1.005);
-            box-shadow: 0 25px 60px rgba(26, 60, 139, 0.2);
-            border-color: #4a6fd9;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary);
+        }
+        
+        .insight-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .insight-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: var(--text-lg);
+            margin-right: var(--space-sm);
+            flex-shrink: 0;
+        }
+        
+        .insight-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
         }
         
         /* 洞察图片容器 */
         .insight-image-container {
             text-align: center;
-            margin: 20px 0 30px;
+            margin: var(--space-md) 0;
             position: relative;
-            min-height: 160px;
+            min-height: 200px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f5ff 0%, #e6efff 100%);
         }
         
-        /* 洞察图片样式 */
         .insight-image {
-            width: 220px;
-            height: 150px;
-            border-radius: 12px;
+            width: 100%;
+            height: 200px;
             object-fit: cover;
-            display: inline-block;
-            box-shadow: 0 15px 35px rgba(0, 10,30, 0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 4px solid white;
-            filter: brightness(0.95) contrast(1.1);
-            position: relative;
-            z-index: 2;
+            transition: transform var(--transition-slow);
+            cursor: pointer;
         }
         
         .insight-item:hover .insight-image {
-            transform: scale(1.1) rotate(1.5deg);
-            box-shadow: 0 25px 50px rgba(0, 15, 40, 0.4);
-            filter: brightness(1.08) contrast(1.25);
+            transform: scale(1.05);
         }
         
-        /* 图片加载占位符 */
         .image-placeholder {
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 220px;
-            height: 150px;
-            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
-            border-radius: 12px;
-            opacity: 0.7;
-            z-index: 1;
-            transition: opacity 0.6s ease;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--text-light);
+            font-size: var(--text-lg);
+            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
+            opacity: 0.8;
+            transition: opacity var(--transition-normal);
         }
         
         .insight-image.loaded ~ .image-placeholder {
             opacity: 0;
+            pointer-events: none;
         }
         
-        /* 响应式调整 */
-        @media print {
-            body {
-                background-image: none;
-                background-color: #fff;
-                color: #333;
-            }
-            
-            .container {
-                box-shadow: none;
-                padding: 15mm 10mm;
-            }
-            
-            .navbar, .history-list {
-                display: none;
-            }
+        /* 摘要与分析区域 */
+        .summary-section, .analysis-section {
+            margin-bottom: var(--space-md);
         }
-
-        /* 图片浮层样式 */
+        
+        .summary-section {
+            background: linear-gradient(135deg, rgba(245, 248, 255, 0.9) 0%, rgba(234, 242, 255, 0.9) 100%);
+            border-left: 3px solid var(--secondary);
+            padding: var(--space-md);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        
+        .analysis-section {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            background: white;
+        }
+        
+        .summary-label, .analysis-label {
+            font-weight: 600;
+            font-size: var(--text-lg);
+            color: var(--text-dark);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .summary-label::before {
+            content: '🎯';
+        }
+        
+        .analysis-label::before {
+            content: '🔍';
+        }
+        
+        .summary-content, .analysis-content {
+            font-size: var(--text-base);
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        .analysis-content p {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .analysis-content ul {
+            margin-left: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .analysis-content li {
+            margin-bottom: var(--space-xs);
+            position: relative;
+        }
+        
+        .analysis-content li::before {
+            content: '•';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: -var(--space-md);
+        }
+        
+        /* ====== 影响矩阵 ====== */
+        .impact-matrix {
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .impact-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            padding-bottom: var(--space-md);
+            border-bottom: 2px solid var(--bg-glass-light);
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .matrix-table th {
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.8) 0%, rgba(42, 92, 170, 0.8) 100%);
+            padding: var(--space-md);
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .matrix-table th:last-child {
+            border-right: none;
+        }
+        
+        .matrix-table td {
+            padding: var(--space-md);
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .matrix-table td:last-child {
+            border-right: none;
+        }
+        
+        .positive {
+            color: var(--success);
+            font-weight: 600;
+            background: rgba(30, 132, 73, 0.15);
+        }
+        
+        .negative {
+            color: var(--danger);
+            font-weight: 600;
+            background: rgba(192, 57, 43, 0.15);
+        }
+        
+        .neutral {
+            color: var(--neutral);
+            font-weight: 600;
+            background: rgba(125, 125, 125, 0.15);
+        }
+        
+        .impact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: var(--radius-full);
+            margin-right: var(--space-xs);
+            font-weight: 700;
+        }
+        
+        .positive-icon {
+            background: var(--success);
+            color: white;
+        }
+        
+        .negative-icon {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .neutral-icon {
+            background: var(--neutral);
+            color: white;
+        }
+        
+        .impact-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+        
+        /* ====== 页脚 ====== */
+        .footer {
+            margin-top: var(--space-xxl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--bg-glass-light);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            text-align: center;
+            width: 100%;
+            max-width: 1440px;
+        }
+        
+        .disclaimer {
+            font-style: italic;
+            margin-top: var(--space-md);
+            color: var(--text-light);
+            font-size: var(--text-xs);
+        }
+        
+        /* ====== 图片浮层 ====== */
         .image-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
             display: none;
             justify-content: center;
             align-items: center;
+            z-index: 9999;
             opacity: 0;
-            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity var(--transition-normal);
         }
         
         .image-overlay.active {
@@ -459,913 +703,589 @@
         }
         
         .overlay-image-container {
-            max-width: 95%;
-            max-height: 95%;
+            max-width: 90vw;
+            max-height: 90vh;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            animation: zoomIn var(--transition-normal);
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         
         .overlay-image {
             max-width: 100%;
-            max-height: 100%;
-            border-radius: 12px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            max-height: 90vh;
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             object-fit: contain;
-            transform-origin: center;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .overlay-image:hover {
-            transform: scale(1.02);
         }
         
         .close-overlay {
             position: absolute;
-            top: -50px;
-            right: -50px;
-            background: rgba(255, 255, 255, 0.1);
+            top: -20px;
+            right: -20px;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
-            font-size: 40px;
-            cursor: pointer;
+            font-size: 32px;
             width: 50px;
             height: 50px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
             display: flex;
-            justify-content: center;
             align-items: center;
-            opacity: 0.9;
-            transition: all 0.2s ease;
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
+            justify-content: center;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(5px);
         }
         
         .close-overlay:hover {
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- 页眉 -->
-        
-        <!-- 导航栏 -->
-        <div class="navbar">
-            <div class="nav-tabs">
-                <button class="nav-tab active" data-tab="daily">每日洞察</button>
-                <button class="nav-tab" data-tab="weekly">每周要点总结</button>
-            </div>
-        </div>
-        
-        <div class="header">
-            <h1 class="title">每日金融情报洞察简报</h1>
-            <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
-            <div class="date" id="report-date">报告日期：2026年01月26日</div>
-        </div>
-        
-        <!-- 执行摘要 -->
-        <div class="executive-summary">
-            <h2>核心摘要</h2>
-            <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
-        </div>
-        
-        <!-- Tab内容容器 -->
-        <div class="tab-content">
-            <div id="daily-tab" class="tab-pane active">
-                <!-- 历史报告列表 -->
-                <div class="history-list"><h3>历史报告</h3><div id="history-items">
-                    <div class="history-item" onclick="window.location.href='./2026-01-25.html'">
-                        <div class="history-date">2026年01月25日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            
-                    <div class="history-item" onclick="window.location.href='./2026-01-24.html'">
-                        <div class="history-date">2026年01月24日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            
-                    <div class="history-item" onclick="window.location.href='./2026-01-23.html'">
-                        <div class="history-date">2026年01月23日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            
-                    <div class="history-item" onclick="window.location.href='./2026-01-22.html'">
-                        <div class="history-date">2026年01月22日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            
-                    <div class="history-item" onclick="window.location.href='./2026-01-21.html'">
-                        <div class="history-date">2026年01月21日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            
-                    <div class="history-item" onclick="window.location.href='./2026-01-20.html'">
-                        <div class="history-date">2026年01月20日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-            </div></div>tml>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日金融情报洞察简报</title>
-    <style>
-        /* 基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
         
-        body {
-            color: #333;
-            background-color: #fff;
-            line-height: 1.6;
-            font-size: 14px;
-        }
+        /* ====== 响应式设计 - 媒体查询 ====== */
         
-        .container {
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 20mm 15mm;
-            background-color: #fff;
-        }
-        
-        /* 页眉 */
-        .header {
-            border-bottom: 2px solid #1a3c8b;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1a3c8b;
-            margin-bottom: 5px;
-        }
-        
-        .subtitle {
-            font-size: 16px;
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .date {
-            font-size: 14px;
-            color: #888;
-            margin-top: 5px;
-        }
-        
-        /* 执行摘要 */
-        .executive-summary {
-            background-color: #f5f8ff;
-            border-left: 4px solid #1a3c8b;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .executive-summary h2 {
-            font-size: 18px;
-            color: #1a3c8b;
-            margin-bottom: 10px;
-        }
-        
-        /* 洞察条目 */
-        .insight-item {
-            margin-bottom: 30px;
-            page-break-inside: avoid;
-        }
-        
-        .insight-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        .insight-number {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            background-color: #1a3c8b;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-weight: 700;
-            margin-right: 12px;
-        }
-        
-        .insight-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #222;
-        }
-        
-        .summary-section {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            border-left: 3px solid #4a6fd9;
-        }
-        
-        .summary-label {
-            font-weight: 600;
-            color: #4a6fd9;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-        
-        .summary-content {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .analysis-section {
-            padding: 15px;
-            border: 1px solid #eaeaea;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
-        
-        .analysis-label {
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .analysis-content {
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        /* 影响矩阵 */
-        .impact-matrix {
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .impact-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a3c8b;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        
-        .matrix-table th {
-            background-color: #f5f8ff;
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 600;
-            color: #1a3c8b;
-            border: 1px solid #ddd;
-        }
-        
-        .matrix-table td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        
-        .positive {
-            color: #1e8449;
-            font-weight: 600;
-            background-color: #e9f7ef;
-        }
-        
-        .negative {
-            color: #c0392b;
-            font-weight: 600;
-            background-color: #fdedec;
-        }
-        
-        .neutral {
-            color: #7d7d7d;
-            font-weight: 600;
-            background-color: #f8f9f9;
-        }
-        
-        .impact-icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            border-radius: 50%;
-            margin-right: 6px;
-            font-weight: 700;
-        }
-        
-        .positive-icon {
-            background-color: #1e8449;
-            color: white;
-        }
-        
-        .negative-icon {
-            background-color: #c0392b;
-            color: white;
-        }
-        
-        .neutral-icon {
-            background-color: #7d7d7d;
-            color: white;
-        }
-        
-        /* 页脚 */
-        .footer {
-            margin-top: 40px;
-            padding-top: 15px;
-            border-top: 1px solid #eaeaea;
-            color: #888;
-            font-size: 12px;
-            text-align: center;
-        }
-        
-        .disclaimer {
-            font-style: italic;
-            margin-top: 10px;
-            color: #999;
-        }
-        
-        /* 打印优化 */
-        @media print {
-            .container {
-                padding: 15mm 10mm;
+        /* 平板设备 (768px - 1024px) */
+        @media (max-width: 1024px) {
+            :root {
+                --space-xl: 2rem;
+                --space-xxl: 3rem;
             }
             
-            .no-print {
+            #insights-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+            
+            .navbar {
+                padding: var(--space-sm);
+            }
+            
+            .nav-tabs {
+                gap: 2px;
+            }
+            
+            .nav-tab {
+                padding: var(--space-xs) var(--space-md);
+                font-size: var(--text-sm);
+            }
+            
+            .title {
+                font-size: var(--text-2xl);
+            }
+            
+            .header {
+                padding: var(--space-md);
+            }
+        }
+        
+        /* 手机设备 (< 768px) */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-sm);
+            }
+            
+            .main-content {
+                padding: var(--space-md) var(--space-sm);
+            }
+            
+            /* 导航栏移动端适配 */
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-tabs {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--bg-darker);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: var(--radius-lg);
+                margin: var(--space-md);
+                padding: var(--space-md);
+                flex-direction: column;
+                gap: var(--space-xs);
                 display: none;
+                box-shadow: var(--shadow-xl);
+                z-index: 99;
+            }
+            
+            .nav-tabs.active {
+                display: flex;
+                animation: slideDown var(--transition-normal);
+            }
+            
+            @keyframes slideDown {
+                from { transform: translateY(-20px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            
+            .nav-tab {
+                width: 100%;
+                text-align: center;
+                padding: var(--space-md);
+                border-radius: var(--radius-md);
+            }
+            
+            .title {
+                font-size: var(--text-xl);
+            }
+            
+            .subtitle {
+                font-size: var(--text-base);
+            }
+            
+            #history-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .matrix-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .impact-legend {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-sm);
+            }
+            
+            .close-overlay {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+        
+        /* 超小屏幕手机 (< 480px) */
+        @media (max-width: 480px) {
+            :root {
+                --space-md: 1rem;
+                --space-lg: 1.5rem;
+            }
+            
+            .header {
+                padding: var(--space-md);
+            }
+            
+            .executive-summary,
+            .summary-section,
+            .analysis-section {
+                padding: var(--space-sm);
             }
             
             .insight-item {
-                page-break-inside: avoid;
+                padding: var(--space-md);
             }
             
-            .impact-matrix {
-                page-break-inside: avoid;
+            .insight-image-container {
+                min-height: 150px;
+            }
+            
+            .insight-image {
+                height: 150px;
             }
         }
         
-        /* 视觉优化样式 */
-        body {
-            background-image: linear-gradient(rgba(10, 30, 60, 0.7), rgba(10, 30, 60, 0.9)), 
-                            url('assets/background_main.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            color: #f0f4f8;
-        }
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #333;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 10, 30, 0.3);
-            padding: 30mm 20mm;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.4);
-        }
-        
-        /* 导航栏增强 */
-        .navbar {
-            background: linear-gradient(135deg, #1a3c8b 0%, #2a5caa 100%);
-            border-radius: 10px;
-            padding: 15px 25px;
-            margin-bottom: 35px;
-            box-shadow: 0 8px 25px rgba(26, 60, 139, 0.3);
-        }
-        
-        .nav-tabs {
-            gap: 5px;
-        }
-        
-        .nav-tab {
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            color: #c7d9ff;
-        }
-        
-        .nav-tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-        
-        .nav-tab:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .nav-tab:hover::before {
-            left: 100%;
-        }
-        
-        .nav-tab.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* 历史列表项悬停效果 */
-        .history-item {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(74, 111, 217, 0.2);
-            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
-        }
-        
-        .history-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 12px 30px rgba(26, 60, 139, 0.15);
-            border-color: #4a6fd9;
-            background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
-        }
-        
-        /* 洞察卡片悬停效果 */
-        .insight-item {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(74, 111, 217, 0.2);
-            background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
-            position: relative;
-            padding: 20px;
-        }
-        
-        .insight-item:hover {
-            transform: translateY(-8px) scale(1.005);
-            box-shadow: 0 25px 60px rgba(26, 60, 139, 0.2);
-            border-color: #4a6fd9;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
-        }
-        
-        /* 洞察图片容器 */
-        .insight-image-container {
-            text-align: center;
-            margin: 20px 0 30px;
-            position: relative;
-            min-height: 160px;
-        }
-        
-        /* 洞察图片样式 */
-        .insight-image {
-            width: 220px;
-            height: 150px;
-            border-radius: 12px;
-            object-fit: cover;
-            display: inline-block;
-            box-shadow: 0 15px 35px rgba(0, 10,30, 0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 4px solid white;
-            filter: brightness(0.95) contrast(1.1);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .insight-item:hover .insight-image {
-            transform: scale(1.1) rotate(1.5deg);
-            box-shadow: 0 25px 50px rgba(0, 15, 40, 0.4);
-            filter: brightness(1.08) contrast(1.25);
-        }
-        
-        /* 图片加载占位符 */
-        .image-placeholder {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 220px;
-            height: 150px;
-            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
-            border-radius: 12px;
-            opacity: 0.7;
-            z-index: 1;
-            transition: opacity 0.6s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .insight-image.loaded ~ .image-placeholder {
-            opacity: 0;
-        }
-        
-        /* 响应式调整 */
+        /* ====== 打印样式优化 ====== */
         @media print {
             body {
-                background-image: none;
-                background-color: #fff;
-                color: #333;
+                background: white !important;
+                color: black !important;
             }
             
             .container {
+                max-width: 100%;
+                padding: 0;
                 box-shadow: none;
-                padding: 15mm 10mm;
             }
             
-            .navbar, .history-list {
-                display: none;
+            .navbar, .history-list, .image-overlay {
+                display: none !important;
+            }
+            
+            .insight-item {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .impact-matrix {
+                break-inside: avoid;
             }
         }
-
-        /* 图片浮层样式 */
-        .image-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         
-        .image-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .overlay-image-container {
-            max-width: 95%;
-            max-height: 95%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .overlay-image {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 12px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-            object-fit: contain;
-            transform-origin: center;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .overlay-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .close-overlay {
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.9;
-            transition: all 0.2s ease;
-            border-radius: 50%;
+        /* ====== 辅助类 ====== */
+        .glass-effect {
+            background: var(--bg-glass);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .close-overlay:hover {
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+        .hover-lift {
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 页眉 -->
-        
         <!-- 导航栏 -->
-        <div class="navbar">
-            <div class="nav-tabs">
+        <nav class="navbar">
+            <a href="#" class="nav-brand">金融情报洞察</a>
+            
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            
+            <div class="nav-tabs" id="nav-tabs">
                 <button class="nav-tab active" data-tab="daily">每日洞察</button>
                 <button class="nav-tab" data-tab="weekly">每周要点总结</button>
             </div>
-        </div>
+        </nav>
         
-        <div class="header">
-            <h1 class="title">每日金融情报洞察简报</h1>
-            <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
-            <div class="date" id="report-date">报告日期：2026年01月26日</div>
-        </div>
-        
-        <!-- 执行摘要 -->
-        <div class="executive-summary">
-            <h2>核心摘要</h2>
-            <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
-        </div>
-        
-        <!-- Tab内容容器 -->
-        <div class="tab-content">
-            <div id="daily-tab" class="tab-pane active">
-                <!-- 历史报告列表 -->
-                <div class="history-list">
-                    <h3>历史报告</h3>
-                    <div id="history-items">
-                    <div class="history-item" onclick="window.location.href='./2026-01-24.html'">
-                        <div class="history-date">2026年01月24日</div>
-                        <div class="history-summary">点击查看完整报告</div>
+        <div class="main-content">
+            <!-- 页眉 -->
+            <div class="header">
+                <h1 class="title">每日金融情报洞察简报</h1>
+                <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
+                <div class="date" id="report-date">报告日期：2026年01月27日</div>
+            </div>
+            
+            <!-- 执行摘要 -->
+            <div class="executive-summary">
+                <h2>核心摘要</h2>
+                <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
+            </div>
+            
+            <!-- Tab内容容器 -->
+            <div class="tab-content">
+                <div id="daily-tab" class="tab-pane active">
+                    <!-- 历史报告列表 -->
+                    <div class="history-list">
+                        <h3>历史报告</h3>
+                        <div id="history-items">
+                            <!-- 历史报告列表项将由脚本动态生成 -->
+                        </div>
                     </div>
-                
-                    <div class="history-item" onclick="window.location.href='./2026-01-23.html'">
-                        <div class="history-date">2026年01月23日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='./2026-01-22.html'">
-                        <div class="history-date">2026年01月22日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='./2026-01-21.html'">
-                        <div class="history-date">2026年01月21日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='./2026-01-20.html'">
-                        <div class="history-date">2026年01月20日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- 洞察条目 -->
-                <div id="insights-container">
+                    
+                    <!-- 洞察条目 -->
+                    <div id="insights-container">
 
-            <!-- 洞察条目4 -->
+            <!-- 洞察条目1 -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">4</div>
-                    <div class="insight-title">现货黄金首次突破5000美元/盎司，创历史新高</div>
+                    <div class="insight-number">1</div>
+                    <div class="insight-title">现货黄金突破5100美元/盎司创历史新高，避险买盘与央行购金双驱动</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="https://s.coze.cn/image/ZUjR9G0AdbA/" alt="洞察图片" class="insight-image" onclick="openImageOverlay(this.src, '现货黄金首次突破5000美元/盎司，创历史新高')">
+                    <img src="assets/insight1_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-1">
+                        黄金突破5100美元再创历史新高，年内涨幅近18%，受地缘政治风险和央行持续购金推动。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-1">
+                        <p>2026年1月27日，现货黄金价格突破每盎司5100美元关口，创下历史新高，延续了自2025年以来的强劲涨势。这一突破主要由多重因素驱动：全球地缘政治紧张局势升级引发的避险买盘、主要央行（尤其是中国央行）持续增持黄金储备、以及对美元信用体系的长期担忧。黄金在突破5000美元心理关口后仅一天便再创新高，显示市场做多情绪极为强劲，技术面上升趋势确立。从资金流向看，全球黄金ETF持仓量持续增加，机构投资者配置黄金比例提升，反映出对传统避险资产的重新定价。</p>
+<p>对中国股市影响：中性偏正面。黄金大涨一方面反映市场避险情绪升温，可能压制A股整体风险偏好，尤其是高估值成长板块。但另一方面，黄金矿业股（如山东黄金、中金黄金）及相关ETF将直接受益于金价上涨，形成结构性投资机会。紫金矿业等龙头企业通过海外收购扩大资源储备，进一步强化板块景气度。</p>
+<p>对香港股市影响：中性偏负面。港股与全球资金流动关联紧密，黄金大涨通常伴随避险情绪抬头，可能抑制外资流入港股意愿。但黄金股在港股中权重较高，恒生综指中黄金矿业板块可能表现突出，形成对冲效应。</p>
+<p>对贵金属市场影响：强烈正面。突破5100美元关键阻力位具有重要技术意义，可能吸引更多追涨资金和程序化交易入场。白银、铂金等关联贵金属有望跟随上涨，形成贵金属板块整体走强格局。央行购金趋势持续为金价提供中长期支撑。</p>
+<p>对汇率影响：美元承压，人民币相对稳定。黄金与美元通常呈现负相关关系，金价创新高往往反映美元信用受质疑。美元指数可能继续走弱，而人民币在央行宏观审慎管理下有望保持相对稳定，甚至受益于避险资金流入中国资产。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目4 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">4</div>
+                    <div class="insight-title">特朗普威胁对加拿大加征100%关税，贸易紧张加剧</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight4_placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
                     <div class="summary-content" id="summary-4">
-                        现货黄金历史性突破5000美元/盎司，反映市场避险情绪高涨和通胀担忧。
+                        特朗普威胁对加拿大加征100%关税，加剧全球贸易紧张局势，影响汇率和市场风险情绪。
                     </div>
                 </div>
                 
                 <div class="analysis-section">
                     <div class="analysis-label">深度分析</div>
                     <div class="analysis-content" id="analysis-4">
-                        <p>2026年1月26日，现货黄金价格首次突破每盎司5000美元关键心理关口，创下历史新高。这一突破由多重因素驱动：全球地缘政治不确定性持续发酵、主要央行货币政策转向预期、以及对长期通胀压力的担忧。黄金作为传统避险资产，在金融市场波动加剧时期吸引力显著增强。技术面上，突破重要阻力位可能引发更多技术性买盘和追涨资金入场，形成自我强化的上涨循环。</p><p>对中国股市影响：中性偏负面。黄金大涨通常反映市场避险情绪升温，可能压制整体风险偏好，对A股高估值板块尤其构成压力。但黄金矿业股和相关ETF可能受益于金价上涨，形成结构性机会。</p><p>对香港股市影响：中性偏负面。港股与全球资金流动关联紧密，避险情绪抬头可能抑制外资流入意愿，对市场整体估值形成压制，但中资企业基本面稳健提供一定支撑。</p><p>对贵金属市场影响：强烈正面。突破关键心理价位具有里程碑意义，将吸引更多机构配置和散户投资者关注。预计黄金价格在突破后可能测试更高阻力位，白银等关联贵金属也有望跟随上涨。</p><p>对汇率影响：美元承压。黄金与美元通常呈现负相关关系，金价突破往往伴随美元走弱。若美联储降息预期强化，美元指数可能进一步下行，人民币汇率在央行干预下有望保持相对稳定。</p>
+                        <p>美国总统特朗普近日公开威胁对加拿大加征100%关税，此举标志着全球贸易紧张局势再度升级。此前美国已对墨西哥、中国等主要贸易伙伴采取类似关税措施，而加拿大作为美国第二大贸易伙伴，若遭受惩罚性关税将严重影响北美供应链和跨境贸易。市场同时关注美日可能协调干预汇市的动向，以及特朗普政府对美联储主席鲍威尔的调查，这些因素叠加为全球金融市场增添政策不确定性。历史经验显示，贸易保护主义措施通常导致全球经济增长预期下调、跨国公司盈利受损、以及风险资产波动加剧。</p>
+<p>对中国股市影响：中性偏负面。贸易紧张升级可能压制全球风险偏好，外资对新兴市场的配置意愿可能下降，影响A股资金面。但若中国作为相对稳定的经济体吸引避险资金，可能形成对冲。此外，中国出口企业若能从转移订单中获益，部分行业可能受益。</p>
+<p>对香港股市影响：负面。港股作为高度开放的国际市场，对全球贸易摩擦极为敏感。外资可能因避险情绪升温而减持港股，尤其影响贸易、航运、出口制造等板块。但中概股回流趋势可能提供一定支撑。</p>
+<p>对贵金属市场影响：正面。贸易紧张局势往往激发避险需求，黄金作为传统避险资产将受到追捧。若关税措施引发全球经济增长担忧，可能进一步强化黄金的配置价值。白银等工业属性较强的贵金属可能受工业需求担忧压制，但避险属性仍占主导。</p>
+<p>对汇率影响：美元可能先强后弱，人民币面临双向压力。初期避险情绪可能推升美元，但贸易战若损及美国经济，美元长期可能承压。人民币汇率将受跨境资本流动和央行干预影响，若中国保持经济稳定，人民币可能展现相对韧性。</p>
                     </div>
                 </div>
             </div>
-    
-            <!-- 洞察条目6 -->
+        
+            <!-- 洞察条目5 -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">6</div>
-                    <div class="insight-title">外资公募聚焦中国科技赛道，贝莱德富达等看好A股配置价值</div>
+                    <div class="insight-number">5</div>
+                    <div class="insight-title">中国央行召开2026年宏观审慎工作会议，强化金融稳定</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="https://s.coze.cn/image/J_1VlMAT8kM/" alt="洞察图片" class="insight-image" onclick="openImageOverlay(this.src, '外资公募聚焦中国科技赛道，贝莱德富达等看好A股配置价值')">
+                    <img src="assets/insight5_placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-6">
-                        外资公募集中投资中国科技股，业绩突出，看好A股2026年配置价值。
+                    <div class="summary-content" id="summary-5">
+                        央行召开宏观审慎工作会议，强调创新政策工具箱、维护金融稳定和推进人民币国际化。
                     </div>
                 </div>
                 
                 <div class="analysis-section">
                     <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-6">
-                        <p>随着公募基金2025年四季报披露，贝莱德、富达等外资公募持仓显示集中布局中国科技赛道，多只产品取得亮眼业绩，如贝莱德先进制造一年持有期混合自2025年以来净值涨幅超50%。外资公募普遍认为2026年中国股票具有显著配置价值，尤其看好科技创新、先进制造等成长领域。这一趋势反映外资对中国经济转型和产业升级的长期信心，以及A股市场估值吸引力的提升。</p><p>对中国股市影响：强烈正面。外资持续流入为A股提供增量资金，尤其利好科技、制造等外资偏好板块。外资机构的看好态度可能带动更多国际资金配置中国资产，提升市场整体估值水平。</p><p>对香港股市影响：正面。港股中概科技股与A股科技板块联动性强，外资对中国科技赛道的看好将提振港股科技股表现。同时，港股作为国际资金配置中国资产的重要通道，也将受益于外资流入趋势。</p><p>对贵金属市场影响：中性。外资配置中国科技股反映风险偏好提升，可能分流部分避险资金，对贵金属需求形成一定压制，但影响相对有限。</p><p>对汇率影响：人民币走强。外资增加对中国资产的配置将带来资本项下资金流入，支撑人民币汇率。同时，中国经济基本面改善预期也利好人民币中长期表现。</p>
+                    <div class="analysis-content" id="analysis-5">
+                        <p>中国人民银行召开2026年宏观审慎工作会议，部署全年金融稳定工作重点。会议要求继续构建覆盖全面的宏观审慎管理体系，创新丰富政策工具箱，维护金融市场稳健运行和金融体系整体稳定。会议明确以服务构建新发展格局为导向，进一步完善人民币跨境使用政策，促进货物贸易便利化，优化人民币清算行布局，更好发挥货币互换作用，发展人民币离岸市场，支持上海国际金融中心建设。这一系列举措显示央行在稳增长与防风险之间寻求平衡，既注重短期流动性管理，也着眼长期金融改革开放。</p>
+<p>对中国股市影响：正面。宏观审慎政策强调金融稳定，有利于降低系统性风险，提升市场信心。人民币国际化推进将吸引更多外资配置中国资产，尤其利好金融板块（银行、券商）和上海本地股。创新政策工具箱意味着央行可能采取更灵活的结构性工具支持实体经济，对股市流动性形成支撑。</p>
+<p>对香港股市影响：正面。人民币离岸市场发展将强化香港作为国际金融中心的地位，利好港交所及在港中资金融机构。人民币跨境使用便利化可能提升港股通等互联互通机制的交易活跃度，吸引内地资金南下。</p>
+<p>对贵金属市场影响：中性偏正面。金融稳定政策降低极端风险事件概率，可能抑制短期避险需求。但人民币国际化若削弱美元霸权地位，中长期有利于黄金作为非主权信用货币的价值重估。中国央行黄金储备政策动向仍需关注。</p>
+<p>对汇率影响：人民币稳中有升。央行明确推进人民币国际化，预示将维持汇率基本稳定，避免大幅波动。优化清算行布局和发挥货币互换作用，将提升人民币在国际贸易和投资中的使用便利性，支撑汇率中长期升值预期。</p>
                     </div>
                 </div>
             </div>
-    
-            <!-- 洞察条目9 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">9</div>
-                    <div class="insight-title">美联储继任主席最热门人选出炉，贝莱德高管里德尔概率升至50%</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="https://s.coze.cn/image/FN5id4b32n8/" alt="洞察图片" class="insight-image" onclick="openImageOverlay(this.src, '美联储继任主席最热门人选出炉，贝莱德高管里德尔概率升至50%')">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-9">
-                        美联储主席人选竞争激烈，贝莱德高管里德尔当选概率飙升至50%。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-9">
-                        <p>美国总统特朗普可能最早于本周宣布新任美联储主席人选，贝莱德高管里克·里德尔在特朗普公开称赞后，获提名概率从4%飙升至50%左右，成为最热门候选人。里德尔作为华尔街资深人士，若执掌美联储可能倾向于更加市场友好的货币政策，与当前美联储偏鹰派的立场形成对比。这一人事变动可能引发全球货币政策预期的重要调整，影响美元利率路径和全球流动性环境。</p><p>对中国股市影响：中性偏正面。若里德尔执掌美联储，可能采取相对温和的货币政策立场，减缓美元加息节奏，有利于全球风险资产表现，为A股创造相对宽松的外部流动性环境。</p><p>对香港股市影响：正面。港股对全球流动性和美元利率变化更为敏感，美联储政策转向温和将降低港股估值压力，吸引国际资金回流新兴市场，利好港股整体表现。</p><p>对贵金属市场影响：正面。美联储政策预期转鸽可能压制美元走势，降低持有黄金的机会成本，利好贵金属价格。市场对货币政策不确定性的担忧也可能提升黄金避险需求。</p><p>对汇率影响：美元承压，人民币相对走强。若美联储主席更替带来政策不确定性或转向鸽派，美元指数可能面临下行压力。人民币在相对稳定的货币政策环境下有望保持韧性，甚至受益于美元走弱。</p>
-                    </div>
-                </div>
-            </div>
-    
+        
             <!-- 洞察条目3 -->
             <div class="insight-item">
                 <div class="insight-header">
                     <div class="insight-number">3</div>
-                    <div class="insight-title">日本央行维持基准利率在0.75%不变，上调经济增长和通胀预测</div>
+                    <div class="insight-title">美股三大指数收涨，科技股财报周开启</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="https://s.coze.cn/image/p_Igmdh8Ky4/" alt="洞察图片" class="insight-image" onclick="openImageOverlay(this.src, '日本央行维持基准利率在0.75%不变，上调经济增长和通胀预测')">
+                    <img src="assets/insight3_placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
                     <div class="summary-content" id="summary-3">
-                        日本央行维持利率不变但上调经济预测，关注日元疲软对经济的影响。
+                        美股三大指数连续第四日收涨，科技股领涨，市场关注本周财报和美联储利率决议。
                     </div>
                 </div>
                 
                 <div class="analysis-section">
                     <div class="analysis-label">深度分析</div>
                     <div class="analysis-content" id="analysis-3">
-                        <p>日本央行在1月议息会议上决定维持基准利率在0.75%不变，同时上调2026财年经济增长和通胀预测。行长植田和男强调将警惕日元疲软影响，必要时将通过购债稳定长期利率。这一决定显示日本央行在通胀压力与经济复苏之间寻求平衡，在美联储可能转向的背景下保持相对谨慎。日元汇率持续疲软可能加剧输入性通胀压力，但同时也提升日本出口竞争力。</p><p>对中国股市影响：中性偏正面。日本央行维持相对宽松货币政策有利于亚洲区域流动性环境，降低中国金融市场的外部收紧压力。日元疲软可能推动部分资金从日本市场流向其他亚洲市场，包括A股。</p><p>对香港股市影响：中性。港股作为国际金融中心，受日本货币政策直接影响有限，但日元疲软可能提升以日元计价的资产配置价值，对港股资金流向影响复杂。</p><p>对贵金属市场影响：中性偏正面。日本央行维持宽松政策可能压制日元汇率，间接支撑美元计价贵金属。但日本通胀预期上升可能提升国内黄金需求，对贵金属市场形成温和支撑。</p><p>对汇率影响：日元承压，人民币相对稳定。日本央行政策立场相对鸽派可能继续压制日元汇率，而人民币在央行调控下有望保持相对稳定，中日利差变化可能影响跨境资本流动。</p>
+                        <p>美股周一延续涨势，三大指数连续第四个交易日收涨。道琼斯指数上涨0.64%，标普500指数上涨0.50%，纳斯达克指数上涨0.43%。市场上涨主要由苹果、微软、Alphabet、Meta及博通等大型科技股推动。投资者正密切关注本周即将密集出炉的科技巨头财报以及美联储利率决议，以评估人工智能热潮的可持续性及未来的货币政策路径。当前市场预期美联储可能维持利率不变，但会释放相对鸽派信号，为后续降息铺路。科技股财报若超预期，可能进一步提振市场情绪，支撑全球风险资产表现。</p>
+<p>对中国股市影响：正面。美股上涨反映全球风险偏好改善，外资对新兴市场的配置意愿可能提升。A股科技板块与美股科技股联动性增强，若纳斯达克持续走强，可能带动A股人工智能、半导体等成长板块。但需警惕若美联储释放鹰派信号引发美股回调，可能产生负面传导。</p>
+<p>对香港股市影响：正面。港股受全球资金流动影响显著，美股上涨通常利好港股风险情绪。科技股作为港股重要权重板块，若美股科技股财报强劲，将直接提振港股科网股表现。但港元与美元挂钩，美联储利率决议可能影响香港流动性环境。</p>
+<p>对贵金属市场影响：中性偏负面。风险偏好上升可能分流部分避险资金，压制黄金短期表现。但若美股上涨源于对经济软着陆的乐观预期，通胀担忧缓解可能降低黄金抗通胀需求。需结合美联储政策信号综合判断。</p>
+<p>对汇率影响：美元可能震荡，人民币相对稳定。美股上涨不一定直接推动美元走强，需看利率预期变化。若市场预期美联储转向鸽派，美元可能承压，人民币则受益于风险情绪改善和资本流入预期。</p>
                     </div>
                 </div>
             </div>
-    
-            <!-- 洞察条目2 -->
+        
+            <!-- 洞察条目7 -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">2</div>
-                    <div class="insight-title">美国政府停摆风险加剧，部分部门资金将于1月底耗尽</div>
+                    <div class="insight-number">7</div>
+                    <div class="insight-title">紫金矿业拟280亿元收购非洲金矿，强化黄金资源布局</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="https://s.coze.cn/image/SAInPV2mciw/" alt="洞察图片" class="insight-image" onclick="openImageOverlay(this.src, '美国政府停摆风险加剧，部分部门资金将于1月底耗尽')">
+                    <img src="assets/insight7_placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
                 <div class="summary-section">
                     <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-2">
-                        美国政府停摆风险因拨款法案受阻而加剧，可能影响全球金融市场稳定。
+                    <div class="summary-content" id="summary-7">
+                        紫金矿业计划以280亿元收购加拿大联合黄金公司，扩大非洲黄金资源布局，提升储量和产量。
                     </div>
                 </div>
                 
                 <div class="analysis-section">
                     <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-2">
-                        <p>多名民主党籍联邦参议员明确表示将反对包含国土安全部拨款的政府支出法案，令联邦政府在1月底资金耗尽后再度部分'停摆'的风险显著上升。政府停摆不仅影响美国国内公共服务和经济增长，更可能削弱投资者对美元资产的信心，加剧全球金融市场波动。历史经验显示，政府停摆期间市场避险情绪通常升温，美元信用受到质疑，国际资本可能重新配置。</p><p>对中国股市影响：中性偏正面。美国政治不确定性可能推动部分国际资本寻求相对稳定的新兴市场，A股作为全球第二大股市可能受益于避险资金流入。但需警惕全球风险情绪恶化对整体市场的拖累。</p><p>对香港股市影响：中性。港股受全球风险情绪影响，美国政治动荡可能压制风险偏好，但中国资产相对稳定性可能吸引部分资金配置港股，形成对冲效应。</p><p>对贵金属市场影响：强烈正面。政府停摆风险往往引发避险需求，黄金作为传统避险资产将受到追捧。美元信用疑虑可能进一步强化黄金的货币属性，推动贵金属价格上涨。</p><p>对汇率影响：美元承压，人民币相对坚挺。美国政治风险可能打压美元汇率，而人民币在全球不确定性中可能展现相对稳定性，尤其在中国经济基本面稳健背景下。</p>
+                    <div class="analysis-content" id="analysis-7">
+                        <p>紫金矿业宣布拟以约55亿加元（约合人民币280亿元）收购加拿大联合黄金公司100%股权，每股44加元现金价格，较协议签署前20个交易日加权平均交易价格溢价约18.95%。收购的核心资产包括位于马里的Sadiola金矿和位于科特迪瓦的金矿综合体。此次收购将显著提升紫金矿业的黄金资源储量和产能，巩固其全球黄金矿业龙头的地位。在当前金价突破历史高位的背景下，这一战略性收购反映了中国矿业企业积极布局海外优质资源，把握黄金上行周期的战略眼光。</p>
+<p>对中国股市影响：正面。紫金矿业作为A股黄金板块龙头，大规模海外收购将直接提升公司估值和盈利预期，带动整个黄金矿业板块走强。此外，这一交易显示中国企业海外资源并购能力增强，可能提振投资者对资源类上市公司的信心。但需关注交易溢价和后续整合风险。</p>
+<p>对香港股市影响：正面。紫金矿业同时在港股上市，收购消息将直接利好H股表现。港股黄金矿业板块可能跟随上涨，尤其关注山东黄金、招金矿业等同业公司的联动效应。国际投资者对中国资源企业的认可度可能提升。</p>
+<p>对贵金属市场影响：中性偏正面。大型矿业公司积极并购反映行业对黄金长期价格的乐观预期，可能强化市场看涨情绪。但交易本身不直接影响实物黄金供需平衡，更多是产业层面的结构调整。需关注收购后是否增加全球黄金供应。</p>
+<p>对汇率影响：中性。交易涉及加元和人民币兑换，可能带来短期跨境资金流动，但规模相对有限。人民币汇率主要受宏观政策和资本账户管理影响，单笔企业并购不会产生显著冲击。</p>
                     </div>
                 </div>
             </div>
-    
+        
         <!-- 影响矩阵 -->
-                <div class="impact-matrix">
-                    <h2 class="impact-title">综合影响矩阵</h2>
-                    <table class="matrix-table">
-                        <thead>
-                            <tr>
-                                <th>洞察条目</th>
-                                <th>A股市场</th>
-                                <th>香港股市</th>
-                                <th>贵金属市场</th>
-                                <th>汇率市场</th>
-                                <th>综合影响</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="impact-matrix">
+                        <h2 class="impact-title">综合影响矩阵</h2>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>洞察条目</th>
+                                    <th>A股市场</th>
+                                    <th>香港股市</th>
+                                    <th>贵金属市场</th>
+                                    <th>汇率市场</th>
+                                    <th>综合影响</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    <tr>
+                        <td><strong>洞察1</strong></td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>偏正面</strong></td>
+                    </tr>
+        
                     <tr>
                         <td><strong>洞察4</strong></td>
-                        <td class="negative"><span class="impact-icon negative-icon">↓</span>负面</td><td class="negative"><span class="impact-icon negative-icon">↓</span>负面</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="negative"><span class="impact-icon negative-icon">↓</span>负面</td>
-                        <td><strong>偏负面</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>洞察6</strong></td>
-                        <td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="neutral"><span class="impact-icon neutral-icon">→</span>中性</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td>
-                        <td><strong>偏正面</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>洞察9</strong></td>
-                        <td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="negative"><span class="impact-icon negative-icon">↓</span>负面</td>
-                        <td><strong>偏正面</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>洞察3</strong></td>
-                        <td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="neutral"><span class="impact-icon neutral-icon">→</span>中性</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="neutral"><span class="impact-icon neutral-icon">→</span>中性</td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
                         <td><strong>中性</strong></td>
                     </tr>
         
                     <tr>
-                        <td><strong>洞察2</strong></td>
-                        <td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="neutral"><span class="impact-icon neutral-icon">→</span>中性</td><td class="positive"><span class="impact-icon positive-icon">↑</span>正面</td><td class="negative"><span class="impact-icon negative-icon">↓</span>负面</td>
-                        <td><strong>偏正面</strong></td>
+                        <td><strong>洞察5</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察3</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="negative">
+                            <span class="impact-icon negative-icon">↓</span>负面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察7</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
                     </tr>
         
                 </tbody>
-                    </table>
-                    
-                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                        <div style="text-align: center;">
-                            <div style="display: inline-block; margin-right: 10px;">
+                        </table>
+                        
+                        <div class="impact-legend">
+                            <div class="legend-item">
                                 <span class="impact-icon positive-icon">↑</span>
+                                <span>正面影响：预期将推动市场上涨或改善基本面</span>
                             </div>
-                            <span><strong>正面影响</strong>：预期将推动市场上涨或改善基本面</span>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="display: inline-block; margin-right: 10px;">
+                            <div class="legend-item">
                                 <span class="impact-icon negative-icon">↓</span>
+                                <span>负面影响：预期将导致市场下跌或恶化环境</span>
                             </div>
-                            <span><strong>负面影响</strong>：预期将导致市场下跌或恶化环境</span>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="display: inline-block; margin-right: 10px;">
+                            <div class="legend-item">
                                 <span class="impact-icon neutral-icon">→</span>
+                                <span>中性影响：影响有限或正负因素相互抵消</span>
                             </div>
-                            <span><strong>中性影响</strong>：影响有限或正负因素相互抵消</span>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- 每周要点总结Tab内容 -->
+                <div id="weekly-tab" class="tab-pane">
+                    <div class="header glass-effect" style="text-align: center; padding: 60px 20px;">
+                        <h2 class="title">每周要点总结</h2>
+                        <p class="subtitle">每周五下午17:30生成，汇总当周5条最高价值洞察。</p>
+                        <p>首期每周要点总结将于2026年1月27日（周五）生成。</p>
                     </div>
                 </div>
             </div>
             
-            <!-- 每周要点总结Tab内容 -->
-            <div id="weekly-tab" class="tab-pane">
-                <div style="text-align: center; padding: 60px 20px;">
-                    <h2>每周要点总结</h2>
-                    <p>每周五下午17:30生成，汇总当周5条最高价值洞察。</p>
-                    <p>首期每周要点总结将于2026年1月27日（周五）生成。</p>
+            <!-- 页脚 -->
+            <div class="footer">
+                <p>数据来源：路透社、彭博社、金融时报、华尔街日报、财新网、IMF、世界银行等权威机构官方披露</p>
+                <p>信息截止时间：每日15:00（北京时间）</p>
+                <div class="disclaimer">
+                    免责声明：本简报基于公开信息整理分析，仅供决策参考，不构成任何投资建议。市场有风险，决策需谨慎。
                 </div>
-            </div>
-        </div>
-        
-        <!-- 页脚 -->
-        <div class="footer">
-            <p>数据来源：路透社、彭博社、金融时报、华尔街日报、财新网、IMF、世界银行等权威机构官方披露</p>
-            <p>信息截止时间：每日15:00（北京时间）</p>
-            <div class="disclaimer">
-                免责声明：本简报基于公开信息整理分析，仅供决策参考，不构成任何投资建议。市场有风险，决策需谨慎。
             </div>
         </div>
     </div>
@@ -1387,6 +1307,34 @@
             const day = String(now.getDate()).padStart(2, '0');
             
             document.getElementById('report-date').textContent = `报告日期：${year}年${month}月${day}日`;
+            
+            // 移动端菜单切换
+            const menuToggle = document.getElementById('menu-toggle');
+            const navTabs = document.getElementById('nav-tabs');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navTabs.classList.toggle('active');
+                });
+                
+                // 点击菜单项后关闭菜单
+                navTabs.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navTabs.classList.remove('active');
+                        }
+                    });
+                });
+                
+                // 点击外部关闭菜单
+                document.addEventListener('click', function(event) {
+                    if (window.innerWidth <= 768 && 
+                        !menuToggle.contains(event.target) && 
+                        !navTabs.contains(event.target)) {
+                        navTabs.classList.remove('active');
+                    }
+                });
+            }
         });
         
         // Tab切换功能
@@ -1409,6 +1357,9 @@
                             pane.classList.add('active');
                         }
                     });
+                    
+                    // 滚动到顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
         });
@@ -1420,6 +1371,11 @@
                 img.addEventListener('load', function() {
                     this.classList.add('loaded');
                 });
+                
+                // 如果图片已缓存，直接添加loaded类
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
             });
         });
         
@@ -1446,6 +1402,10 @@
             function closeOverlay() {
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
+                // 清空图片src，避免内存占用
+                setTimeout(() => {
+                    overlayImage.src = '';
+                }, 300);
             }
             
             // 点击关闭按钮
@@ -1464,6 +1424,45 @@
                     closeOverlay();
                 }
             });
+            
+            // 触摸滑动关闭（移动端）
+            let touchStartY = 0;
+            let touchEndY = 0;
+            
+            overlay.addEventListener('touchstart', function(e) {
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+            
+            overlay.addEventListener('touchend', function(e) {
+                touchEndY = e.changedTouches[0].screenY;
+                const deltaY = touchEndY - touchStartY;
+                
+                // 向下滑动超过100px关闭浮层
+                if (deltaY > 100) {
+                    closeOverlay();
+                }
+            }, { passive: true });
+        });
+        
+        // 窗口大小变化时调整菜单
+        window.addEventListener('resize', function() {
+            const navTabs = document.getElementById('nav-tabs');
+            if (window.innerWidth > 768) {
+                navTabs.classList.remove('active');
+                navTabs.style.display = 'flex';
+            } else {
+                navTabs.style.display = '';
+            }
+        });
+        
+        // 初始化页面加载完成后的动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
         });
     </script>
 </body>
