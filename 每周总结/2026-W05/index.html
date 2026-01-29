@@ -471,29 +471,6 @@
             line-height: 1.5;
         }
         
-        /* ====== 页脚 ====== */
-        .footer {
-            text-align: center;
-            padding: var(--space-xl) 0;
-            margin-top: var(--space-xxl);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            font-size: var(--text-sm);
-        }
-        
-        .footer p {
-            margin-bottom: var(--space-xs);
-        }
-        
-        .disclaimer {
-            margin-top: var(--space-lg);
-            padding: var(--space-md);
-            background: rgba(192, 57, 43, 0.1);
-            border-radius: var(--radius-md);
-            font-size: var(--text-sm);
-            color: var(--warning);
-        }
-        
         /* ====== 响应式设计 ====== */
         @media (max-width: 768px) {
             .container {
@@ -579,13 +556,6 @@
             .nav-tabs.active {
                 display: flex;
             }
-            
-            .nav-tab {
-                width: 100%;
-                text-align: left;
-                padding: var(--space-md);
-                border-radius: var(--radius-md);
-            }
         }
         
         /* ====== 加载动画 ====== */
@@ -608,6 +578,52 @@
         
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+        
+        /* ====== 空状态样式 ====== */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state-title {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        
+        .empty-state-message {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* ====== 页脚 ====== */
+        .footer {
+            text-align: center;
+            padding: var(--space-xl) 0;
+            margin-top: var(--space-xxl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+        
+        .footer p {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .disclaimer {
+            margin-top: var(--space-lg);
+            padding: var(--space-md);
+            background: rgba(192, 57, 43, 0.1);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            color: var(--warning);
         }
     </style>
 </head>
@@ -664,160 +680,160 @@
                     
                     <div id="insights-container" class="insights-grid">
                         
-            <div class="insight-card">
-                <div class="insight-rank">1</div>
-                <div class="insight-score">9.50分</div>
-                <h3 class="insight-title">美股三大指数收涨，科技股财报周开启</h3>
-                <div class="insight-date">2026年01月27日</div>
-                <div class="insight-summary">美股三大指数连续第四日收涨，科技股领涨，市场关注本周财报和美联储利率决议。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                <div class="insight-card">
+                    <div class="insight-rank">1</div>
+                    <div class="insight-score">9.50分</div>
+                    <h3 class="insight-title">美股三大指数收涨，科技股财报周开启</h3>
+                    <div class="insight-date">2026年01月27日</div>
+                    <div class="insight-summary">美股三大指数连续第四日收涨，科技股领涨，市场关注本周财报和美联储利率决议。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">2</div>
-                <div class="insight-score">9.33分</div>
-                <h3 class="insight-title">美元指数跌至近四年新低，特朗普称美元表现良好</h3>
-                <div class="insight-date">2026年01月28日</div>
-                <div class="insight-summary">美元指数跌至近四年低点，特朗普表态缓和市场担忧，但对全球贸易和汇率市场影响深远。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">2</div>
+                    <div class="insight-score">9.33分</div>
+                    <h3 class="insight-title">美元指数跌至近四年新低，特朗普称美元表现良好</h3>
+                    <div class="insight-date">2026年01月28日</div>
+                    <div class="insight-summary">美元指数跌至近四年低点，特朗普表态缓和市场担忧，但对全球贸易和汇率市场影响深远。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">3</div>
-                <div class="insight-score">9.33分</div>
-                <h3 class="insight-title">美股三大指数分化，标普500创历史新高，科技股领涨</h3>
-                <div class="insight-date">2026年01月28日</div>
-                <div class="insight-summary">美股分化，标普创历史新高，科技股领涨，市场关注财报和美联储决议。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">3</div>
+                    <div class="insight-score">9.33分</div>
+                    <h3 class="insight-title">美股三大指数分化，标普500创历史新高，科技股领涨</h3>
+                    <div class="insight-date">2026年01月28日</div>
+                    <div class="insight-summary">美股分化，标普创历史新高，科技股领涨，市场关注财报和美联储决议。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">4</div>
-                <div class="insight-score">9.33分</div>
-                <h3 class="insight-title">Fed expected to hold rates steady at January meeting</h3>
-                <div class="insight-date">2026年01月28日</div>
-                <div class="insight-summary">预计美联储1月会议将维持利率不变，市场关注后续政策路径。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">4</div>
+                    <div class="insight-score">9.33分</div>
+                    <h3 class="insight-title">Fed expected to hold rates steady at January meeting</h3>
+                    <div class="insight-date">2026年01月28日</div>
+                    <div class="insight-summary">预计美联储1月会议将维持利率不变，市场关注后续政策路径。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">5</div>
-                <div class="insight-score">9.00分</div>
-                <h3 class="insight-title">特朗普威胁对加拿大加征100%关税，贸易紧张加剧</h3>
-                <div class="insight-date">2026年01月27日</div>
-                <div class="insight-summary">特朗普威胁对加拿大加征100%关税，加剧全球贸易紧张局势，影响汇率和市场风险情绪。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">5</div>
+                    <div class="insight-score">9.00分</div>
+                    <h3 class="insight-title">特朗普威胁对加拿大加征100%关税，贸易紧张加剧</h3>
+                    <div class="insight-date">2026年01月27日</div>
+                    <div class="insight-summary">特朗普威胁对加拿大加征100%关税，加剧全球贸易紧张局势，影响汇率和市场风险情绪。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">6</div>
-                <div class="insight-score">8.83分</div>
-                <h3 class="insight-title">日本央行维持基准利率在0.75%不变，上调经济增长和通胀预测</h3>
-                <div class="insight-date">2026年01月26日</div>
-                <div class="insight-summary">日本央行维持利率不变但上调经济预测，关注日元疲软对经济的影响。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">6</div>
+                    <div class="insight-score">8.83分</div>
+                    <h3 class="insight-title">日本央行维持基准利率在0.75%不变，上调经济增长和通胀预测</h3>
+                    <div class="insight-date">2026年01月26日</div>
+                    <div class="insight-summary">日本央行维持利率不变但上调经济预测，关注日元疲软对经济的影响。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">7</div>
-                <div class="insight-score">8.67分</div>
-                <h3 class="insight-title">现货黄金突破5190美元创历史新高，避险需求与美元走弱双驱动</h3>
-                <div class="insight-date">2026年01月28日</div>
-                <div class="insight-summary">黄金突破5190美元创历史新高，受美元走弱和地缘风险推动，避险需求强劲。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">7</div>
+                    <div class="insight-score">8.67分</div>
+                    <h3 class="insight-title">现货黄金突破5190美元创历史新高，避险需求与美元走弱双驱动</h3>
+                    <div class="insight-date">2026年01月28日</div>
+                    <div class="insight-summary">黄金突破5190美元创历史新高，受美元走弱和地缘风险推动，避险需求强劲。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">8</div>
-                <div class="insight-score">7.67分</div>
-                <h3 class="insight-title">紫金矿业拟280亿元收购非洲金矿，强化黄金资源布局</h3>
-                <div class="insight-date">2026年01月27日</div>
-                <div class="insight-summary">紫金矿业计划以280亿元收购加拿大联合黄金公司，扩大非洲黄金资源布局，提升储量和产量。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">8</div>
+                    <div class="insight-score">7.67分</div>
+                    <h3 class="insight-title">紫金矿业拟280亿元收购非洲金矿，强化黄金资源布局</h3>
+                    <div class="insight-date">2026年01月27日</div>
+                    <div class="insight-summary">紫金矿业计划以280亿元收购加拿大联合黄金公司，扩大非洲黄金资源布局，提升储量和产量。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">9</div>
-                <div class="insight-score">7.67分</div>
-                <h3 class="insight-title">中国2025年规模以上工业企业利润同比增长0.6%，四年来首次转正</h3>
-                <div class="insight-date">2026年01月28日</div>
-                <div class="insight-summary">中国工业企业利润四年来首次转正，高技术制造业表现突出，实体经济修复迹象明显。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">9</div>
+                    <div class="insight-score">7.67分</div>
+                    <h3 class="insight-title">中国2025年规模以上工业企业利润同比增长0.6%，四年来首次转正</h3>
+                    <div class="insight-date">2026年01月28日</div>
+                    <div class="insight-summary">中国工业企业利润四年来首次转正，高技术制造业表现突出，实体经济修复迹象明显。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">10</div>
-                <div class="insight-score">7.33分</div>
-                <h3 class="insight-title">现货黄金首次突破5000美元/盎司，创历史新高</h3>
-                <div class="insight-date">2026年01月26日</div>
-                <div class="insight-summary">现货黄金历史性突破5000美元/盎司，反映市场避险情绪高涨和通胀担忧。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">10</div>
+                    <div class="insight-score">7.33分</div>
+                    <h3 class="insight-title">现货黄金首次突破5000美元/盎司，创历史新高</h3>
+                    <div class="insight-date">2026年01月26日</div>
+                    <div class="insight-summary">现货黄金历史性突破5000美元/盎司，反映市场避险情绪高涨和通胀担忧。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag high">事件影响: 高</span><span class="dimension-tag medium">数据影响: 中</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">11</div>
-                <div class="insight-score">7.17分</div>
-                <h3 class="insight-title">美联储继任主席最热门人选出炉，贝莱德高管里德尔概率升至50%</h3>
-                <div class="insight-date">2026年01月26日</div>
-                <div class="insight-summary">美联储主席人选竞争激烈，贝莱德高管里德尔当选概率飙升至50%。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">11</div>
+                    <div class="insight-score">7.17分</div>
+                    <h3 class="insight-title">美联储继任主席最热门人选出炉，贝莱德高管里德尔概率升至50%</h3>
+                    <div class="insight-date">2026年01月26日</div>
+                    <div class="insight-summary">美联储主席人选竞争激烈，贝莱德高管里德尔当选概率飙升至50%。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">12</div>
-                <div class="insight-score">6.17分</div>
-                <h3 class="insight-title">外资公募聚焦中国科技赛道，贝莱德富达等看好A股配置价值</h3>
-                <div class="insight-date">2026年01月26日</div>
-                <div class="insight-summary">外资公募集中投资中国科技股，业绩突出，看好A股2026年配置价值。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag low">事件影响: 低</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">12</div>
+                    <div class="insight-score">6.17分</div>
+                    <h3 class="insight-title">外资公募聚焦中国科技赛道，贝莱德富达等看好A股配置价值</h3>
+                    <div class="insight-date">2026年01月26日</div>
+                    <div class="insight-summary">外资公募集中投资中国科技股，业绩突出，看好A股2026年配置价值。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag low">事件影响: 低</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag medium">时效性: 中</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">13</div>
-                <div class="insight-score">6.17分</div>
-                <h3 class="insight-title">现货黄金突破5100美元/盎司创历史新高，避险买盘与央行购金双驱动</h3>
-                <div class="insight-date">2026年01月27日</div>
-                <div class="insight-summary">黄金突破5100美元再创历史新高，年内涨幅近18%，受地缘政治风险和央行持续购金推动。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">13</div>
+                    <div class="insight-score">6.17分</div>
+                    <h3 class="insight-title">现货黄金突破5100美元/盎司创历史新高，避险买盘与央行购金双驱动</h3>
+                    <div class="insight-date">2026年01月27日</div>
+                    <div class="insight-summary">黄金突破5100美元再创历史新高，年内涨幅近18%，受地缘政治风险和央行持续购金推动。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="insight-card">
-                <div class="insight-rank">14</div>
-                <div class="insight-score">6.17分</div>
-                <h3 class="insight-title">中国央行召开2026年宏观审慎工作会议，强化金融稳定</h3>
-                <div class="insight-date">2026年01月27日</div>
-                <div class="insight-summary">央行召开宏观审慎工作会议，强调创新政策工具箱、维护金融稳定和推进人民币国际化。</div>
-                <div class="insight-dimensions">
-                    <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                
+                <div class="insight-card">
+                    <div class="insight-rank">14</div>
+                    <div class="insight-score">6.17分</div>
+                    <h3 class="insight-title">中国央行召开2026年宏观审慎工作会议，强化金融稳定</h3>
+                    <div class="insight-date">2026年01月27日</div>
+                    <div class="insight-summary">央行召开宏观审慎工作会议，强调创新政策工具箱、维护金融稳定和推进人民币国际化。</div>
+                    <div class="insight-dimensions">
+                        <span class="dimension-tag medium">事件影响: 中</span><span class="dimension-tag low">数据影响: 低</span><span class="dimension-tag high">市场相关: 高</span><span class="dimension-tag high">时效性: 高</span>
+                    </div>
                 </div>
-            </div>
-            
+                
                     </div>
                 </div>
                 
@@ -885,16 +901,8 @@
                             pane.classList.add('active');
                         }
                     });
-                    
-                    // 如果是历史报告Tab，加载历史数据
-                    if (tabName === 'history') {
-                        loadHistoryData();
-                    }
                 });
             });
-            
-            // 加载本周要点数据
-            loadWeeklyData();
             
             // 移动端菜单切换
             const menuToggle = document.getElementById('menu-toggle');
@@ -939,103 +947,6 @@
             d.setDate(d.getDate() + 4 - dayNum);
             const yearStart = new Date(d.getFullYear(), 0, 1);
             return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-        }
-        
-        // 加载本周要点数据
-        function loadWeeklyData() {
-            const container = document.getElementById('insights-container');
-            
-            // 在实际应用中，这里应该从API或JSON文件加载数据
-            // 暂时显示加载状态
-            container.innerHTML = '<div class="loading"></div>';
-            
-            // 模拟数据加载
-            setTimeout(() => {
-                // 这里应该替换为实际的数据加载逻辑
-                const mockData = {
-                    total_insights: 25,
-                    included_insights: 8,
-                    avg_score: 6.8,
-                    threshold_rate: '32%',
-                    insights: []
-                };
-                
-                // 更新统计数据
-                document.getElementById('total-insights').textContent = mockData.total_insights;
-                document.getElementById('included-insights').textContent = mockData.included_insights;
-                document.getElementById('avg-score').textContent = mockData.avg_score.toFixed(1);
-                document.getElementById('threshold-rate').textContent = mockData.threshold_rate;
-                
-                // 清空容器
-                container.innerHTML = '';
-                
-                // 如果没有要点，显示提示
-                if (mockData.insights.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                            <div style="font-size: 48px; margin-bottom: 20px;">📊</div>
-                            <h3 style="color: var(--text-primary); margin-bottom: 10px;">暂无收录要点</h3>
-                            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
-                                本日生成的洞察尚未达到收录标准（≥6.0分）。请查看历史报告或等待新数据生成。
-                            </p>
-                        </div>
-                    `;
-                }
-            }, 1000);
-        }
-        
-        // 加载历史报告数据
-        function loadHistoryData() {
-            const container = document.getElementById('history-container');
-            
-            // 在实际应用中，这里应该从API或JSON文件加载数据
-            // 暂时显示加载状态
-            container.innerHTML = '<div class="loading"></div>';
-            
-            // 模拟数据加载
-            setTimeout(() => {
-                // 这里应该替换为实际的数据加载逻辑
-                const mockHistory = [
-                    { week: '2026-01', dateRange: '2026年01月20日 - 2026年01月26日', count: 7, snippet: '黄金突破5100美元，央行宏观审慎会议，贸易紧张局势' },
-                    { week: '2026-02', dateRange: '2026年01月27日 - 2026年02月02日', count: 5, snippet: '美股财报季，美联储政策预期，中国经济数据发布' }
-                ];
-                
-                // 清空容器
-                container.innerHTML = '';
-                
-                // 生成历史报告卡片
-                mockHistory.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'history-card';
-                    card.innerHTML = `
-                        <div class="history-week">${item.week}</div>
-                        <div class="history-date-range">${item.dateRange}</div>
-                        <div class="history-count">收录 ${item.count} 个要点</div>
-                        <div class="history-snippet">${item.snippet}</div>
-                    `;
-                    
-                    // 点击卡片跳转到对应周报
-                    card.addEventListener('click', function() {
-                        // 在实际应用中，这里应该跳转到对应周报的URL
-                        alert('在实际应用中，这里会跳转到第' + item.week + '周的详细报告页面');
-                    });
-                    
-                    container.appendChild(card);
-                });
-                
-                // 如果没有历史数据，显示提示
-                if (mockHistory.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                            <div style="font-size: 48px; margin-bottom: 20px;">📁</div>
-                            <h3 style="color: var(--text-primary); margin-bottom: 10px;">暂无历史报告</h3>
-                            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
-                                尚未生成任何每周要点总结报告。首份报告将在本周五（2026年01月27日）生成。
-                            </p>
-                        </div>
-                    `;
-                }
-            }, 1000);
         }
     </script>
 </body>
