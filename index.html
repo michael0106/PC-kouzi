@@ -350,7 +350,7 @@
         
         #history-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--space-sm);
         }
         
@@ -578,14 +578,14 @@
         
         /* ====== 影响矩阵独立模块 ====== */
         .impact-matrix {
-            margin-top: var(--space-xxl);
-            margin-bottom: var(--space-xl);
+            margin-top: 5rem;
+            margin-bottom: 4rem;
             padding: var(--space-xl);
             background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
             backdrop-filter: blur(15px);
             border-radius: var(--radius-xl);
             border: 2px solid rgba(255, 255, 255, 0.15);
-            box-shadow: var(--shadow-xl);
+            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -1029,6 +1029,13 @@
         .hover-lift:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
+        }
+        
+        /* 桌面端历史报告栏全屏横向布局 */
+        @media (min-width: 1024px) {
+            #history-items {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
         
         .text-gradient {
