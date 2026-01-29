@@ -315,6 +315,39 @@
             border-bottom: 2px solid var(--bg-glass-light);
         }
         
+        /* ====== 今日洞察标题 ====== */
+        .today-insights-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.12) 0%, rgba(0, 212, 170, 0.06) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all var(--transition-normal);
+        }
+        
+        .today-insights-header:hover {
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        
+        .today-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .today-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
         #history-items {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -543,10 +576,29 @@
             left: -var(--space-md);
         }
         
-        /* ====== 影响矩阵 ====== */
+        /* ====== 影响矩阵独立模块 ====== */
         .impact-matrix {
             margin-top: var(--space-xxl);
             margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-xl);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-matrix::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 111, 217, 0.1) 0%, transparent 70%);
+            z-index: -1;
         }
         
         .impact-title {
@@ -892,7 +944,7 @@
             }
             
             .analysis-section.expanded {
-                max-height: 2000px;
+                max-height: 5000px;
                 padding: var(--space-md);
                 border: 1px solid rgba(0, 0, 0, 0.08);
                 border-radius: var(--radius-md);
@@ -1006,7 +1058,7 @@
             <div class="header">
                 <h1 class="title">每日金融情报洞察简报</h1>
                 <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
-                <div class="date" id="report-date">报告日期：2026年01月28日</div>
+                <div class="date" id="report-date">报告日期：2026年01月29日</div>
             </div>
             
             <!-- 执行摘要 -->
@@ -1018,10 +1070,304 @@
             <!-- Tab内容容器 -->
             <div class="tab-content">
                 <div id="daily-tab" class="tab-pane active">
+
+                    
+                    <!-- 今日洞察标题 -->
+                    <div class="today-insights-header">
+                        <h2 class="today-title">今日洞察</h2>
+                        <p class="today-subtitle">以下为今日筛选的5条核心金融洞察</p>
+                    </div>
+                    
+                    <!-- 洞察条目 -->
+                    <div id="insights-container">
+
+            <!-- 洞察条目1（显示序号：1） -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">1</div>
+                    <div class="insight-title">现货黄金突破5400美元创历史新高，单日暴涨220美元</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight1_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-1">
+                        黄金首次突破5400美元创历史新高，单日暴涨220美元，受美联储利率决议和地缘风险推动。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-1">
+                        <p>现货黄金突破5400美元/盎司，创下历史新高，单日涨幅达220美元，为近年罕见。这轮暴涨主要受三重因素驱动：一是美联储1月议息会议维持利率不变，鲍威尔表态偏鸽，实际利率预期下行；二是特朗普对伊朗发出更严厉警告，中东地缘政治风险升温；三是全球央行购金需求持续，加纳、泰国等新兴市场央行调整黄金政策引发市场关注。</p>
+<p>对中国股市影响：中性偏负面。黄金暴涨反映避险情绪高涨，可能抽离部分股市资金，但A股黄金板块（如山东黄金、中金黄金）将直接受益。
+对香港股市影响：类似A股，避险情绪压制恒指，但黄金股表现强势。
+对贵金属市场影响：显著正面。黄金突破关键心理关口将带动白银、铂金等贵金属全面上涨，提振矿业公司盈利预期。
+对汇率影响：美元承压。黄金以美元计价，金价大涨反映美元信用担忧，人民币兑美元短期可能升值。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目2（显示序号：2） -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">2</div>
+                    <div class="insight-title">美联储维持利率不变，鲍威尔强调政策无预定路线</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight2_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-2">
+                        美联储1月议息会议维持利率不变，鲍威尔强调政策灵活性，关注通胀数据。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-2">
+                        <p>美联储1月议息会议决定维持联邦基金利率目标区间在3.5-3.75%不变，符合市场预期。此次会议有两个关键信号：一是内部出现分歧，理事米兰和沃勒支持降息25个基点，显示鸽派声音增强；二是鲍威尔在记者会上重申利率已处于中性区间上端，强调政策没有预定路线，未来将依赖数据决策。这表明美联储对通胀回落的信心增强，但不愿过早释放降息信号。</p>
+<p>对中国股市影响：正面。美联储暂停加息缓解了中美利差压力，减少资本外流担忧，有利于A股外资回流。
+对香港股市影响：正面。联系汇率制度下，港币利率压力减轻，港股流动性环境改善。
+对贵金属市场影响：正面。利率上行周期暂停，实际利率预期下行，黄金等无息资产吸引力上升。
+对汇率影响：美元短期承压。暂停加息削弱美元收益率优势，人民币兑美元有升值空间，但需关注美国经济数据韧性。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目3（显示序号：3） -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">3</div>
+                    <div class="insight-title">美国财长贝森特：美国长期奉行强势美元政策，绝对没有干预日元</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight3_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-3">
+                        美国财长重申强势美元政策，否认干预日元，关注美联储主席人选。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-3">
+                        <p>美国财政部长贝森特在公开讲话中明确表示，美国长期奉行强势美元政策，并否认了市场关于美国干预日元汇率的猜测。此番表态发生在特朗普表达不担忧美元走弱之后，具有明显的政策对冲意味。同时，贝森特透露特朗普可能在一周左右公布美联储主席人选，这增加了未来货币政策的不确定性。强势美元政策声明旨在维持美元国际储备货币地位，但可能引发新兴市场货币压力。</p>
+<p>对中国股市影响：负面。强势美元政策可能引发新兴市场资本外流，外资从A股撤出压力增大。
+对香港股市影响：负面。港币与美元挂钩，美元走强可能使香港资产吸引力下降，港股承压。
+对贵金属市场影响：负面。美元走强直接压制以美元计价的黄金价格，抵消部分避险需求带来的涨幅。
+对汇率影响：美元走强。明确政策立场支撑美元汇率，人民币兑美元短期面临贬值压力，但央行有充足工具维持汇率稳定。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目6（显示序号：4） -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">4</div>
+                    <div class="insight-title">国务院国资委研究起草推动央企培育新兴支柱产业文件</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight6_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-6">
+                        国资委研究推动央企培育新兴支柱产业，利好相关板块和A股市场。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-6">
+                        <p>国务院国资委正在研究起草关于推动中央企业培育新兴支柱产业的工作文件，这是中国深化国企改革、优化产业结构的重要举措。文件预计将聚焦新能源、人工智能、生物技术、高端装备制造等战略新兴产业，通过政策支持、资源倾斜等方式，引导央企在这些领域加大投入，形成新的增长点。此举旨在提升中国产业链自主可控能力，应对国际科技竞争。</p>
+<p>对中国股市影响：显著正面。直接利好新能源、人工智能、半导体等新兴产业板块，相关央企上市公司估值有望提升。
+对香港股市影响：正面。在港上市的中资央企，特别是涉及新兴产业的上市公司将受益于政策预期。
+对贵金属市场影响：中性。产业政策对贵金属供需无直接影响，但经济结构优化可能长期支撑人民币计价黄金需求。
+对汇率影响：中性偏正面。经济转型升级成功将增强人民币长期基本面，但短期汇率影响有限。</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目8（显示序号：5） -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">5</div>
+                    <div class="insight-title">阿斯麦四季度订单翻倍，AI需求推动业绩炸裂</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight8_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-8">
+                        阿斯麦四季度订单额达132亿欧元，AI需求强劲，利好半导体产业链。
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-8">
+                        <p>全球光刻机巨头阿斯麦（ASML）公布第四季度财报，订单额达到132亿欧元，几乎是彭博分析师平均预期68.5亿欧元的两倍，较上一季度的54亿欧元大幅增长。这一创纪录表现主要受益于人工智能基础设施的快速发展，各大芯片制造商为满足AI算力需求，大幅增加对先进制程设备的投资。阿斯麦作为半导体设备关键供应商，其订单激增预示全球半导体资本开支进入新一轮上升周期。</p>
+<p>对中国股市影响：正面。利好A股半导体设备、材料、封测等产业链公司，如北方华创、中微公司等有望受益于行业景气度提升。
+对香港股市影响：正面。在港上市的半导体相关中资企业，如中芯国际、华虹半导体等将受到行业情绪提振。
+对贵金属市场影响：中性。半导体行业复苏对贵金属供需无直接影响，但科技发展可能增加对白银等工业属性贵金属的需求。
+对汇率影响：中性。反映全球科技复苏预期，但对人民币汇率直接影响有限，需观察中国半导体产业自主化进展。</p>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- 影响矩阵 -->
+                    <div class="impact-matrix">
+                        <h2 class="impact-title">综合影响矩阵</h2>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>洞察条目</th>
+                                    <th>A股市场</th>
+                                    <th>香港股市</th>
+                                    <th>贵金属市场</th>
+                                    <th>汇率市场</th>
+                                    <th>综合影响</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                    <tr>
+                        <td><strong>黄金首次突破</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>美联储1月议</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>美国财长重申</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>国资委研究推</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>阿斯麦四季度</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    </tbody>
+                        </table>
+                        
+                        <div class="impact-legend">
+                            <div class="legend-item">
+                                <span class="impact-icon positive-icon">↑</span>
+                                <span>正面影响：预期将推动市场上涨或改善基本面</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="impact-icon negative-icon">↓</span>
+                                <span>负面影响：预期将导致市场下跌或恶化环境</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="impact-icon neutral-icon">→</span>
+                                <span>中性影响：影响有限或正负因素相互抵消</span>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- 历史报告列表 -->
-                    <div class="history-list">
-                        <h3>历史报告</h3>
-                        <div class="history-list"><h3>历史报告</h3><div id="history-items">
+                    <div class="history-list"><h3>历史报告</h3><div id="history-items">
+                    <div class="history-item" onclick="window.location.href='history/2026-01-28/index.html'">
+                        <div class="history-date">2026年01月28日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
                     <div class="history-item" onclick="window.location.href='history/2026-01-27/index.html'">
                         <div class="history-date">2026年01月27日</div>
                         <div class="history-summary">点击查看完整报告</div>
@@ -1062,290 +1408,6 @@
                         <div class="history-summary">点击查看完整报告</div>
                     </div>
                 </div></div>
-                    </div>
-                    
-                    <!-- 洞察条目 -->
-                    <div id="insights-container">
-
-            <!-- 洞察条目1 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">1</div>
-                    <div class="insight-title">现货黄金突破5190美元创历史新高，避险需求与美元走弱双驱动</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight1_placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-1">
-                        黄金突破5190美元创历史新高，受美元走弱和地缘风险推动，避险需求强劲。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-1">
-                        <p>2026年1月28日，现货黄金价格突破每盎司5190美元关口，创下历史新高，较前一交易日上涨3.52%。这一突破由多重因素共同驱动：美元指数跌至近四年低点，削弱了以美元计价的黄金持有成本；中东等地缘政治紧张局势持续升级，激发传统避险买盘；市场对美联储年内降息预期升温，实际利率下行预期强化黄金配置价值。技术面上，黄金在突破5100美元后仅隔一日便再创新高，显示上升动能极为强劲，短期可能挑战5200美元心理关口。资金流向显示，全球黄金ETF持仓持续增加，央行购金步伐未减，为金价提供中长期支撑。</p>
-<p>对中国股市影响：中性偏正面。黄金大涨反映避险情绪升温，可能压制A股整体风险偏好，尤其高估值成长板块。但黄金矿业股（如山东黄金、中金黄金）及相关ETF将直接受益于金价上涨，形成结构性机会。紫金矿业等龙头企业海外资源布局进一步强化板块景气度。</p>
-<p>对香港股市影响：中性偏负面。港股与全球资金流动关联紧密，避险情绪抬头可能抑制外资流入意愿。但黄金股在港股中权重较高，恒生综指中黄金矿业板块可能表现突出，形成一定对冲效应。</p>
-<p>对贵金属市场影响：强烈正面。突破5190美元关键阻力位具有重要技术意义，可能吸引更多追涨资金和程序化交易入场。白银、铂金等关联贵金属有望跟随上涨，形成贵金属板块整体走强格局。央行购金趋势持续为金价提供中长期支撑。</p>
-<p>对汇率影响：美元承压，人民币相对稳定。黄金与美元通常呈现负相关关系，金价创新高反映美元信用受质疑。美元指数可能继续走弱，而人民币在央行宏观审慎管理下有望保持相对稳定，甚至受益于避险资金流入中国资产。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目2 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">2</div>
-                    <div class="insight-title">美元指数跌至近四年新低，特朗普称美元表现良好</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight2_placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-2">
-                        美元指数跌至近四年低点，特朗普表态缓和市场担忧，但对全球贸易和汇率市场影响深远。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-2">
-                        <p>美元指数周二下跌1.34%，报95.7455，创下自2022年3月以来的近四年新低。这一下跌主要反映市场对美国财政赤字扩大、贸易逆差高企以及美联储降息预期的担忧。美国总统特朗普在回应美元贬值担忧时表示，美元“表现很好”，并暗示政府可以操控美元汇率但不会这样做，这一表态旨在缓和市场对竞争性贬值的担忧。历史数据显示，美元指数在95-96区间具有技术支撑，若跌破可能进一步下探94水平。美元走弱对全球贸易、跨国企业盈利以及大宗商品定价产生广泛影响。</p>
-<p>对中国股市影响：正面。美元走弱通常推动资金流向新兴市场，中国作为全球第二大经济体可能吸引更多外资流入A股。人民币相对升值有利于降低进口成本，缓解输入性通胀压力，对消费和制造业板块形成利好。但出口企业可能面临汇率压力，需关注结构性分化。</p>
-<p>对香港股市影响：正面。港元与美元挂钩，美元走弱一定程度上缓解香港的联系汇率制压力。外资可能因美元贬值而增加对港股配置，尤其受益于人民币资产重估的中资股。但需警惕若美元持续贬值引发全球金融市场动荡，可能抑制风险偏好。</p>
-<p>对贵金属市场影响：正面。美元与黄金通常呈负相关关系，美元走弱直接提升黄金的吸引力。以其他货币计价的黄金价格也普遍上涨，强化全球避险资产配置需求。若美元指数进一步下行，可能推动黄金测试更高阻力位。</p>
-<p>对汇率影响：美元承压，人民币升值预期增强。美元指数创四年新低反映市场对美元信心的动摇，而中国经济基本面相对稳健，人民币有望保持强势。央行可能通过逆周期因子调节升值节奏，避免过快升值冲击出口部门。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目3 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">3</div>
-                    <div class="insight-title">美股三大指数分化，标普500创历史新高，科技股领涨</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight3_placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-3">
-                        美股分化，标普创历史新高，科技股领涨，市场关注财报和美联储决议。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-3">
-                        <p>美股周二呈现分化走势，道琼斯工业平均指数下跌0.83%，纳斯达克综合指数上涨0.91%，标普500指数上涨0.41%并创下盘中历史新高6986.38点。市场分化主要源于板块轮动：科技股成为上涨主力，苹果、微软、英伟达等权重股表现强劲；而工业、金融等传统板块承压下跌。投资者正密切关注本周密集发布的科技巨头财报以及美联储利率决议，以评估人工智能热潮的可持续性和货币政策走向。当前市场情绪总体乐观，但波动率指数（VIX）仍处于相对低位，显示投资者对短期风险定价不足。</p>
-<p>对中国股市影响：正面。美股上涨尤其是科技股领涨，反映全球风险偏好改善，外资对新兴市场的配置意愿可能提升。A股科技板块与美股科技股联动性增强，若纳斯达克持续走强，可能带动A股人工智能、半导体等成长板块表现。但需警惕若美股回调可能产生负面传导效应。</p>
-<p>对香港股市影响：正面。港股受全球资金流动影响显著，美股上涨通常利好港股风险情绪。科技股作为港股重要权重板块，若美股科技股财报强劲，将直接提振港股科网股表现。但港元与美元挂钩，美联储利率决议可能影响香港流动性环境。</p>
-<p>对贵金属市场影响：中性偏负面。风险偏好上升可能分流部分避险资金，压制黄金短期表现。若美股上涨源于对经济软着陆的乐观预期，通胀担忧缓解可能降低黄金抗通胀需求。但若市场过度乐观后出现修正，黄金可能重获青睐。</p>
-<p>对汇率影响：美元可能震荡，人民币受益。美股上涨不一定直接推动美元走强，需看利率预期变化。若市场预期美联储转向鸽派，美元可能承压，人民币则受益于风险情绪改善和资本流入预期。短期汇率走势将受中美政策差异主导。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目6 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">6</div>
-                    <div class="insight-title">中国2025年规模以上工业企业利润同比增长0.6%，四年来首次转正</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight6_placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-6">
-                        中国工业企业利润四年来首次转正，高技术制造业表现突出，实体经济修复迹象明显。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-6">
-                        <p>国家统计局数据显示，2025年全国规模以上工业企业实现利润总额73982.0亿元，比上年增长0.6%，结束了自2021年以来的连续三年下降态势，四年来首次实现正增长。这一转正具有重要象征意义，表明在政策支持、需求回暖、成本压力缓解等多重因素作用下，中国实体经济正在逐步修复。尤其值得关注的是，高技术制造业利润大幅增长13.3%，远高于整体水平，显示经济结构转型成效显现。分行业看，电气机械、汽车制造、计算机通信等行业利润增长较快，而钢铁、建材等传统行业仍面临压力。</p>
-<p>对中国股市影响：强烈正面。工业企业利润转正是宏观经济企稳的重要信号，将显著提升市场对中国经济基本面的信心。盈利改善直接利好上市公司业绩，尤其制造业、科技等高增长板块。这一数据可能吸引更多外资配置中国资产，推动A股估值修复。</p>
-<p>对香港股市影响：正面。港股中的中资企业占比较高，内地经济基本面改善将直接提升相关公司盈利预期。国际投资者对中国资产的配置意愿可能增强，推动港股尤其是H股表现。但需关注全球流动性环境变化可能产生的对冲效应。</p>
-<p>对贵金属市场影响：中性。中国经济企稳可能提升全球风险偏好，一定程度上分流避险资金。但另一方面，经济复苏可能带动大宗商品需求，对白银等工业属性较强的贵金属形成支撑。黄金作为避险资产短期可能受压制，但中长期仍受美元信用和地缘政治主导。</p>
-<p>对汇率影响：人民币升值预期强化。经济基本面向好是汇率最坚实的支撑，工业企业利润转正将增强人民币资产的吸引力。若后续数据持续改善，可能推动人民币对一篮子货币稳步升值，央行将维持汇率在合理均衡水平上的基本稳定。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目14 -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">14</div>
-                    <div class="insight-title">Fed expected to hold rates steady at January meeting</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight14_placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-14">
-                        预计美联储1月会议将维持利率不变，市场关注后续政策路径。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-14">
-                        <p>根据彭博社调查，市场参与者和大多数经济学家预计美联储在1月会议上将维持联邦基金利率目标区间在3.50%–3.75%不变。这将是连续第二次会议维持利率不变，此前在2025年下半年实施了三次25个基点的降息。当前美国通胀已从高位回落，但仍高于2%目标，劳动力市场保持韧性，经济增长温和放缓，为美联储提供了观望空间。市场关注焦点在于会后声明和主席鲍威尔的新闻发布会，以获取关于未来降息时机和路径的线索。若美联储释放相对鸽派信号，可能提振风险资产；若强调通胀风险尚未消除，则可能引发市场波动。</p>
-<p>对中国股市影响：中性偏正面。美联储维持利率稳定有利于全球流动性环境保持相对宽松，减少外部冲击。若美联储表态鸽派，可能推动美元走弱、资金流向新兴市场，利好A股。但若加息预期重燃，则可能引发外资回流压力。总体影响取决于政策信号的方向性。</p>
-<p>对香港股市影响：中性。港元与美元挂钩，美联储利率决议直接影响香港的货币环境。维持利率不变意味着香港金管局也不必调整贴现窗基本利率，市场流动性保持稳定。但需关注若美联储释放鹰派信号可能引发跨境资本流动变化。</p>
-<p>对贵金属市场影响：中性偏负面。维持利率不变意味着实际利率暂时保持高位，对无息资产黄金构成压制。若美联储推迟降息预期，可能进一步削弱黄金的吸引力。但若声明中透露对经济前景的担忧，避险需求可能部分抵消利率影响。</p>
-<p>对汇率影响：美元短期企稳，人民币双向波动。利率决议前市场通常保持谨慎，决议后若符合预期且无意外信号，美元可能小幅震荡。人民币汇率将更多受中国经济基本面和央行政策影响，中美利差变化可能带来阶段性压力。</p>
-                    </div>
-                </div>
-            </div>
-        
-        <!-- 影响矩阵 -->
-                    <div class="impact-matrix">
-                        <h2 class="impact-title">综合影响矩阵</h2>
-                        <table class="matrix-table">
-                            <thead>
-                                <tr>
-                                    <th>洞察条目</th>
-                                    <th>A股市场</th>
-                                    <th>香港股市</th>
-                                    <th>贵金属市场</th>
-                                    <th>汇率市场</th>
-                                    <th>综合影响</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                    <tr>
-                        <td><strong>黄金突破51</strong></td>
-                        <td class="positive">
-                            <span class="impact-icon positive-icon">↑</span>正面
-                        </td>
-                        <td class="negative">
-                            <span class="impact-icon negative-icon">↓</span>负面
-                        </td>
-                        <td class="positive">
-                            <span class="impact-icon positive-icon">↑</span>正面
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>偏正面</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>美元指数跌至</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>美股分化标普</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="negative">
-                            <span class="impact-icon negative-icon">↓</span>负面
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>中国工业企业</strong></td>
-                        <td class="positive">
-                            <span class="impact-icon positive-icon">↑</span>正面
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>预计美联储1</strong></td>
-                        <td class="positive">
-                            <span class="impact-icon positive-icon">↑</span>正面
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="negative">
-                            <span class="impact-icon negative-icon">↓</span>负面
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性</strong></td>
-                    </tr>
-        
-                    </tbody>
-                        </table>
-                        
-                        <div class="impact-legend">
-                            <div class="legend-item">
-                                <span class="impact-icon positive-icon">↑</span>
-                                <span>正面影响：预期将推动市场上涨或改善基本面</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="impact-icon negative-icon">↓</span>
-                                <span>负面影响：预期将导致市场下跌或恶化环境</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="impact-icon neutral-icon">→</span>
-                                <span>中性影响：影响有限或正负因素相互抵消</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- 每周要点总结Tab内容 -->
@@ -1579,6 +1641,32 @@
                 });
             }
         });
+        
+        // 图片加载失败备用机制
+        function setupImageFallback() {
+            const images = document.querySelectorAll('.insight-image');
+            images.forEach(img => {
+                // 保存原始src
+                const originalSrc = img.src;
+                const fallbackSrc = img.dataset.fallback || 'assets/placeholder.jpg';
+                
+                // 图片加载失败时替换为备用图片
+                img.addEventListener('error', function() {
+                    console.log(`图片加载失败: ${originalSrc}, 使用备用图片: ${fallbackSrc}`);
+                    this.src = fallbackSrc;
+                    // 防止备用图片也加载失败时无限循环
+                    this.onerror = null;
+                });
+                
+                // 如果图片已经加载失败（如缓存中已失败）
+                if (img.complete && img.naturalHeight === 0) {
+                    img.src = fallbackSrc;
+                }
+            });
+        }
+        
+        // 初始化图片备用机制
+        document.addEventListener('DOMContentLoaded', setupImageFallback);
         
         // 初始化页面加载完成后的动画
         window.addEventListener('load', function() {
