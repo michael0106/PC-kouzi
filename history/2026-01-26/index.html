@@ -315,6 +315,39 @@
             border-bottom: 2px solid var(--bg-glass-light);
         }
         
+        /* ====== 今日洞察标题 ====== */
+        .today-insights-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.12) 0%, rgba(0, 212, 170, 0.06) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all var(--transition-normal);
+        }
+        
+        .today-insights-header:hover {
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        
+        .today-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .today-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
         #history-items {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -543,10 +576,29 @@
             left: -var(--space-md);
         }
         
-        /* ====== 影响矩阵 ====== */
+        /* ====== 影响矩阵独立模块 ====== */
         .impact-matrix {
             margin-top: var(--space-xxl);
             margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-xl);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-matrix::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 111, 217, 0.1) 0%, transparent 70%);
+            z-index: -1;
         }
         
         .impact-title {
@@ -892,7 +944,7 @@
             }
             
             .analysis-section.expanded {
-                max-height: 2000px;
+                max-height: 5000px;
                 padding: var(--space-md);
                 border: 1px solid rgba(0, 0, 0, 0.08);
                 border-radius: var(--radius-md);
@@ -1018,60 +1070,27 @@
             <!-- Tab内容容器 -->
             <div class="tab-content">
                 <div id="daily-tab" class="tab-pane active">
-                    <!-- 历史报告列表 -->
-                    <div class="history-list">
-                        <h3>历史报告</h3>
-                        <div class="history-list"><h3>历史报告</h3><div id="history-items">
-                    <div class="history-item" onclick="window.location.href='history/2026-01-27/index.html'">
-                        <div class="history-date">2026年01月27日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-25/index.html'">
-                        <div class="history-date">2026年01月25日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-24/index.html'">
-                        <div class="history-date">2026年01月24日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-23/index.html'">
-                        <div class="history-date">2026年01月23日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-22/index.html'">
-                        <div class="history-date">2026年01月22日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-21/index.html'">
-                        <div class="history-date">2026年01月21日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-20/index.html'">
-                        <div class="history-date">2026年01月20日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                </div></div>
+
+                    
+                    <!-- 今日洞察标题 -->
+                    <div class="today-insights-header">
+                        <h2 class="today-title">今日洞察</h2>
+                        <p class="today-subtitle">以下为今日筛选的5条核心金融洞察</p>
                     </div>
                     
                     <!-- 洞察条目 -->
                     <div id="insights-container">
 
-            <!-- 洞察条目2 -->
+            <!-- 洞察条目2（显示序号：1） -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">2</div>
+                    <div class="insight-number">1</div>
                     <div class="insight-title">美国政府停摆风险加剧，部分部门资金将于1月底耗尽</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="assets/insight2_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <img src="assets/insight2_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
@@ -1094,16 +1113,16 @@
                 </div>
             </div>
         
-            <!-- 洞察条目3 -->
+            <!-- 洞察条目3（显示序号：2） -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">3</div>
+                    <div class="insight-number">2</div>
                     <div class="insight-title">日本央行维持基准利率在0.75%不变，上调经济增长和通胀预测</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="assets/insight3_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <img src="assets/insight3_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
@@ -1126,16 +1145,16 @@
                 </div>
             </div>
         
-            <!-- 洞察条目4 -->
+            <!-- 洞察条目4（显示序号：3） -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">4</div>
+                    <div class="insight-number">3</div>
                     <div class="insight-title">现货黄金首次突破5000美元/盎司，创历史新高</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="assets/insight4_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <img src="assets/insight4_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
@@ -1158,16 +1177,16 @@
                 </div>
             </div>
         
-            <!-- 洞察条目6 -->
+            <!-- 洞察条目6（显示序号：4） -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">6</div>
+                    <div class="insight-number">4</div>
                     <div class="insight-title">外资公募聚焦中国科技赛道，贝莱德富达等看好A股配置价值</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="assets/insight6_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <img src="assets/insight6_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
@@ -1190,16 +1209,16 @@
                 </div>
             </div>
         
-            <!-- 洞察条目9 -->
+            <!-- 洞察条目9（显示序号：5） -->
             <div class="insight-item">
                 <div class="insight-header">
-                    <div class="insight-number">9</div>
+                    <div class="insight-number">5</div>
                     <div class="insight-title">美联储继任主席最热门人选出炉，贝莱德高管里德尔概率升至50%</div>
                 </div>
                 
                 <!-- 洞察图片 -->
                 <div class="insight-image-container">
-                    <img src="assets/insight9_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <img src="assets/insight9_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
                     <div class="image-placeholder">图片加载中...</div>
                 </div>
                 
@@ -1341,6 +1360,49 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- 历史报告列表 -->
+                    <div class="history-list"><h3>历史报告</h3><div id="history-items">
+                    <div class="history-item" onclick="window.location.href='history/2026-01-28/index.html'">
+                        <div class="history-date">2026年01月28日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-27/index.html'">
+                        <div class="history-date">2026年01月27日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-25/index.html'">
+                        <div class="history-date">2026年01月25日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-24/index.html'">
+                        <div class="history-date">2026年01月24日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-23/index.html'">
+                        <div class="history-date">2026年01月23日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-22/index.html'">
+                        <div class="history-date">2026年01月22日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-21/index.html'">
+                        <div class="history-date">2026年01月21日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='history/2026-01-20/index.html'">
+                        <div class="history-date">2026年01月20日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                </div></div>
                 </div>
                 
                 <!-- 每周要点总结Tab内容 -->
@@ -1574,6 +1636,32 @@
                 });
             }
         });
+        
+        // 图片加载失败备用机制
+        function setupImageFallback() {
+            const images = document.querySelectorAll('.insight-image');
+            images.forEach(img => {
+                // 保存原始src
+                const originalSrc = img.src;
+                const fallbackSrc = img.dataset.fallback || 'assets/placeholder.jpg';
+                
+                // 图片加载失败时替换为备用图片
+                img.addEventListener('error', function() {
+                    console.log(`图片加载失败: ${originalSrc}, 使用备用图片: ${fallbackSrc}`);
+                    this.src = fallbackSrc;
+                    // 防止备用图片也加载失败时无限循环
+                    this.onerror = null;
+                });
+                
+                // 如果图片已经加载失败（如缓存中已失败）
+                if (img.complete && img.naturalHeight === 0) {
+                    img.src = fallbackSrc;
+                }
+            });
+        }
+        
+        // 初始化图片备用机制
+        document.addEventListener('DOMContentLoaded', setupImageFallback);
         
         // 初始化页面加载完成后的动画
         window.addEventListener('load', function() {
