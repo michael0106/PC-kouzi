@@ -350,7 +350,7 @@
         
         #history-items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: var(--space-sm);
         }
         
@@ -408,11 +408,11 @@
         }
         
         .insight-item {
-            background: var(--bg-card);
+            background: var(--bg-glass-light);
             border-radius: var(--radius-lg);
             padding: var(--space-lg);
-            color: var(--text-dark);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: var(--shadow-sm);
             transition: all var(--transition-normal);
             position: relative;
@@ -578,8 +578,8 @@
         
         /* ====== 影响矩阵独立模块 ====== */
         .impact-matrix {
-            margin-top: 5rem;
-            margin-bottom: 4rem;
+            margin-top: 6rem;
+            margin-bottom: 5rem;
             padding: var(--space-xl);
             background: linear-gradient(135deg, rgba(26, 60, 139, 0.15) 0%, rgba(0, 212, 170, 0.08) 100%);
             backdrop-filter: blur(15px);
@@ -812,6 +812,10 @@
                 gap: var(--space-xl);
             }
             
+            #history-items {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            
             .navbar {
                 padding: var(--space-sm);
             }
@@ -1034,7 +1038,7 @@
         /* 桌面端历史报告栏全屏横向布局 */
         @media (min-width: 1024px) {
             #history-items {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
         }
         
@@ -1079,14 +1083,16 @@
                 <div id="daily-tab" class="tab-pane active">
 
                     
-                    <!-- 今日洞察标题 -->
-                    <div class="today-insights-header">
-                        <h2 class="today-title">今日洞察</h2>
-                        <p class="today-subtitle">以下为今日筛选的5条核心金融洞察</p>
-                    </div>
-                    
-                    <!-- 洞察条目 -->
-                    <div id="insights-container">
+                    <!-- 今日洞察板块 -->
+                    <div class="today-insights-section glass-effect" style="padding: var(--space-xl); border-radius: var(--radius-xl); margin-bottom: var(--space-xl);">
+                        <!-- 今日洞察标题 -->
+                        <div class="today-insights-header" style="background: none; border: none; padding: 0; margin-bottom: var(--space-lg);">
+                            <h2 class="today-title">今日洞察</h2>
+                            <p class="today-subtitle">以下为今日筛选的5条核心金融洞察</p>
+                        </div>
+                        
+                        <!-- 洞察条目 -->
+                        <div id="insights-container">
 
             <!-- 洞察条目1（显示序号：1） -->
             <div class="insight-item">
@@ -1278,7 +1284,7 @@
                         <td class="neutral">
                             <span class="impact-icon neutral-icon">→</span>中性
                         </td>
-                        <td><strong>中性</strong></td>
+                        <td><strong>中性（高）</strong></td>
                     </tr>
         
                     <tr>
@@ -1295,7 +1301,7 @@
                         <td class="neutral">
                             <span class="impact-icon neutral-icon">→</span>中性
                         </td>
-                        <td><strong>中性</strong></td>
+                        <td><strong>中性（中）</strong></td>
                     </tr>
         
                     <tr>
@@ -1312,7 +1318,7 @@
                         <td class="neutral">
                             <span class="impact-icon neutral-icon">→</span>中性
                         </td>
-                        <td><strong>中性</strong></td>
+                        <td><strong>中性（高）</strong></td>
                     </tr>
         
                     <tr>
@@ -1329,7 +1335,7 @@
                         <td class="neutral">
                             <span class="impact-icon neutral-icon">→</span>中性
                         </td>
-                        <td><strong>中性</strong></td>
+                        <td><strong>中性（低）</strong></td>
                     </tr>
         
                     <tr>
@@ -1346,7 +1352,7 @@
                         <td class="neutral">
                             <span class="impact-icon neutral-icon">→</span>中性
                         </td>
-                        <td><strong>中性</strong></td>
+                        <td><strong>中性（中）</strong></td>
                     </tr>
         
                     </tbody>
@@ -1422,7 +1428,28 @@
                     <div class="header glass-effect" style="text-align: center; padding: 60px 20px;">
                         <h2 class="title">每周要点总结</h2>
                         <p class="subtitle">每周五下午17:30生成，汇总当周5条最高价值洞察。</p>
-                        <p>首期每周要点总结将于2026年1月27日（周五）生成。</p>
+                        <div id="weekly-stats" style="margin-top: 2rem;">
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+                                <div class="stat-card" style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; min-width: 180px;">
+                                    <div id="total-insights" class="stat-value" style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">0</div>
+                                    <div class="stat-label" style="color: var(--text-secondary); margin-top: 0.5rem;">本周总洞察数</div>
+                                </div>
+                                <div class="stat-card" style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; min-width: 180px;">
+                                    <div id="included-insights" class="stat-value" style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">0</div>
+                                    <div class="stat-label" style="color: var(--text-secondary); margin-top: 0.5rem;">收录要点数</div>
+                                </div>
+                                <div class="stat-card" style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; min-width: 180px;">
+                                    <div id="avg-score" class="stat-value" style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">0.0</div>
+                                    <div class="stat-label" style="color: var(--text-secondary); margin-top: 0.5rem;">平均评分</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="weekly-items" style="margin-top: 3rem;">
+                            <!-- 每周要点内容将由脚本动态生成 -->
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <a href="../每周总结/2026-W05/index.html" class="nav-tab" style="display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; border-radius: var(--radius-md); text-decoration: none; font-weight: 600;">查看完整每周要点总结</a>
+                        </div>
                     </div>
                 </div>
             </div>
