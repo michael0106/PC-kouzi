@@ -1049,6 +1049,39 @@
             color: transparent;
         }
     </style>
+<style>
+/* 快速样式修复 - 提高可读性 */
+.report-title {
+    background-color: rgba(26, 60, 139, 0.9) !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    border-bottom: 2px solid #00d4aa !important;
+}
+
+.header-section {
+    background: linear-gradient(135deg, #0a1e3c 0%, #1a3c8b 100%) !important;
+}
+
+.insight-title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.summary-label, .analysis-label {
+    color: #c7d9ff !important;
+    font-weight: 600 !important;
+}
+
+.matrix-table th {
+    background-color: rgba(26, 60, 139, 0.8) !important;
+    color: #ffffff !important;
+}
+
+.matrix-table td {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #c7d9ff !important;
+}
+</style>
 </head>
 <body>
     <div class="container">
@@ -1069,7 +1102,7 @@
             <div class="header">
                 <h1 class="title">每日金融情报洞察简报</h1>
                 <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
-                <div class="date" id="report-date">报告日期：2026年01月29日</div>
+                <div class="date" id="report-date">报告日期：YYYY年MM月DD日</div>
             </div>
             
             <!-- 执行摘要 -->
@@ -1093,168 +1126,11 @@
                         
                         <!-- 洞察条目 -->
                         <div id="insights-container">
-
-            <!-- 洞察条目1（显示序号：1） -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">1</div>
-                    <div class="insight-title">现货黄金突破5400美元创历史新高，单日暴涨220美元</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight1_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-1">
-                        黄金首次突破5400美元创历史新高，单日暴涨220美元，受美联储利率决议和地缘风险推动。
+                            <!-- 洞察条目将由脚本动态生成 -->
+                        </div>
                     </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-1">
-                        <p>现货黄金突破5400美元/盎司，创下历史新高，单日涨幅达220美元，为近年罕见。这轮暴涨主要受三重因素驱动：一是美联储1月议息会议维持利率不变，鲍威尔表态偏鸽，实际利率预期下行；二是特朗普对伊朗发出更严厉警告，中东地缘政治风险升温；三是全球央行购金需求持续，加纳、泰国等新兴市场央行调整黄金政策引发市场关注。</p>
-<p>对中国股市影响：中性偏负面。黄金暴涨反映避险情绪高涨，可能抽离部分股市资金，但A股黄金板块（如山东黄金、中金黄金）将直接受益。
-对香港股市影响：类似A股，避险情绪压制恒指，但黄金股表现强势。
-对贵金属市场影响：显著正面。黄金突破关键心理关口将带动白银、铂金等贵金属全面上涨，提振矿业公司盈利预期。
-对汇率影响：美元承压。黄金以美元计价，金价大涨反映美元信用担忧，人民币兑美元短期可能升值。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目2（显示序号：2） -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">2</div>
-                    <div class="insight-title">美联储维持利率不变，鲍威尔强调政策无预定路线</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight2_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-2">
-                        美联储1月议息会议维持利率不变，鲍威尔强调政策灵活性，关注通胀数据。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-2">
-                        <p>美联储1月议息会议决定维持联邦基金利率目标区间在3.5-3.75%不变，符合市场预期。此次会议有两个关键信号：一是内部出现分歧，理事米兰和沃勒支持降息25个基点，显示鸽派声音增强；二是鲍威尔在记者会上重申利率已处于中性区间上端，强调政策没有预定路线，未来将依赖数据决策。这表明美联储对通胀回落的信心增强，但不愿过早释放降息信号。</p>
-<p>对中国股市影响：正面。美联储暂停加息缓解了中美利差压力，减少资本外流担忧，有利于A股外资回流。
-对香港股市影响：正面。联系汇率制度下，港币利率压力减轻，港股流动性环境改善。
-对贵金属市场影响：正面。利率上行周期暂停，实际利率预期下行，黄金等无息资产吸引力上升。
-对汇率影响：美元短期承压。暂停加息削弱美元收益率优势，人民币兑美元有升值空间，但需关注美国经济数据韧性。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目3（显示序号：3） -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">3</div>
-                    <div class="insight-title">美国财长贝森特：美国长期奉行强势美元政策，绝对没有干预日元</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight3_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-3">
-                        美国财长重申强势美元政策，否认干预日元，关注美联储主席人选。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-3">
-                        <p>美国财政部长贝森特在公开讲话中明确表示，美国长期奉行强势美元政策，并否认了市场关于美国干预日元汇率的猜测。此番表态发生在特朗普表达不担忧美元走弱之后，具有明显的政策对冲意味。同时，贝森特透露特朗普可能在一周左右公布美联储主席人选，这增加了未来货币政策的不确定性。强势美元政策声明旨在维持美元国际储备货币地位，但可能引发新兴市场货币压力。</p>
-<p>对中国股市影响：负面。强势美元政策可能引发新兴市场资本外流，外资从A股撤出压力增大。
-对香港股市影响：负面。港币与美元挂钩，美元走强可能使香港资产吸引力下降，港股承压。
-对贵金属市场影响：负面。美元走强直接压制以美元计价的黄金价格，抵消部分避险需求带来的涨幅。
-对汇率影响：美元走强。明确政策立场支撑美元汇率，人民币兑美元短期面临贬值压力，但央行有充足工具维持汇率稳定。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目6（显示序号：4） -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">4</div>
-                    <div class="insight-title">国务院国资委研究起草推动央企培育新兴支柱产业文件</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight6_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-6">
-                        国资委研究推动央企培育新兴支柱产业，利好相关板块和A股市场。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-6">
-                        <p>国务院国资委正在研究起草关于推动中央企业培育新兴支柱产业的工作文件，这是中国深化国企改革、优化产业结构的重要举措。文件预计将聚焦新能源、人工智能、生物技术、高端装备制造等战略新兴产业，通过政策支持、资源倾斜等方式，引导央企在这些领域加大投入，形成新的增长点。此举旨在提升中国产业链自主可控能力，应对国际科技竞争。</p>
-<p>对中国股市影响：显著正面。直接利好新能源、人工智能、半导体等新兴产业板块，相关央企上市公司估值有望提升。
-对香港股市影响：正面。在港上市的中资央企，特别是涉及新兴产业的上市公司将受益于政策预期。
-对贵金属市场影响：中性。产业政策对贵金属供需无直接影响，但经济结构优化可能长期支撑人民币计价黄金需求。
-对汇率影响：中性偏正面。经济转型升级成功将增强人民币长期基本面，但短期汇率影响有限。</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- 洞察条目8（显示序号：5） -->
-            <div class="insight-item">
-                <div class="insight-header">
-                    <div class="insight-number">5</div>
-                    <div class="insight-title">阿斯麦四季度订单翻倍，AI需求推动业绩炸裂</div>
-                </div>
-                
-                <!-- 洞察图片 -->
-                <div class="insight-image-container">
-                    <img src="assets/insight8_placeholder.jpg" data-fallback="assets/placeholder.jpg" alt="洞察图片" class="insight-image">
-                    <div class="image-placeholder">图片加载中...</div>
-                </div>
-                
-                <div class="summary-section">
-                    <div class="summary-label">核心摘要</div>
-                    <div class="summary-content" id="summary-8">
-                        阿斯麦四季度订单额达132亿欧元，AI需求强劲，利好半导体产业链。
-                    </div>
-                </div>
-                
-                <div class="analysis-section">
-                    <div class="analysis-label">深度分析</div>
-                    <div class="analysis-content" id="analysis-8">
-                        <p>全球光刻机巨头阿斯麦（ASML）公布第四季度财报，订单额达到132亿欧元，几乎是彭博分析师平均预期68.5亿欧元的两倍，较上一季度的54亿欧元大幅增长。这一创纪录表现主要受益于人工智能基础设施的快速发展，各大芯片制造商为满足AI算力需求，大幅增加对先进制程设备的投资。阿斯麦作为半导体设备关键供应商，其订单激增预示全球半导体资本开支进入新一轮上升周期。</p>
-<p>对中国股市影响：正面。利好A股半导体设备、材料、封测等产业链公司，如北方华创、中微公司等有望受益于行业景气度提升。
-对香港股市影响：正面。在港上市的半导体相关中资企业，如中芯国际、华虹半导体等将受到行业情绪提振。
-对贵金属市场影响：中性。半导体行业复苏对贵金属供需无直接影响，但科技发展可能增加对白银等工业属性贵金属的需求。
-对汇率影响：中性。反映全球科技复苏预期，但对人民币汇率直接影响有限，需观察中国半导体产业自主化进展。</p>
-                    </div>
-                </div>
-            </div>
-        
-        <!-- 影响矩阵 -->
+                    
+                    <!-- 影响矩阵 -->
                     <div class="impact-matrix">
                         <h2 class="impact-title">综合影响矩阵</h2>
                         <table class="matrix-table">
@@ -1269,93 +1145,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                    <tr>
-                        <td><strong>黄金首次突破</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性（高）</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>美联储1月议</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性（中）</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>美国财长重申</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性（高）</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>国资委研究推</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性（低）</strong></td>
-                    </tr>
-        
-                    <tr>
-                        <td><strong>阿斯麦四季度</strong></td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td class="neutral">
-                            <span class="impact-icon neutral-icon">→</span>中性
-                        </td>
-                        <td><strong>中性（中）</strong></td>
-                    </tr>
-        
-                    </tbody>
+                                <!-- 影响矩阵行将由脚本动态生成 -->
+                            </tbody>
                         </table>
                         
                         <div class="impact-legend">
@@ -1375,52 +1166,9 @@
                     </div>
                     
                     <!-- 历史报告列表 -->
-                    <div class="history-list"><h3>历史报告</h3><div id="history-items">
-                    <div class="history-item" onclick="window.location.href='history/2026-01-28/index.html'">
-                        <div class="history-date">2026年01月28日</div>
-                        <div class="history-summary">点击查看完整报告</div>
+                    <div id="history-items">
+                        <!-- 历史报告列表项将由脚本动态生成 -->
                     </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-27/index.html'">
-                        <div class="history-date">2026年01月27日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-26/index.html'">
-                        <div class="history-date">2026年01月26日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-25/index.html'">
-                        <div class="history-date">2026年01月25日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-24/index.html'">
-                        <div class="history-date">2026年01月24日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-23/index.html'">
-                        <div class="history-date">2026年01月23日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-22/index.html'">
-                        <div class="history-date">2026年01月22日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-21/index.html'">
-                        <div class="history-date">2026年01月21日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                
-                    <div class="history-item" onclick="window.location.href='history/2026-01-20/index.html'">
-                        <div class="history-date">2026年01月20日</div>
-                        <div class="history-summary">点击查看完整报告</div>
-                    </div>
-                </div></div>
                 </div>
                 
                 <!-- 每周要点总结Tab内容 -->
@@ -1448,7 +1196,7 @@
                             <!-- 每周要点内容将由脚本动态生成 -->
                         </div>
                         <div style="margin-top: 2rem;">
-                            <a href="../每周总结/2026-W05/final/index.html" class="nav-tab" style="display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; border-radius: var(--radius-md); text-decoration: none; font-weight: 600;">查看完整每周要点总结（最终版）</a>
+                            <a href="../每周总结/2026-W05/index.html" class="nav-tab" style="display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; border-radius: var(--radius-md); text-decoration: none; font-weight: 600;">查看完整每周要点总结</a>
                         </div>
                     </div>
                 </div>
@@ -1711,6 +1459,21 @@
                 document.body.style.opacity = '1';
             }, 100);
         });
+    </script>
+    <script src="../../src/render_daily_report.js"></script>
+    <script>
+    // 确保渲染器初始化
+    if (typeof window.DailyReportRenderer !== 'undefined') {
+        window.DailyReportRenderer.init();
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.DailyReportRenderer !== 'undefined') {
+                window.DailyReportRenderer.init();
+            } else {
+                console.error('DailyReportRenderer未加载');
+            }
+        });
+    }
     </script>
 </body>
 </html>
