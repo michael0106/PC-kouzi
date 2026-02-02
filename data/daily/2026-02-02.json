@@ -1,0 +1,127 @@
+{
+  "date": "2026-02-02",
+  "report_date_display": "2026年02月02日",
+  "generated_at": "2026-02-02T18:16:13.084139",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 2,
+    "schema_version": "1.0",
+    "generator": "generate_daily_data.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "美联储维持利率不变，市场关注通胀数据",
+      "summary": "美联储维持利率不变，鲍威尔强调依赖数据决策，市场聚焦通胀走势。",
+      "analysis": "美联储1月议息会议决定维持联邦基金利率目标区间在3.5-3.75%不变，符合市场预期。鲍威尔在记者会上重申利率已处于中性区间上端，强调政策没有预定路线，未来将依赖数据决策。这表明美联储对通胀回落的信心增强，但不愿过早释放降息信号。\\n\\n对中国股市影响：正面。美联储暂停加息缓解了中美利差压力，减少资本外流担忧，有利于A股外资回流。\\n对香港股市影响：正面。联系汇率制度下，港币利率压力减轻，港股流动性环境改善。\\n对贵金属市场影响：正面。利率上行周期暂停，实际利率预期下行，黄金等无息资产吸引力上升。\\n对汇率影响：美元短期承压。暂停加息削弱美元收益率优势，人民币兑美元有升值空间。",
+      "formatted_analysis": "<p>美联储1月议息会议决定维持联邦基金利率目标区间在3.5-3.75%不变，符合市场预期。鲍威尔在记者会上重申利率已处于中性区间上端，强调政策没有预定路线，未来将依赖数据决策。这表明美联储对通胀回落的信心增强，但不愿过早释放降息信号。\\n\\n对中国股市影响：正面。美联储暂停加息缓解了中美利差压力，减少资本外流担忧，有利于A股外资回流。\\n对香港股市影响：正面。联系汇率制度下，港币利率压力减轻，港股流动性环境改善。\\n对贵金属市场影响：正面。利率上行周期暂停，实际利率预期下行，黄金等无息资产吸引力上升。\\n对汇率影响：美元短期承压。暂停加息削弱美元收益率优势，人民币兑美元有升值空间。</p>",
+      "source": "金十数据",
+      "original_url": "https://www.hstong.com/news/detail/26020207060066847",
+      "publish_time": "2026-02-02T07:02:00+08:00",
+      "source_links": [
+        "https://www.hstong.com/news/detail/26020207060066847"
+      ],
+      "impacts": {
+        "a_share": "positive",
+        "hk_stock": "positive",
+        "precious_metal": "positive",
+        "fx": "positive"
+      },
+      "impact_judgement": {
+        "china_stock": "正面",
+        "hk_stock": "正面",
+        "precious_metal": "正面",
+        "exchange_rate": "正面"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 8.33
+        },
+        "should_include": true
+      },
+      "short_title": "美联储维持利",
+      "overall_impact": "偏正面",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "title": "黄金价格小幅回调，市场观望美联储政策",
+      "summary": "黄金价格从历史高点小幅回落，市场等待美联储进一步信号。",
+      "analysis": "现货黄金在突破5400美元创历史新高后，今日小幅回调至5380美元附近。市场分析认为这是技术性调整，投资者在等待美联储明确政策方向。中东地缘政治风险依然存在，但部分避险资金获利了结导致金价暂时承压。\\n\\n对中国股市影响：中性。黄金回调对A股黄金板块有短期压力，但整体市场情绪影响有限。\\n对香港股市影响：中性。恒指受外围市场影响更大，黄金股可能调整。\\n对贵金属市场影响：中性偏正面。长期看，美联储暂停加息仍支撑贵金属价格。\\n对汇率影响：中性。美元指数变动不大，人民币汇率保持稳定。",
+      "formatted_analysis": "<p>现货黄金在突破5400美元创历史新高后，今日小幅回调至5380美元附近。市场分析认为这是技术性调整，投资者在等待美联储明确政策方向。中东地缘政治风险依然存在，但部分避险资金获利了结导致金价暂时承压。\\n\\n对中国股市影响：中性。黄金回调对A股黄金板块有短期压力，但整体市场情绪影响有限。\\n对香港股市影响：中性。恒指受外围市场影响更大，黄金股可能调整。\\n对贵金属市场影响：中性偏正面。长期看，美联储暂停加息仍支撑贵金属价格。\\n对汇率影响：中性。美元指数变动不大，人民币汇率保持稳定。</p>",
+      "source": "金十数据",
+      "original_url": "https://www.hstong.com/news/detail/26020207060066848",
+      "publish_time": "2026-02-02T08:30:00+08:00",
+      "source_links": [
+        "https://www.hstong.com/news/detail/26020207060066848"
+      ],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性",
+        "hk_stock": "中性",
+        "precious_metal": "中性",
+        "exchange_rate": "中性"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 6.17
+        },
+        "should_include": true
+      },
+      "short_title": "黄金价格从历",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "美联储维持利",
+      "a_share": "positive",
+      "hk_stock": "positive",
+      "precious_metal": "positive",
+      "fx": "positive",
+      "overall_impact": "偏正面",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "short_title": "黄金价格从历",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    }
+  ]
+}
