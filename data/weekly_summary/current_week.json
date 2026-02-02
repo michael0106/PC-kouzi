@@ -1,0 +1,119 @@
+{
+  "week_id": "2026-W06",
+  "date_range": "2026年02月02日 - 2026年02月08日",
+  "generation_date": "2026-02-02 16:09:50",
+  "stats": {
+    "total_insights": 18,
+    "included_insights": 5,
+    "avg_total_score": 8.9,
+    "inclusion_rate": 27.8,
+    "threshold": 6.0
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "美股三大指数收涨，科技股财报周开启",
+      "summary": "美股三大指数全线收涨，科技股财报周开启，市场关注苹果、微软等科技巨头财报表现。",
+      "date": "2026年01月27日",
+      "score": 9.5,
+      "scores": {
+        "event_impact": "高",
+        "data_impact": "中",
+        "market_relevance": "高",
+        "timeliness": "高"
+      },
+      "numeric_scores": {
+        "event_impact": 3,
+        "data_impact": 2,
+        "surprise": 1,
+        "market_relevance": 3,
+        "timeliness": 3,
+        "total": 9.5
+      }
+    },
+    {
+      "id": 2,
+      "title": "美元指数跌至近四年新低，特朗普称美元表现良好",
+      "summary": "美元指数跌至近四年新低，但特朗普在社交媒体上表示美元表现良好，引发市场对汇率政策的讨论。",
+      "date": "2026年01月28日",
+      "score": 9.33,
+      "scores": {
+        "event_impact": "高",
+        "data_impact": "高",
+        "market_relevance": "中",
+        "timeliness": "高"
+      },
+      "numeric_scores": {
+        "event_impact": 3,
+        "data_impact": 3,
+        "surprise": 1,
+        "market_relevance": 2,
+        "timeliness": 3,
+        "total": 9.33
+      }
+    },
+    {
+      "id": 3,
+      "title": "美股三大指数分化，标普500创历史新高",
+      "summary": "美股三大指数走势分化，标普500指数创下历史新高，科技股领涨，能源股表现疲软。",
+      "date": "2026年01月28日",
+      "score": 9.33,
+      "scores": {
+        "event_impact": "中",
+        "data_impact": "高",
+        "market_relevance": "高",
+        "timeliness": "高"
+      },
+      "numeric_scores": {
+        "event_impact": 2,
+        "data_impact": 3,
+        "surprise": 1,
+        "market_relevance": 3,
+        "timeliness": 3,
+        "total": 9.33
+      }
+    },
+    {
+      "id": 4,
+      "title": "Fed expected to hold rates steady at January meeting",
+      "summary": "市场普遍预期美联储将在1月会议上维持利率不变，关注会后声明中关于通胀和就业的措辞变化。",
+      "date": "2026年01月28日",
+      "score": 9.33,
+      "scores": {
+        "event_impact": "高",
+        "data_impact": "中",
+        "market_relevance": "高",
+        "timeliness": "高"
+      },
+      "numeric_scores": {
+        "event_impact": 3,
+        "data_impact": 2,
+        "surprise": 1,
+        "market_relevance": 3,
+        "timeliness": 3,
+        "total": 9.33
+      }
+    },
+    {
+      "id": 5,
+      "title": "特朗普威胁对加拿大加征100%关税，贸易紧张加剧",
+      "summary": "特朗普威胁对加拿大加征100%关税，美加贸易关系紧张，市场担忧贸易摩擦可能影响北美自由贸易。",
+      "date": "2026年01月27日",
+      "score": 9.0,
+      "scores": {
+        "event_impact": "高",
+        "data_impact": "中",
+        "market_relevance": "中",
+        "timeliness": "高"
+      },
+      "numeric_scores": {
+        "event_impact": 3,
+        "data_impact": 2,
+        "surprise": 1,
+        "market_relevance": 2,
+        "timeliness": 3,
+        "total": 9.0
+      }
+    }
+  ]
+}
