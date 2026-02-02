@@ -1,0 +1,71 @@
+{
+  "date": "2026-01-30",
+  "report_date_display": "2026年01月30日",
+  "generated_at": "2026-01-30T19:55:34.738542",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 1,
+    "schema_version": "1.0",
+    "generator": "generate_daily_report.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "测试洞察标题1",
+      "summary": "这是测试摘要，用于验证JSON生成功能。",
+      "analysis": "这是深度分析内容。包含详细解释。\n\n• 要点一：测试要点\n• 要点二：另一个测试要点",
+      "formatted_analysis": "<p>这是深度分析内容。包含详细解释。</p>\n<ul>\n<li> 要点一：测试要点</li>\n<li> 要点二：另一个测试要点</li>\n</ul>",
+      "source": "测试信源",
+      "original_url": "https://example.com",
+      "publish_time": "2026-01-30T10:00:00+08:00",
+      "source_links": [
+        "https://example.com"
+      ],
+      "impacts": {
+        "a_share": "positive",
+        "hk_stock": "neutral",
+        "precious_metal": "positive",
+        "fx": "negative"
+      },
+      "impact_judgement": {
+        "china_stock": "正面影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "正面影响",
+        "exchange_rate": "负面影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "高",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 3,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 9.0
+        },
+        "should_include": true
+      },
+      "short_title": "这是测试摘要",
+      "overall_impact": "偏正面",
+      "event_impact": "中"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "这是测试摘要",
+      "a_share": "positive",
+      "hk_stock": "neutral",
+      "precious_metal": "positive",
+      "fx": "negative",
+      "overall_impact": "偏正面",
+      "event_impact": "中"
+    }
+  ]
+}
