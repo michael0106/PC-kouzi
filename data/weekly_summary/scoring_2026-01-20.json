@@ -1,0 +1,113 @@
+{
+  "report_date": "2026年01月20日",
+  "scoring_date": "2026-01-27 19:52:37",
+  "insights_count": 5,
+  "included_count": 1,
+  "results": [
+    {
+      "insight_id": 1,
+      "insight_date": "2026年01月20日",
+      "scores": {
+        "event_impact": "中",
+        "data_impact": "低",
+        "surprise": "否",
+        "market_relevance": "高",
+        "timeliness": "低"
+      },
+      "numeric_scores": {
+        "event_impact": 2,
+        "data_impact": 1,
+        "surprise": 0,
+        "market_relevance": 3,
+        "timeliness": 1,
+        "total": 5.17
+      },
+      "should_include": false,
+      "scoring_time": "2026-01-27 19:52:37"
+    },
+    {
+      "insight_id": 2,
+      "insight_date": "2026年01月20日",
+      "scores": {
+        "event_impact": "低",
+        "data_impact": "中",
+        "surprise": "是",
+        "market_relevance": "高",
+        "timeliness": "低"
+      },
+      "numeric_scores": {
+        "event_impact": 1,
+        "data_impact": 2,
+        "surprise": 1,
+        "market_relevance": 3,
+        "timeliness": 1,
+        "total": 5.83
+      },
+      "should_include": false,
+      "scoring_time": "2026-01-27 19:52:37"
+    },
+    {
+      "insight_id": 3,
+      "insight_date": "2026年01月20日",
+      "scores": {
+        "event_impact": "高",
+        "data_impact": "低",
+        "surprise": "否",
+        "market_relevance": "高",
+        "timeliness": "低"
+      },
+      "numeric_scores": {
+        "event_impact": 3,
+        "data_impact": 1,
+        "surprise": 0,
+        "market_relevance": 3,
+        "timeliness": 1,
+        "total": 6.5
+      },
+      "should_include": true,
+      "scoring_time": "2026-01-27 19:52:37"
+    },
+    {
+      "insight_id": 4,
+      "insight_date": "2026年01月20日",
+      "scores": {
+        "event_impact": "低",
+        "data_impact": "低",
+        "surprise": "否",
+        "market_relevance": "高",
+        "timeliness": "低"
+      },
+      "numeric_scores": {
+        "event_impact": 1,
+        "data_impact": 1,
+        "surprise": 0,
+        "market_relevance": 3,
+        "timeliness": 1,
+        "total": 3.83
+      },
+      "should_include": false,
+      "scoring_time": "2026-01-27 19:52:37"
+    },
+    {
+      "insight_id": 5,
+      "insight_date": "2026年01月20日",
+      "scores": {
+        "event_impact": "中",
+        "data_impact": "中",
+        "surprise": "否",
+        "market_relevance": "高",
+        "timeliness": "低"
+      },
+      "numeric_scores": {
+        "event_impact": 2,
+        "data_impact": 2,
+        "surprise": 0,
+        "market_relevance": 3,
+        "timeliness": 1,
+        "total": 5.67
+      },
+      "should_include": false,
+      "scoring_time": "2026-01-27 19:52:37"
+    }
+  ]
+}
