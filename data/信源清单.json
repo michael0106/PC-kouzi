@@ -1,0 +1,182 @@
+[
+  {
+    "name": "彭博社",
+    "url": "https://www.bloomberg.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "路透社",
+    "url": "https://www.reuters.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "金融时报",
+    "url": "https://www.ft.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "华尔街日报",
+    "url": "https://www.wsj.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "经济学人",
+    "url": "https://www.economist.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "福布斯",
+    "url": "https://www.forbes.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "财富",
+    "url": "https://fortune.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "CNBC",
+    "url": "https://www.cnbc.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "市场观察",
+    "url": "https://www.marketwatch.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "雅虎财经",
+    "url": "https://finance.yahoo.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "投资百科",
+    "url": "https://www.investopedia.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "巴伦周刊",
+    "url": "https://www.barrons.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "商业标准",
+    "url": "https://www.business-standard.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "投资网",
+    "url": "https://www.investing.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "纳斯达克",
+    "url": "https://www.nasdaq.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "晨星",
+    "url": "https://www.morningstar.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "金融快报",
+    "url": "https://www.financialexpress.com",
+    "type": "权威媒体",
+    "language": "英文"
+  },
+  {
+    "name": "财新网",
+    "url": "https://www.caixin.com",
+    "type": "权威媒体",
+    "language": "中文"
+  },
+  {
+    "name": "21世纪经济报道",
+    "url": "https://www.21jingji.com",
+    "type": "权威媒体",
+    "language": "中文"
+  },
+  {
+    "name": "中国证券报",
+    "url": "http://www.cs.com.cn",
+    "type": "权威媒体",
+    "language": "中文"
+  },
+  {
+    "name": "国际货币基金组织",
+    "url": "https://twitter.com/IMFNews",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "世界银行",
+    "url": "https://twitter.com/WorldBank",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "美联储",
+    "url": "https://twitter.com/federalreserve",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "欧洲央行",
+    "url": "https://twitter.com/ECB",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "日本银行 (英文)",
+    "url": "https://twitter.com/Bank_of_Japan_e",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "日本银行 (日文)",
+    "url": "https://twitter.com/Bank_of_Japan_j",
+    "type": "官方社交媒体",
+    "language": "日文"
+  },
+  {
+    "name": "英格兰银行",
+    "url": "https://twitter.com/bankofengland",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "欧洲央行研究",
+    "url": "https://twitter.com/ECB_Research",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "欧洲央行TARGET",
+    "url": "https://twitter.com/TARGET_ECB",
+    "type": "官方社交媒体",
+    "language": "英文"
+  },
+  {
+    "name": "中国人民银行微博",
+    "url": "https://weibo.com/u/2830678474",
+    "type": "官方社交媒体",
+    "language": "中文"
+  }
+]
