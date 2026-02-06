@@ -1,0 +1,555 @@
+{
+  "date": "2026-02-03",
+  "report_date_display": "2026年02月03日",
+  "generated_at": "2026-02-06T14:06:18.532451",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 10,
+    "schema_version": "1.0",
+    "generator": "generate_daily_data.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "美股周一收高，道指涨超500点，关注科技股财报与就业报告",
+      "summary": "美股周一收高，道指涨超500点，市场关注科技股财报与非农就业报告。",
+      "analysis": "美股周一收高，道指涨超500点，市场关注科技股财报与非农就业报告。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美股周一收高，道指涨超500点，市场关注科技股财报与非农就业报告。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "新浪财经",
+      "original_url": "https://finance.sina.com.cn/headline/2026-02-03/doc-inhknttq7474040.shtml",
+      "publish_time": "2026-02-03T06:34:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "中",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 2,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 4.0
+        },
+        "should_include": false
+      },
+      "short_title": "美股周一收高",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 2,
+      "title": "国际贵金属市场显著上涨，现货黄金突破多个关口",
+      "summary": "现货黄金价格今日大幅上涨，连续突破多个关口，日内涨幅达2.24%。",
+      "analysis": "现货黄金价格今日大幅上涨，连续突破多个关口，日内涨幅达2.24%。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>现货黄金价格今日大幅上涨，连续突破多个关口，日内涨幅达2.24%。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "头条",
+      "original_url": "http://m.toutiao.com/group/7602425068253102592/",
+      "publish_time": "2026-02-03T08:12:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "中",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 2,
+          "timeliness": 2,
+          "total": 4.0
+        },
+        "should_include": false
+      },
+      "short_title": "现货黄金价格",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "title": "美国与印度达成贸易协议，降低关税",
+      "summary": "美印达成贸易协议，美国降低印度商品关税，印度承诺停止购买俄罗斯石油。",
+      "analysis": "美印达成贸易协议，美国降低印度商品关税，印度承诺停止购买俄罗斯石油。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美印达成贸易协议，美国降低印度商品关税，印度承诺停止购买俄罗斯石油。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 4.33
+        },
+        "should_include": false
+      },
+      "short_title": "美印达成贸易",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "title": "美联储博斯蒂克表示预计2026年不会降息",
+      "summary": "美联储博斯蒂克预计2026年不会降息，强调保持耐心，货币政策维持紧缩。",
+      "analysis": "美联储博斯蒂克预计2026年不会降息，强调保持耐心，货币政策维持紧缩。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美联储博斯蒂克预计2026年不会降息，强调保持耐心，货币政策维持紧缩。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 4.33
+        },
+        "should_include": false
+      },
+      "short_title": "美联储博斯蒂",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 5,
+      "title": "美国1月ISM制造业PMI升至52.6，远超预期",
+      "summary": "美国1月ISM制造业PMI升至52.6，远超预期，显示制造业重返扩张区间。",
+      "analysis": "美国1月ISM制造业PMI升至52.6，远超预期，显示制造业重返扩张区间。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美国1月ISM制造业PMI升至52.6，远超预期，显示制造业重返扩张区间。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 5.5
+        },
+        "should_include": false
+      },
+      "short_title": "美国1月IS",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "title": "亚太股市大幅下跌，韩国综指暴跌5.26%",
+      "summary": "亚太股市大幅下跌，韩国综指暴跌5.26%触发熔断，A股资源股大面积跌停。",
+      "analysis": "亚太股市大幅下跌，韩国综指暴跌5.26%触发熔断，A股资源股大面积跌停。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>亚太股市大幅下跌，韩国综指暴跌5.26%触发熔断，A股资源股大面积跌停。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "中",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 2,
+          "timeliness": 2,
+          "total": 4.0
+        },
+        "should_include": false
+      },
+      "short_title": "亚太股市大幅",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "title": "特斯拉第三代人形机器人即将亮相，预计年产百万台",
+      "summary": "特斯拉将推出第三代人形机器人，预计年产百万台，具备观察学习能力。",
+      "analysis": "特斯拉将推出第三代人形机器人，预计年产百万台，具备观察学习能力。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>特斯拉将推出第三代人形机器人，预计年产百万台，具备观察学习能力。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 3.33
+        },
+        "should_include": false
+      },
+      "short_title": "特斯拉将推出",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "title": "甲骨文计划融资500亿美元用于AI基础设施",
+      "summary": "甲骨文计划融资500亿美元扩建云基础设施，服务AMD、Meta、英伟达等大客户。",
+      "analysis": "甲骨文计划融资500亿美元扩建云基础设施，服务AMD、Meta、英伟达等大客户。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>甲骨文计划融资500亿美元扩建云基础设施，服务AMD、Meta、英伟达等大客户。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "财经密码",
+      "original_url": "http://m.toutiao.com/group/7602411518839308838/",
+      "publish_time": "2026-02-03T07:31:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 3.33
+        },
+        "should_include": false
+      },
+      "short_title": "甲骨文计划融",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 9,
+      "title": "马斯克旗下SpaceX与xAI合并，估值1.25万亿美元",
+      "summary": "SpaceX宣布收购xAI，合并后估值1.25万亿美元，整合火箭与AI业务。",
+      "analysis": "SpaceX宣布收购xAI，合并后估值1.25万亿美元，整合火箭与AI业务。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>SpaceX宣布收购xAI，合并后估值1.25万亿美元，整合火箭与AI业务。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "头条",
+      "original_url": "http://m.toutiao.com/group/7602425068253102592/",
+      "publish_time": "2026-02-03T08:12:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 3.33
+        },
+        "should_include": false
+      },
+      "short_title": "SpaceX",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "title": "美国天然气期货暴跌20%",
+      "summary": "美国天然气期货因天气转暖暴跌20%-25%，创两周新低。",
+      "analysis": "美国天然气期货因天气转暖暴跌20%-25%，创两周新低。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美国天然气期货因天气转暖暴跌20%-25%，创两周新低。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "头条",
+      "original_url": "http://m.toutiao.com/group/7602425068253102592/",
+      "publish_time": "2026-02-03T08:12:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "中"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 2,
+          "total": 3.33
+        },
+        "should_include": false
+      },
+      "short_title": "美国天然气期",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "美股周一收高",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 2,
+      "short_title": "现货黄金价格",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "short_title": "美印达成贸易",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "short_title": "美联储博斯蒂",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 5,
+      "short_title": "美国1月IS",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "short_title": "亚太股市大幅",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "short_title": "特斯拉将推出",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "short_title": "甲骨文计划融",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 9,
+      "short_title": "SpaceX",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "short_title": "美国天然气期",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ]
+}
