@@ -1,0 +1,555 @@
+{
+  "date": "2026-02-05",
+  "report_date_display": "2026年02月05日",
+  "generated_at": "2026-02-05T14:45:45.795225",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 10,
+    "schema_version": "1.0",
+    "generator": "generate_daily_data.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "美联储连续第三次维持利率不变，鲍威尔强调政策灵活性",
+      "summary": "美联储连续第三次维持利率不变，鲍威尔强调政策灵活性，关注通胀数据。",
+      "analysis": "美联储连续第三次维持利率不变，鲍威尔强调政策灵活性，关注通胀数据。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美联储连续第三次维持利率不变，鲍威尔强调政策灵活性，关注通胀数据。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "新浪财经",
+      "original_url": "https://cj.sina.com.cn/articles/view/7857201856/1d45362c001901v96c?finpagefr=ttzz&froms=ttmp",
+      "publish_time": "2026-01-30T22:05:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "中",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 2,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 5.5
+        },
+        "should_include": false
+      },
+      "short_title": "美联储连续第",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "title": "美股科技股遭重锤，AMD暴跌17%，纳指跌1.51%",
+      "summary": "美股科技股大幅下跌，AMD暴跌17%，纳指跌1.51%，资金转向防御板块。",
+      "analysis": "美股科技股大幅下跌，AMD暴跌17%，纳指跌1.51%，资金转向防御板块。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美股科技股大幅下跌，AMD暴跌17%，纳指跌1.51%，资金转向防御板块。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "网易新闻",
+      "original_url": "https://c.m.163.com/news/a/KKE949Q3053469RG.html",
+      "publish_time": "2026-01-29T09:09:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "美股科技股大",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "title": "A股节前缩量震荡，科技与资源板块成春季主线",
+      "summary": "A股节前缩量震荡，科技与资源板块成为春季主线，呈现结构性行情。",
+      "analysis": "A股节前缩量震荡，科技与资源板块成为春季主线，呈现结构性行情。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>A股节前缩量震荡，科技与资源板块成为春季主线，呈现结构性行情。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "今日头条",
+      "original_url": "http://m.toutiao.com/group/7603154216135262755/",
+      "publish_time": "2026-02-05T07:34:11+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "中",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 2,
+          "timeliness": 3,
+          "total": 4.5
+        },
+        "should_include": false
+      },
+      "short_title": "A股节前缩量",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 4,
+      "title": "黄金价格突破5000美元后回落，日内波动剧烈",
+      "summary": "黄金价格突破5000美元后回落，日内波动剧烈，受美元和避险情绪驱动。",
+      "analysis": "黄金价格突破5000美元后回落，日内波动剧烈，受美元和避险情绪驱动。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>黄金价格突破5000美元后回落，日内波动剧烈，受美元和避险情绪驱动。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "黄金金价网",
+      "original_url": "https://www.jinrijinjia.cn/zst/?wwzinm=4fwan1&theme=dark",
+      "publish_time": "2026-02-04T16:39:49+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "positive",
+        "fx": "positive"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "正面影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "正面影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "中",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 2,
+          "timeliness": 3,
+          "total": 4.5
+        },
+        "should_include": false
+      },
+      "short_title": "黄金价格突破",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 5,
+      "title": "美国财长贝森特重申强势美元政策，否认干预日元",
+      "summary": "美国财长重申强势美元政策，否认干预日元，关注美联储主席人选。",
+      "analysis": "美国财长重申强势美元政策，否认干预日元，关注美联储主席人选。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美国财长重申强势美元政策，否认干预日元，关注美联储主席人选。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "华尔街见闻",
+      "original_url": "https://www.163.com/dy/article/KL043HLK05198NMR.html",
+      "publish_time": "2026-02-05T07:27:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 4.83
+        },
+        "should_include": false
+      },
+      "short_title": "美国财长重申",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 6,
+      "title": "印度股市表现稳健，Nifty 50指数微涨0.19%",
+      "summary": "印度股市稳健上涨，Nifty 50指数微涨0.19%，银行股表现强势。",
+      "analysis": "印度股市稳健上涨，Nifty 50指数微涨0.19%，银行股表现强势。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>印度股市稳健上涨，Nifty 50指数微涨0.19%，银行股表现强势。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "Moneycontrol",
+      "original_url": "https://www.moneycontrol.com/stocksmarketsindia/",
+      "publish_time": "2026-02-05T04:20:28+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "印度股市稳健",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "title": "马斯克团队考察中国光伏产业链，太空光伏概念爆火",
+      "summary": "马斯克团队考察中国光伏产业链，太空光伏概念在资本市场爆火。",
+      "analysis": "马斯克团队考察中国光伏产业链，太空光伏概念在资本市场爆火。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>马斯克团队考察中国光伏产业链，太空光伏概念在资本市场爆火。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "证券时报",
+      "original_url": "http://m.toutiao.com/group/7603142752578126346/",
+      "publish_time": "2026-02-05T06:37:55+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "马斯克团队考",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "title": "美国ADP就业数据大幅不及预期，仅新增2.2万人",
+      "summary": "美国ADP就业数据大幅不及预期，仅新增2.2万人，显示劳动力市场疲软。",
+      "analysis": "美国ADP就业数据大幅不及预期，仅新增2.2万人，显示劳动力市场疲软。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>美国ADP就业数据大幅不及预期，仅新增2.2万人，显示劳动力市场疲软。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "华尔街见闻",
+      "original_url": "https://www.163.com/dy/article/KL043HLK05198NMR.html",
+      "publish_time": "2026-02-05T07:27:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 6.0
+        },
+        "should_include": true
+      },
+      "short_title": "美国ADP就",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 9,
+      "title": "减肥药双雄业绩分化，礼来营收大增43%，诺和诺德暴跌18%",
+      "summary": "减肥药双雄业绩分化，礼来营收大增43%，诺和诺德暴跌18%反映定价压力。",
+      "analysis": "减肥药双雄业绩分化，礼来营收大增43%，诺和诺德暴跌18%反映定价压力。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>减肥药双雄业绩分化，礼来营收大增43%，诺和诺德暴跌18%反映定价压力。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "网易新闻",
+      "original_url": "https://www.163.com/dy/article/KL043HLK05198NMR.html",
+      "publish_time": "2026-02-05T07:27:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "减肥药双雄业",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "title": "日本40年期国债拍卖需求创10个月新高，缓解崩盘担忧",
+      "summary": "日本40年期国债拍卖需求强劲，投标倍数2.76倍，缓解超长债崩盘担忧。",
+      "analysis": "日本40年期国债拍卖需求强劲，投标倍数2.76倍，缓解超长债崩盘担忧。\n\n从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。",
+      "formatted_analysis": "<p>日本40年期国债拍卖需求强劲，投标倍数2.76倍，缓解超长债崩盘担忧。</p>\n<p>从市场影响来看：\n详细的市场影响需要结合具体的经济数据、政策环境和技术面因素进行综合判断。</p>\n<p>建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p>",
+      "source": "证券之星",
+      "original_url": "https://vip.stockstar.com/column/news/640EBA7DFE937391811A7BB7A153E352EC2A14C0EE2CB1F9",
+      "publish_time": "2026-01-29T08:33:43+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "hk_stock": "中性影响。详细分析需结合具体市场环境和数据。",
+        "precious_metal": "中性影响。详细分析需结合具体市场环境和数据。",
+        "exchange_rate": "中性影响。详细分析需结合具体市场环境和数据。"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "日本40年期",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "美联储连续第",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "short_title": "美股科技股大",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "short_title": "A股节前缩量",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 4,
+      "short_title": "黄金价格突破",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "positive",
+      "fx": "positive",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 5,
+      "short_title": "美国财长重申",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 6,
+      "short_title": "印度股市稳健",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "short_title": "马斯克团队考",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "short_title": "美国ADP就",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 9,
+      "short_title": "减肥药双雄业",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "short_title": "日本40年期",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ]
+}
