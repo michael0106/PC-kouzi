@@ -1,0 +1,609 @@
+{
+  "date": "2026-02-06",
+  "report_date_display": "2026年02月06日",
+  "generated_at": "2026-02-06T19:42:30.759900",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 11,
+    "schema_version": "1.0",
+    "generator": "generate_daily_data.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "2026年2月6日凌晨，全球金融市场遭遇剧烈波动，美股、黄金...",
+      "summary": "2026年2月6日凌晨 全球金融市场遭遇剧烈波动 美股",
+      "analysis": "2026年2月6日凌晨，全球金融市场遭遇剧烈波动，美股、黄金、白银、比特币、石油全线暴跌。加密货币市场超过43万人爆仓，20多亿美元蒸发。美股科技股重挫，纳斯达克指数下跌1.59%。贵金属市场白银暴跌20.05%，黄金跌幅超过4%。引发原因包括谷歌AI资本开支超预期、美国就业数据恶化、美联储降息预期降温等。\n\n市场影响分析：\n从市场表现来看，整体面临下行压力。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 负面影响。\n• 汇率: 负面影响。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>2026年2月6日凌晨，全球金融市场遭遇剧烈波动，美股、黄金、白银、比特币、石油全线暴跌。加密货币市场超过43万人爆仓，20多亿美元蒸发。美股科技股重挫，纳斯达克指数下跌1.59%。贵金属市场白银暴跌20.05%，黄金跌幅超过4%。引发原因包括谷歌AI资本开支超预期、美国就业数据恶化、美联储降息预期降温等。</p>\n<p>市场影响分析：\n从市场表现来看，整体面临下行压力。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 负面影响。</li>\n<li> 汇率: 负面影响。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "http://m.toutiao.com/group/7603550103093248538/",
+      "original_url": "http://m.toutiao.com/group/7603550103093248538/",
+      "publish_time": "2026-02-06T08:59:07+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "negative",
+        "fx": "negative"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "负面影响",
+        "exchange_rate": "负面影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 8.33
+        },
+        "should_include": true
+      },
+      "short_title": "2026年2",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "title": "国际贵金属市场剧烈波动，现货黄金日内下跌4%，白银暴跌19....",
+      "summary": "国际贵金属市场剧烈波动 现货黄金日内下跌4% 白银暴跌19",
+      "analysis": "国际贵金属市场剧烈波动，现货黄金日内下跌4%，白银暴跌19.33%。加密货币市场比特币暴跌14.19%。美股三大指数普跌，科技股疲软。伊朗与美国举行核问题间接谈判。纳斯达克中国金龙指数收涨0.89%。国内方面，中国人民银行开展逆回购操作，净投放645亿元。\n\n市场影响分析：\n从市场表现来看，整体面临下行压力。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 正面影响。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>国际贵金属市场剧烈波动，现货黄金日内下跌4%，白银暴跌19.33%。加密货币市场比特币暴跌14.19%。美股三大指数普跌，科技股疲软。伊朗与美国举行核问题间接谈判。纳斯达克中国金龙指数收涨0.89%。国内方面，中国人民银行开展逆回购操作，净投放645亿元。</p>\n<p>市场影响分析：\n从市场表现来看，整体面临下行压力。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 正面影响。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "http://m.toutiao.com/group/7603538253903430170/",
+      "original_url": "http://m.toutiao.com/group/7603538253903430170/",
+      "publish_time": "2026-02-06T08:12:04+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "positive",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "正面影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 5.17
+        },
+        "should_include": false
+      },
+      "short_title": "国际贵金属市",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "title": "欧洲央行维持利率不变，为连续第五次暂停降息",
+      "summary": "欧洲央行维持利率不变 为连续第五次暂停降息",
+      "analysis": "欧洲央行维持利率不变，为连续第五次暂停降息。英国央行维持利率3.75%不变，但释放鸽派信号。美国1月挑战者裁员数量飙升至10.84万人，创17年来同期最差。世界黄金协会：1月全球黄金ETF吸引创纪录的187亿美元资金流入。全球市场动态：美股全线收跌，贵金属期货普遍收跌，美油跌3.1%。\n\n市场影响分析：\n从市场表现来看，整体面临下行压力。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 负面影响。\n• 汇率: 负面影响。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>欧洲央行维持利率不变，为连续第五次暂停降息。英国央行维持利率3.75%不变，但释放鸽派信号。美国1月挑战者裁员数量飙升至10.84万人，创17年来同期最差。世界黄金协会：1月全球黄金ETF吸引创纪录的187亿美元资金流入。全球市场动态：美股全线收跌，贵金属期货普遍收跌，美油跌3.1%。</p>\n<p>市场影响分析：\n从市场表现来看，整体面临下行压力。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 负面影响。</li>\n<li> 汇率: 负面影响。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://m.sohu.com/a/984295407_122014422/",
+      "original_url": "https://m.sohu.com/a/984295407_122014422/",
+      "publish_time": "2026-02-06T07:26:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "negative",
+        "fx": "negative"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "负面影响",
+        "exchange_rate": "负面影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 6.17
+        },
+        "should_include": true
+      },
+      "short_title": "欧洲央行维持",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "title": "加密货币与贵金属市场同步重挫，比特币暴跌12%，白银单日跌幅...",
+      "summary": "加密货币与贵金属市场同步重挫 比特币暴跌12%",
+      "analysis": "加密货币与贵金属市场同步重挫，比特币暴跌12%，白银单日跌幅近20%。美股三大指数连续第三日下跌，科技股领跌。中国人民银行开展逆回购操作，净投放645亿元，支持春节前流动性。A股业绩预告收官，房地产行业成重灾区。美联储独立性受关注，市场预期3月维持利率不变概率达90.1%。\n\n市场影响分析：\n从市场表现来看，整体面临下行压力。\n\n具体市场影响：\n• 中国股市: 负面影响。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 负面影响。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>加密货币与贵金属市场同步重挫，比特币暴跌12%，白银单日跌幅近20%。美股三大指数连续第三日下跌，科技股领跌。中国人民银行开展逆回购操作，净投放645亿元，支持春节前流动性。A股业绩预告收官，房地产行业成重灾区。美联储独立性受关注，市场预期3月维持利率不变概率达90.1%。</p>\n<p>市场影响分析：\n从市场表现来看，整体面临下行压力。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 负面影响。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 负面影响。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://www.iesdouyin.com/share/video/7603526435605900281",
+      "original_url": "https://www.iesdouyin.com/share/video/7603526435605900281",
+      "publish_time": "2026-02-06T07:26:05+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "negative",
+        "hk_stock": "neutral",
+        "precious_metal": "negative",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "负面影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "负面影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 7.67
+        },
+        "should_include": true
+      },
+      "short_title": "加密货币与贵",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 5,
+      "title": "显示未来几日全球经济数据发布日程，包括美国Sentix投资信...",
+      "summary": "显示未来几日全球经济数据发布日程 包括美国Sentix投资信",
+      "analysis": "显示未来几日全球经济数据发布日程，包括美国Sentix投资信心指数、消费信贷、中国台湾贸易帐、欧元区经常帐等数据。提供各数据的重要性评级（高/中/低）。\n\n市场影响分析：\n从市场表现来看，整体呈现震荡格局。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>显示未来几日全球经济数据发布日程，包括美国Sentix投资信心指数、消费信贷、中国台湾贸易帐、欧元区经常帐等数据。提供各数据的重要性评级（高/中/低）。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现震荡格局。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://forex.eastmoney.com/fc.html",
+      "original_url": "https://forex.eastmoney.com/fc.html",
+      "publish_time": "2026-02-06T00:00:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 5.17
+        },
+        "should_include": false
+      },
+      "short_title": "显示未来几日",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "title": "美国'小非农'仅增2.2万不及预期",
+      "summary": "美国 小非农 仅增2 2万不及预期 谷歌四季度经营利润359",
+      "analysis": "美国'小非农'仅增2.2万不及预期。谷歌四季度经营利润359.3亿美元同比增长16%。欧洲恢复针对批准欧美贸易协议提案的立法工作。中东多国游说美伊谈判恢复。美股科技股已陷入连续三个月低迷，价值股相对强劲。\n\n市场影响分析：\n从市场表现来看，整体呈现积极态势。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 正面影响。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>美国'小非农'仅增2.2万不及预期。谷歌四季度经营利润359.3亿美元同比增长16%。欧洲恢复针对批准欧美贸易协议提案的立法工作。中东多国游说美伊谈判恢复。美股科技股已陷入连续三个月低迷，价值股相对强劲。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现积极态势。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 正面影响。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://global.eastmoney.com/",
+      "original_url": "https://global.eastmoney.com/",
+      "publish_time": "2026-02-06T00:22:12+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "positive"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "正面影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 6.67
+        },
+        "should_include": true
+      },
+      "short_title": "美国小非农仅",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "title": "提供各国关键经济数据：美国GDP 29.18万亿美元，GDP...",
+      "summary": "提供各国关键经济数据 美国GDP 29 18万亿美元",
+      "analysis": "提供各国关键经济数据：美国GDP 29.18万亿美元，GDP增长4.4%，通胀率2.7%；中国GDP 18.74万亿美元，增长1.2%，通胀率0.8%；欧元区GDP 16.41万亿美元，增长0.3%，通胀率1.7%等。涵盖GDP、利率、通胀、失业率、债务等指标。\n\n市场影响分析：\n从市场表现来看，整体呈现积极态势。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 正面影响。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>提供各国关键经济数据：美国GDP 29.18万亿美元，GDP增长4.4%，通胀率2.7%；中国GDP 18.74万亿美元，增长1.2%，通胀率0.8%；欧元区GDP 16.41万亿美元，增长0.3%，通胀率1.7%等。涵盖GDP、利率、通胀、失业率、债务等指标。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现积极态势。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 正面影响。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://www.theglobalstatistics.com/",
+      "original_url": "https://www.theglobalstatistics.com/",
+      "publish_time": "2026-02-06T00:56:57+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "positive"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "正面影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "高",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 3,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 6.5
+        },
+        "should_include": true
+      },
+      "short_title": "提供各国关键",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "title": "美联储2月5日宣布维持联邦基金利率在5.25%-5.5%区间...",
+      "summary": "美联储2月5日宣布维持联邦基金利率在5 25%-5",
+      "analysis": "美联储2月5日宣布维持联邦基金利率在5.25%-5.5%区间不变，连续第五次维稳，符合市场预期。美联储主席鲍威尔表示通胀仍未达到2%目标，暂不启动降息。市场反应平稳，美股小幅收涨。预计2026年下半年若通胀回落，可能逐步启动降息。\n\n市场影响分析：\n从市场表现来看，整体呈现积极态势。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>美联储2月5日宣布维持联邦基金利率在5.25%-5.5%区间不变，连续第五次维稳，符合市场预期。美联储主席鲍威尔表示通胀仍未达到2%目标，暂不启动降息。市场反应平稳，美股小幅收涨。预计2026年下半年若通胀回落，可能逐步启动降息。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现积极态势。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://www.iesdouyin.com/share/video/7603234102976126715/",
+      "original_url": "https://www.iesdouyin.com/share/video/7603234102976126715/",
+      "publish_time": "2026-02-05T12:31:38+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "中",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 2,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 8.33
+        },
+        "should_include": true
+      },
+      "short_title": "美联储2月5",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 9,
+      "title": "北京时间2月6日凌晨3点，美联储将公布2026年首份利率决议",
+      "summary": "北京时间2月6日凌晨3点 美联储将公布2026年首份利率决议",
+      "analysis": "北京时间2月6日凌晨3点，美联储将公布2026年首份利率决议。市场预计按兵不动概率高达97.2%，降息概率仅2.8%。美联储已连续三次降息至3.5%-3.75%区间，目前中性利率政策立场。预计2026年下半年实施合计50个基点的宽松政策。\n\n市场影响分析：\n从市场表现来看，整体呈现震荡格局。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>北京时间2月6日凌晨3点，美联储将公布2026年首份利率决议。市场预计按兵不动概率高达97.2%，降息概率仅2.8%。美联储已连续三次降息至3.5%-3.75%区间，目前中性利率政策立场。预计2026年下半年实施合计50个基点的宽松政策。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现震荡格局。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://www.iesdouyin.com/share/video/7603450083979447595/",
+      "original_url": "https://www.iesdouyin.com/share/video/7603450083979447595/",
+      "publish_time": "2026-02-06T02:29:44+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "高",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 3,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 7.17
+        },
+        "should_include": true
+      },
+      "short_title": "北京时间2月",
+      "overall_impact": "中性",
+      "event_impact": "高"
+    },
+    {
+      "id": 10,
+      "title": "美联储3月维持利率不变的概率飙升至77.3%，降息概率仅22...",
+      "summary": "美联储3月维持利率不变的概率飙升至77 3%",
+      "analysis": "美联储3月维持利率不变的概率飙升至77.3%，降息概率仅22.7%。6月累计降息25个基点的概率刚过半（50.2%）。显示市场对美联储降息预期显著降温，全球市场需稳住应对。\n\n市场影响分析：\n从市场表现来看，整体呈现震荡格局。\n\n具体市场影响：\n• 中国股市: 影响有限，中性为主。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>美联储3月维持利率不变的概率飙升至77.3%，降息概率仅22.7%。6月累计降息25个基点的概率刚过半（50.2%）。显示市场对美联储降息预期显著降温，全球市场需稳住应对。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现震荡格局。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 影响有限，中性为主。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "https://www.iesdouyin.com/share/video/7603531933495326698/",
+      "original_url": "https://www.iesdouyin.com/share/video/7603531933495326698/",
+      "publish_time": "2026-02-06T07:47:15+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "中性影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "是",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 1,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 7.67
+        },
+        "should_include": true
+      },
+      "short_title": "美联储3月维",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 11,
+      "title": "2月5日A股市场表现：沪指跌1.03%，A股成交量884.2...",
+      "summary": "2月5日A股市场表现 沪指跌1 03% A股成交量884",
+      "analysis": "2月5日A股市场表现：沪指跌1.03%，A股成交量884.27亿股，成交金额14591.78亿元。个股方面1645只上涨，3695只下跌。行业表现：美容护理、食品饮料、传媒涨幅居前；有色金属、电力设备、煤炭跌幅最大。\n\n市场影响分析：\n从市场表现来看，整体呈现震荡格局。\n\n具体市场影响：\n• 中国股市: 正面影响。\n• 香港股市: 影响有限，中性为主。\n• 贵金属市场: 影响有限，中性为主。\n• 汇率: 影响有限，中性为主。\n\n投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n",
+      "formatted_analysis": "<p>2月5日A股市场表现：沪指跌1.03%，A股成交量884.27亿股，成交金额14591.78亿元。个股方面1645只上涨，3695只下跌。行业表现：美容护理、食品饮料、传媒涨幅居前；有色金属、电力设备、煤炭跌幅最大。</p>\n<p>市场影响分析：\n从市场表现来看，整体呈现震荡格局。</p>\n<p>具体市场影响：\n<ul>\n<li> 中国股市: 正面影响。</li>\n<li> 香港股市: 影响有限，中性为主。</li>\n<li> 贵金属市场: 影响有限，中性为主。</li>\n<li> 汇率: 影响有限，中性为主。</p></li>\n</ul>\n<p>投资建议：投资者应密切关注相关市场动态，结合技术分析和基本面研究，审慎决策。\n</p>",
+      "source": "http://m.toutiao.com/group/7603244833309803014/",
+      "original_url": "http://m.toutiao.com/group/7603244833309803014/",
+      "publish_time": "2026-02-05T13:13:17+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "positive",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "正面影响",
+        "hk_stock": "中性影响",
+        "precious_metal": "中性影响",
+        "exchange_rate": "中性影响"
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 5.17
+        },
+        "should_include": false
+      },
+      "short_title": "2月5日A股",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "2026年2",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "negative",
+      "fx": "negative",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 2,
+      "short_title": "国际贵金属市",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "positive",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 3,
+      "short_title": "欧洲央行维持",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "negative",
+      "fx": "negative",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "short_title": "加密货币与贵",
+      "a_share": "negative",
+      "hk_stock": "neutral",
+      "precious_metal": "negative",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 5,
+      "short_title": "显示未来几日",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "short_title": "美国小非农仅",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "positive",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "short_title": "提供各国关键",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "positive",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "short_title": "美联储2月5",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 9,
+      "short_title": "北京时间2月",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "高"
+    },
+    {
+      "id": 10,
+      "short_title": "美联储3月维",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 11,
+      "short_title": "2月5日A股",
+      "a_share": "positive",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ]
+}
