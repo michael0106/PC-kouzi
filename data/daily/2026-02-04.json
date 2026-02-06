@@ -1,0 +1,555 @@
+{
+  "date": "2026-02-04",
+  "report_date_display": "2026年02月04日",
+  "generated_at": "2026-02-04T14:23:59.199818",
+  "version": "1.0",
+  "metadata": {
+    "total_insights": 10,
+    "schema_version": "1.0",
+    "generator": "generate_daily_data.py"
+  },
+  "insights": [
+    {
+      "id": 1,
+      "title": "特朗普签署法案结束政府部分停摆",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 2,
+      "title": "美联储理事米兰：今年需要降息不止100个基点",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 4.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 3,
+      "title": "澳大利亚央行两年多来首次加息",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 4.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "title": "韩国总统李在明：将不惜一切手段遏制房地产投机",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 5,
+      "title": "美股三大指数全线收跌，科技股遭抛售",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "title": "国际贵金属期货普遍收涨，黄金涨6.83%，白银涨10.27%",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:46:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "高",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 3,
+          "timeliness": 3,
+          "total": 5.17
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "title": "2026年中央一号文件发布，严控新增村级债务",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T08:49:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "title": "央行开展8000亿元买断式逆回购操作",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T08:49:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "中",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 2,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 4.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 9,
+      "title": "上海黄金交易所调整黄金合约保证金比例",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T08:49:40+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "中",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 2,
+          "timeliness": 3,
+          "total": 4.5
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "title": "美国1月份ISM制造业数据好于预期",
+      "summary": "",
+      "analysis": "",
+      "formatted_analysis": "",
+      "source": "",
+      "original_url": "",
+      "publish_time": "2026-02-04T07:05:00+08:00",
+      "source_links": [],
+      "impacts": {
+        "a_share": "neutral",
+        "hk_stock": "neutral",
+        "precious_metal": "neutral",
+        "fx": "neutral"
+      },
+      "impact_judgement": {
+        "china_stock": "",
+        "hk_stock": "",
+        "precious_metal": "",
+        "exchange_rate": ""
+      },
+      "scoring": {
+        "scores": {
+          "event_impact": "低",
+          "data_impact": "低",
+          "surprise": "否",
+          "market_relevance": "低",
+          "timeliness": "高"
+        },
+        "numeric_scores": {
+          "event_impact": 1,
+          "data_impact": 1,
+          "surprise": 0,
+          "market_relevance": 1,
+          "timeliness": 3,
+          "total": 3.83
+        },
+        "should_include": false
+      },
+      "short_title": "要点",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ],
+  "impact_matrix": [
+    {
+      "id": 1,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 2,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 3,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 4,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 5,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 6,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 7,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 8,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "中"
+    },
+    {
+      "id": 9,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    },
+    {
+      "id": 10,
+      "short_title": "要点",
+      "a_share": "neutral",
+      "hk_stock": "neutral",
+      "precious_metal": "neutral",
+      "fx": "neutral",
+      "overall_impact": "中性",
+      "event_impact": "低"
+    }
+  ]
+}
