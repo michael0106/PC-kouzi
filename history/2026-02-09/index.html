@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日金融情报洞察简报</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm 15mm;
+            background-color: #fff;
+        }
+        
+        /* 页眉 */
+        .header {
+            border-bottom: 2px solid #1a3c8b;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a3c8b;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .date {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        /* 执行摘要 */
+        .executive-summary {
+            background-color: #f5f8ff;
+            border-left: 4px solid #1a3c8b;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .executive-summary h2 {
+            font-size: 18px;
+            color: #1a3c8b;
+            margin-bottom: 10px;
+        }
+        
+        /* 洞察条目 */
+        .insight-item {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .insight-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .insight-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background-color: #1a3c8b;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        
+        .insight-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .summary-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid #4a6fd9;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+            color: #4a6fd9;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .summary-content {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .analysis-section {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .analysis-label {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .analysis-content {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* 影响矩阵 */
+        .impact-matrix {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .impact-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3c8b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .matrix-table th {
+            background-color: #f5f8ff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a3c8b;
+            border: 1px solid #ddd;
+        }
+        
+        .matrix-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .positive {
+            color: #1e8449;
+            font-weight: 600;
+            background-color: #e9f7ef;
+        }
+        
+        .negative {
+            color: #c0392b;
+            font-weight: 600;
+            background-color: #fdedec;
+        }
+        
+        .neutral {
+            color: #7d7d7d;
+            font-weight: 600;
+            background-color: #f8f9f9;
+        }
+        
+        .impact-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 50%;
+            margin-right: 6px;
+            font-weight: 700;
+        }
+        
+        .positive-icon {
+            background-color: #1e8449;
+            color: white;
+        }
+        
+        .negative-icon {
+            background-color: #c0392b;
+            color: white;
+        }
+        
+        .neutral-icon {
+            background-color: #7d7d7d;
+            color: white;
+        }
+        
+        /* 页脚 */
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #eaeaea;
+            color: #888;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            font-style: italic;
+            margin-top: 10px;
+            color: #999;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            .container {
+                padding: 15mm 10mm;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .insight-item {
+                page-break-inside: avoid;
+            }
+            
+            .impact-matrix {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* 视觉优化样式 */
+        body {
+            background-image: linear-gradient(rgba(10, 30, 60, 0.7), rgba(10, 30, 60, 0.9)), 
+                            url('assets/background_main.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #f0f4f8;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 10, 30, 0.3);
+            padding: 30mm 20mm;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 15, 40, 0.4);
+        }
+        
+        /* 导航栏增强 */
+        .navbar {
+            background: linear-gradient(135deg, #1a3c8b 0%, #2a5caa 100%);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(26, 60, 139, 0.3);
+        }
+        
+        .nav-tabs {
+            gap: 5px;
+        }
+        
+        .nav-tab {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #c7d9ff;
+        }
+        
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .nav-tab:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab:hover::before {
+            left: 100%;
+        }
+        
+        .nav-tab.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 历史列表项悬停效果 */
+        .history-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+        }
+        
+        .history-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 30px rgba(26, 60, 139, 0.15);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
+        }
+        
+        /* 洞察卡片悬停效果 */
+        .insight-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(74, 111, 217, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+            position: relative;
+            padding: 20px;
+        }
+        
+        .insight-item:hover {
+            transform: translateY(-8px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(26, 60, 139, 0.2);
+            border-color: #4a6fd9;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f5ff 100%);
+        }
+        
+        /* 洞察图片容器 */
+        .insight-image-container {
+            text-align: center;
+            margin: 20px 0 30px;
+            position: relative;
+            min-height: 160px;
+        }
+        
+        /* 洞察图片样式 */
+        .insight-image {
+            width: 220px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(0, 10,30, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 4px solid white;
+            filter: brightness(0.95) contrast(1.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .insight-item:hover .insight-image {
+            transform: scale(1.1) rotate(1.5deg);
+            box-shadow: 0 25px 50px rgba(0, 15, 40, 0.4);
+            filter: brightness(1.08) contrast(1.25);
+        }
+        
+        /* 图片加载占位符 */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 150px;
+            background: linear-gradient(135deg, #e6efff 0%, #d1e0ff 100%);
+            border-radius: 12px;
+            opacity: 0.7;
+            z-index: 1;
+            transition: opacity 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .insight-image.loaded ~ .image-placeholder {
+            opacity: 0;
+        }
+        
+        /* 响应式调整 */
+        @media print {
+            body {
+                background-image: none;
+                background-color: #fff;
+                color: #333;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 15mm 10mm;
+            }
+            
+            .navbar, .history-list {
+                display: none;
+            }
+        }
+
+        /* 图片浮层样式 */
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .overlay-image-container {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .overlay-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .close-overlay {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .close-overlay:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页眉 -->
+        
+        <!-- 导航栏 -->
+        <div class="navbar">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="daily">每日洞察</button>
+                <button class="nav-tab" data-tab="weekly">每周要点总结</button>
+            </div>
+        </div>
+        
+        <div class="header">
+            <h1 class="title">每日金融情报洞察简报</h1>
+            <div class="subtitle">专属情报分析伙伴 | 金融市场动态 & 国际财经政策</div>
+            <div class="date" id="report-date">报告日期：2026年02月09日</div>
+        </div>
+        
+        <!-- 执行摘要 -->
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <p>本简报基于全球权威金融媒体与国际机构信源，筛选当日对国际与中国金融市场影响最大的5项核心动态。每条洞察包含30字内核心摘要与200-300字深度分析，并明确对中国股市、香港股市、贵金属市场及汇率市场的正负影响判断。</p>
+        </div>
+        
+        <!-- Tab内容容器 -->
+        <div class="tab-content">
+            <div id="daily-tab" class="tab-pane active">
+                <!-- 历史报告列表 -->
+                <div class="history-list">
+                    <h3>历史报告</h3>
+                    <div class="history-list"><h3>历史报告</h3><div id="history-items">
+                    <div class="history-item" onclick="window.location.href='2026-02-06.html'">
+                        <div class="history-date">2026年02月06日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='2026-02-05.html'">
+                        <div class="history-date">2026年02月05日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='2026-01-29.html'">
+                        <div class="history-date">2026年01月29日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='2026-01-28.html'">
+                        <div class="history-date">2026年01月28日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                
+                    <div class="history-item" onclick="window.location.href='2026-01-27.html'">
+                        <div class="history-date">2026年01月27日</div>
+                        <div class="history-summary">点击查看完整报告</div>
+                    </div>
+                </div></div>
+                </div>
+                
+                <!-- 洞察条目 -->
+                <div id="insights-container">
+
+            <!-- 洞察条目1 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">1</div>
+                    <div class="insight-title">中国外汇储备连续6个月增长，黄金储备'15连增'</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight1_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-1">
+                        中国外汇储备连续6个月增长，黄金储备'15连增'。截至202...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-1">
+                        <ul>
+<p>事件概述: 中国外汇储备连续6个月增长，黄金储备'15连增'。截至2026年1月末，外汇储备规模33991亿美元，环比上升412亿美元；黄金储备7419万盎司，环比增加4万盎司。\n\n\n\n市场影响分析:\n<li> 中国股市: 正面影响。可能提振市场情绪和投资者信心。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 正面影响。可能支撑贵金属价格走势。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目2 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">2</div>
+                    <div class="insight-title">美公布与印度临时贸易协议框架，印度取消或降低对美国工业品及农产品关税，美国将'对等关税'税率从25%降至18%</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight2_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-2">
+                        美公布与印度临时贸易协议框架，印度取消或降低对美国工业品及农...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-2">
+                        <ul>
+<p>事件概述: 美公布与印度临时贸易协议框架，印度取消或降低对美国工业品及农产品关税，美国将'对等关税'税率从25%降至18%。特朗普签署行政令取消印度进口俄油额外关税。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目3 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">3</div>
+                    <div class="insight-title">美国消费者信心指数创六个月新高，2月密歇根大学消费者信心指数初值57.3，1年期通胀预期降至3.5%为一年最低</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight3_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-3">
+                        美国消费者信心指数创六个月新高，2月密歇根大学消费者信心指数...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-3">
+                        <ul>
+<p>事件概述: 美国消费者信心指数创六个月新高，2月密歇根大学消费者信心指数初值57.3，1年期通胀预期降至3.5%为一年最低。美联储副主席杰斐逊对经济前景'谨慎乐观'。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目4 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">4</div>
+                    <div class="insight-title">日本执政党联盟在众议院选举中获得过半数议席，市场预期将出台更多财政刺激措施</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight4_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-4">
+                        日本执政党联盟在众议院选举中获得过半数议席，市场预期将出台更...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-4">
+                        <ul>
+<p>事件概述: 日本执政党联盟在众议院选举中获得过半数议席，市场预期将出台更多财政刺激措施。财务大臣片山皋月表示动用外汇储备为减税提供资金需谨慎。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目5 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">5</div>
+                    <div class="insight-title">印度央行维持基准利率在5.25%不变，在美印贸易协议缓解增长担忧后选择观望</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight5_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-5">
+                        印度央行维持基准利率在5.25%不变，在美印贸易协议缓解增长...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-5">
+                        <ul>
+<p>事件概述: 印度央行维持基准利率在5.25%不变，在美印贸易协议缓解增长担忧后选择观望。行长Sanjay Malhotra称贸易协议成功达成对经济前景是个好兆头。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目6 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">6</div>
+                    <div class="insight-title">德国经济研究显示，自2020年以来受地缘政治冲突、能源价格波动等影响，德国经济累计损失约9400亿欧元</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight6_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-6">
+                        德国经济研究显示，自2020年以来受地缘政治冲突、能源价格波...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-6">
+                        <ul>
+<p>事件概述: 德国经济研究显示，自2020年以来受地缘政治冲突、能源价格波动等影响，德国经济累计损失约9400亿欧元。土耳其等多国央行从美联储招募资深官员。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目7 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">7</div>
+                    <div class="insight-title">美股三大指数集体收涨，道指涨2.47%首次突破50000点创历史新高，纳指涨2.18%，标普500涨1.97%</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight7_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-7">
+                        美股三大指数集体收涨，道指涨2.47%首次突破50000点创...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-7">
+                        <ul>
+<p>事件概述: 美股三大指数集体收涨，道指涨2.47%首次突破50000点创历史新高，纳指涨2.18%，标普500涨1.97%。信息技术板块领涨，芯片股普遍大涨。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目8 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">8</div>
+                    <div class="insight-title">国际贵金属市场强势，现货黄金突破5000-5040美元/盎司关口，日内涨幅1.66%；纽约期金突破5020-5060美元</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight8_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-8">
+                        国际贵金属市场强势，现货黄金突破5000-5040美元/盎司...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-8">
+                        <ul>
+<p>事件概述: 国际贵金属市场强势，现货黄金突破5000-5040美元/盎司关口，日内涨幅1.66%；纽约期金突破5020-5060美元。现货白银突破79美元，比特币升破72000美元。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 正面影响。可能支撑贵金属价格走势。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目9 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">9</div>
+                    <div class="insight-title">欧盟碳边境税(CBAM)今日全面实施，涵盖钢铁、水泥、铝、化肥等产品，全球贸易成本抬升</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight9_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-9">
+                        欧盟碳边境税(CBAM)今日全面实施，涵盖钢铁、水泥、铝、化...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-9">
+                        <ul>
+<p>事件概述: 欧盟碳边境税(CBAM)今日全面实施，涵盖钢铁、水泥、铝、化肥等产品，全球贸易成本抬升。此举可能重塑全球贸易格局和产业布局。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目10 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">10</div>
+                    <div class="insight-title">亚马逊因预测2026年AI基础设施资本支出将达2000亿美元，远超市场预期，股价大跌5.6%</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight10_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-10">
+                        亚马逊因预测2026年AI基础设施资本支出将达2000亿美元...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-10">
+                        <ul>
+<p>事件概述: 亚马逊因预测2026年AI基础设施资本支出将达2000亿美元，远超市场预期，股价大跌5.6%。市场担忧科技巨头天量资本开支影响自由现金流和投资回报率。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目11 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">11</div>
+                    <div class="insight-title">央行等八部门联合发布通知，明确虚拟货币相关业务属于非法金融活动，将严厉打击相关非法金融活动</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight11_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-11">
+                        央行等八部门联合发布通知，明确虚拟货币相关业务属于非法金融活...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-11">
+                        <ul>
+<p>事件概述: 央行等八部门联合发布通知，明确虚拟货币相关业务属于非法金融活动，将严厉打击相关非法金融活动。地方金融管理部门等将依法调查认定、妥善处置。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 洞察条目12 -->
+            <div class="insight-item">
+                <div class="insight-header">
+                    <div class="insight-number">12</div>
+                    <div class="insight-title">特斯拉副总裁表示，2026年将加大在中国市场AI软硬件和能源领域投入，已在华布局本地训练中心用于智能辅助驾驶本土化调优</div>
+                </div>
+                
+                <!-- 洞察图片 -->
+                <div class="insight-image-container">
+                    <img src="assets/insight12_placeholder.jpg" alt="洞察图片" class="insight-image">
+                    <div class="image-placeholder">图片加载中...</div>
+                </div>
+                
+                <div class="summary-section">
+                    <div class="summary-label">核心摘要</div>
+                    <div class="summary-content" id="summary-12">
+                        特斯拉副总裁表示，2026年将加大在中国市场AI软硬件和能源...
+                    </div>
+                </div>
+                
+                <div class="analysis-section">
+                    <div class="analysis-label">深度分析</div>
+                    <div class="analysis-content" id="analysis-12">
+                        <ul>
+<p>事件概述: 特斯拉副总裁表示，2026年将加大在中国市场AI软硬件和能源领域投入，已在华布局本地训练中心用于智能辅助驾驶本土化调优。特斯拉全球资本支出预计超200亿美元。\n\n\n\n市场影响分析:\n<li> 中国股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 香港股市: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 贵金属市场: 中性影响。详细分析需结合具体市场环境和数据。\n<li> 汇率: 中性影响。详细分析需结合具体市场环境和数据。\n\n\n建议投资者关注相关市场的后续数据发布和重要政策动向，及时调整投资策略。</p></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- 影响矩阵 -->
+                <div class="impact-matrix">
+                    <h2 class="impact-title">综合影响矩阵</h2>
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>洞察条目</th>
+                                <th>A股市场</th>
+                                <th>香港股市</th>
+                                <th>贵金属市场</th>
+                                <th>汇率市场</th>
+                                <th>综合影响</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <tr>
+                        <td><strong>洞察1</strong></td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察2</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察3</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察4</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察5</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察6</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察7</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察8</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="positive">
+                            <span class="impact-icon positive-icon">↑</span>正面
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察9</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察10</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察11</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>洞察12</strong></td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td class="neutral">
+                            <span class="impact-icon neutral-icon">→</span>中性
+                        </td>
+                        <td><strong>中性</strong></td>
+                    </tr>
+        
+                </tbody>
+                    </table>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon positive-icon">↑</span>
+                            </div>
+                            <span><strong>正面影响</strong>：预期将推动市场上涨或改善基本面</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon negative-icon">↓</span>
+                            </div>
+                            <span><strong>负面影响</strong>：预期将导致市场下跌或恶化环境</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; margin-right: 10px;">
+                                <span class="impact-icon neutral-icon">→</span>
+                            </div>
+                            <span><strong>中性影响</strong>：影响有限或正负因素相互抵消</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 每周要点总结Tab内容 -->
+            <div id="weekly-tab" class="tab-pane">
+                <div style="text-align: center; padding: 60px 20px;">
+                    <h2>每周要点总结</h2>
+                    <p>每周五下午17:30生成，汇总当周5条最高价值洞察。</p>
+                    <p>首期每周要点总结将于2026年1月27日（周五）生成。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>数据来源：路透社、彭博社、金融时报、华尔街日报、财新网、IMF、世界银行等权威机构官方披露</p>
+            <p>信息截止时间：每日15:00（北京时间）</p>
+            <div class="disclaimer">
+                免责声明：本简报基于公开信息整理分析，仅供决策参考，不构成任何投资建议。市场有风险，决策需谨慎。
+            </div>
+        </div>
+    </div>
+    
+    <!-- 图片浮层 -->
+    <div class="image-overlay" id="image-overlay">
+        <div class="overlay-image-container">
+            <img class="overlay-image" id="overlay-image" src="" alt="放大图片">
+            <button class="close-overlay" id="close-overlay">&times;</button>
+        </div>
+    </div>
+    
+    <script>
+        // 自动设置报告日期为当天
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            
+            document.getElementById('report-date').textContent = `报告日期：${year}年${month}月${day}日`;
+        });
+        
+        // Tab切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // 更新活跃Tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应内容
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                        if (pane.id === `${tabName}-tab`) {
+                            pane.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // 图片加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.insight-image');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        });
+        
+        // 图片浮层功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('image-overlay');
+            const overlayImage = document.getElementById('overlay-image');
+            const closeOverlayBtn = document.getElementById('close-overlay');
+            
+            // 为所有洞察图片添加点击事件
+            const insightImages = document.querySelectorAll('.insight-image');
+            insightImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    // 设置浮层图片的src为被点击图片的src
+                    overlayImage.src = this.src;
+                    // 显示浮层
+                    overlay.classList.add('active');
+                    // 禁止背景滚动
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // 关闭浮层
+            function closeOverlay() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // 点击关闭按钮
+            closeOverlayBtn.addEventListener('click', closeOverlay);
+            
+            // 点击遮罩层关闭
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeOverlay();
+                }
+            });
+            
+            // 按ESC键关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closeOverlay();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
