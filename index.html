@@ -17,6 +17,49 @@
         网络连接已断开，部分功能可能受限
     </div>
     
+    <!-- 导航横幅：跳转到今日洞察报告 -->
+    <div class="navigation-banner" style="
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(26, 60, 139, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    ">
+        <div style="
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 0.5px;
+        ">
+            金融情报洞察平台
+        </div>
+        <a href="history/2026-02-09/index.html" style="
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(76, 175, 80, 0.4)';" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(76, 175, 80, 0.3)';">
+            查看今日洞察报告
+        </a>
+    </div>
+    
     <!-- 主容器 -->
     <div class="container">
         <!-- 导航栏组件容器 -->
