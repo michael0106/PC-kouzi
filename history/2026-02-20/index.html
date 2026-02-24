@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>金融情报洞察平台</title>
+    <link rel="stylesheet" href="assets/styles.cee14c78.css">
+</head>
+<body>
+    <!-- 滚动进度指示器 -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- 离线状态指示器 -->
+    <div class="offline-indicator" id="offline-indicator">
+        网络连接已断开，部分功能可能受限
+    </div>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 导航栏组件容器 -->
+        <div id="navigation-container"></div>
+        
+        <!-- 实时更新控制面板 -->
+        <div id="realtime-control-panel" class="realtime-control-panel">
+            <div class="control-header">
+                <h3><i class="icon-refresh"></i> 实时更新引擎</h3>
+                <div class="status-indicators">
+                    <span class="status-badge network-status" id="network-status">在线</span>
+                    <span class="status-badge engine-status" id="engine-status">待机</span>
+                </div>
+            </div>
+            
+            <div class="control-body">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">轮询次数</div>
+                        <div class="stat-value" id="polling-count">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">成功更新</div>
+                        <div class="stat-value" id="update-success">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">失败次数</div>
+                        <div class="stat-value" id="update-failures">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">平均延迟</div>
+                        <div class="stat-value" id="avg-latency">0ms</div>
+                    </div>
+                </div>
+                
+                <div class="control-buttons">
+                    <button id="toggle-polling" class="btn btn-primary">启动轮询</button>
+                    <button id="manual-refresh" class="btn btn-secondary">手动刷新</button>
+                    <button id="toggle-demo" class="btn btn-info">演示模式</button>
+                    <button id="reset-stats" class="btn btn-warning">重置统计</button>
+                </div>
+                
+                <div class="update-log">
+                    <div class="log-header">
+                        <h4>更新日志</h4>
+                        <button id="clear-log" class="btn btn-sm btn-outline">清空</button>
+                    </div>
+                    <div class="log-content" id="update-log">
+                        <div class="log-entry log-info">实时更新引擎已初始化</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 洞察列表容器 -->
+            <div id="insights-container">
+                <div class="loading-shimmer" style="height: 300px; border-radius: var(--radius-md); margin-bottom: var(--space-md);"></div>
+                <div class="loading-shimmer" style="height: 300px; border-radius: var(--radius-md); margin-bottom: var(--space-md);"></div>
+            </div>
+            
+            <!-- 影响矩阵容器 -->
+            <div id="impact-matrix-container"></div>
+            
+            <!-- 历史报告容器 -->
+            <div id="history-container" style="display: none;">
+                <h2>历史报告</h2>
+                <div id="history-list" class="history-list">
+                    <!-- 动态生成历史报告列表 -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 组件脚本 -->
+    <script src="components/NavigationBar.js"></script>
+    <script src="components/RealTimeFeedEngine.js"></script>
+    <script src="components/InsightCard.js"></script>
+    <script src="components/ImpactMatrix.js"></script>
+    <script src="components/ServiceWorker.js"></script>
+    <script src="components/PWAManager.js"></script>
+    <script src="components/ComponentManager.js"></script>
+    <script src="components/LazyLoader.js"></script>
+    <script src="components/WebVitalsMonitor.js"></script>
+    <script src="components/PerformanceOptimizer.js"></script>
+    <script src="realtime/PollingService.js"></script>
+    <script src="realtime/ChangeDetector.js"></script>
+    <script src="realtime/IncrementalRenderer.js"></script>
+    <script src="realtime/CacheManager.js"></script>
+    <script src="realtime/RealTimeState.js"></script>
+    <script src="realtime/PerformanceMonitor.js"></script>
+    <script src="realtime/RealTimeEngine.js"></script>
+    
+    <!-- 初始化脚本 -->
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始化组件管理器
+            const componentManager = new ComponentManager({
+                components: {
+                    navigationBar: {
+                        type: 'NavigationBar',
+                        container: 'navigation-container',
+                        options: {
+                            activeTab: 'daily',
+                            userPreferences: {
+                                theme: 'dark'
+                            },
+                            onTabChange: (tabName) => {
+                                console.log('Tab切换:', tabName);
+                                handleTabChange(tabName);
+                            },
+                            onSearch: (query) => {
+                                console.log('搜索:', query);
+                                handleSearch(query);
+                            }
+                        }
+                    },
+                    realTimeFeedEngine: {
+                        type: 'RealTimeFeedEngine',
+                        container: 'insights-container',
+                        options: {
+                            apiEndpoint: '/api/insights/latest',
+                            pollingConfig: {
+                                normalInterval: 30000,
+                                activeInterval: 10000,
+                                backgroundInterval: 60000
+                            },
+                            onDataUpdate: (changes, newData) => {
+                                console.log('数据更新:', changes);
+                                handleDataUpdate(changes, newData);
+                            },
+                            renderFunction: (changes, newData) => {
+                                return renderInsights(changes, newData);
+                            }
+                        }
+                    },
+                    impactMatrix: {
+                        type: 'ImpactMatrix',
+                        container: 'impact-matrix-container',
+                        options: {
+                            onItemClick: (item) => {
+                                console.log('矩阵项目点击:', item);
+                                handleMatrixItemClick(item);
+                            }
+                        }
+                    },
+                    pwaManager: {
+                        type: 'PWAManager',
+                        options: {
+                            serviceWorkerPath: '/service-worker.js',
+                            manifest: {
+                                name: '金融情报洞察平台',
+                                short_name: '金融情报',
+                                description: '专业的金融情报洞察与分析平台',
+                                theme_color: '#1a3c8b',
+                                background_color: '#0a1e3c',
+                                display: 'standalone',
+                                orientation: 'portrait',
+                                icons: [
+                                    {
+                                        src: 'assets/icons/icon-192x192.png',
+                                        sizes: '192x192',
+                                        type: 'image/png'
+                                    },
+                                    {
+                                        src: 'assets/icons/icon-512x512.png',
+                                        sizes: '512x512',
+                                        type: 'image/png'
+                                    }
+                                ]
+                            },
+                            onUpdateAvailable: (newWorker) => {
+                                console.log('更新可用:', newWorker);
+                                handleUpdateAvailable(newWorker);
+                            },
+                            onOfflineStatusChange: (isOnline) => {
+                                console.log('离线状态变化:', isOnline);
+                                handleOfflineStatusChange(isOnline);
+                            }
+                        }
+                    },
+                    performanceOptimizer: {
+                        type: 'PerformanceOptimizer',
+                        options: {
+                            lazyLoading: {
+                                enable: true,
+                                rootMargin: '200px',
+                                threshold: 0.01
+                            },
+                            webVitals: {
+                                enable: true,
+                                autoReportToConsole: true,
+                                thresholds: {
+                                    lcp: { good: 2500, poor: 4000 },
+                                    fid: { good: 100, poor: 300 },
+                                    cls: { good: 0.1, poor: 0.25 },
+                                    fcp: { good: 1000, poor: 3000 },
+                                    ttfb: { good: 800, poor: 1800 }
+                                }
+                            },
+                            cache: {
+                                enableServiceWorker: true,
+                                enableMemoryCache: true
+                            },
+                            onOptimizationComplete: (result) => {
+                                console.log('性能优化完成:', result);
+                            },
+                            onError: (error) => {
+                                console.error('性能优化错误:', error);
+                            }
+                        }
+                    }
+                },
+                state: {
+                    currentTab: 'daily',
+                    isOnline: navigator.onLine,
+                    lastUpdateTime: null
+                },
+                onStateChange: (componentName, state) => {
+                    console.log('状态变化:', componentName, state);
+                    handleGlobalStateChange(componentName, state);
+                }
+            });
+            
+            // 初始化滚动进度指示器
+            // 初始化实时更新引擎
+            const realtimeEngine = new RealTimeEngine({
+                apiEndpoint: "/api/insights/latest",
+                pollingConfig: {
+                    normalInterval: 30000,
+                    activeInterval: 10000,
+                    backgroundInterval: 60000,
+                    retryDelay: 5000,
+                    maxRetries: 3
+                },
+                onDataUpdate: (changes, newData) => {
+                    console.log("实时数据更新:", changes);
+                    handleDataUpdate(changes, newData);
+                },
+                enableCache: true,
+                enablePerformanceMonitor: true
+            });
+
+            // 启动实时更新引擎
+            realtimeEngine.start();
+
+            initScrollProgressIndicator();
+            
+            // 显示初始加载状态
+            setTimeout(() => {
+                const loadingElements = document.querySelectorAll('.loading-shimmer');
+                loadingElements.forEach(el => {
+                    el.style.opacity = '0.5';
+                });
+            }, 1000);
+        });
+        
+        // ====== 事件处理函数 ======
+        
+        /**
+         * 处理Tab切换
+         */
+        function handleTabChange(tabName) {
+            switch (tabName) {
+                case 'daily':
+                    showDailyInsights();
+                    break;
+                case 'weekly':
+                    showWeeklySummary();
+                    break;
+                default:
+                    console.warn('未知Tab:', tabName);
+            }
+        }
+        
+        /**
+         * 处理搜索
+         */
+        function handleSearch(query) {
+            // 搜索逻辑
+            console.log('执行搜索:', query);
+        }
+        
+        /**
+         * 处理数据更新
+         */
+        function handleDataUpdate(changes, newData) {
+            // 根据变化类型更新UI
+            if (changes.hasChanges) {
+                console.log('检测到数据变化:', changes);
+            }
+        }
+        
+        /**
+         * 处理矩阵项目点击
+         */
+        function handleMatrixItemClick(item) {
+            // 跳转到对应洞察
+            const insightId = item.id;
+            const insightElement = document.querySelector(`[data-insight-id="${insightId}"]`);
+            
+            if (insightElement) {
+                insightElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // 添加高亮效果
+                insightElement.classList.add('highlighted');
+                setTimeout(() => {
+                    insightElement.classList.remove('highlighted');
+                }, 2000);
+            }
+        }
+        
+        /**
+         * 处理更新可用
+         */
+        function handleUpdateAvailable(newWorker) {
+            // 显示更新提示
+            showUpdateNotification();
+        }
+        
+        /**
+         * 处理离线状态变化
+         */
+        function handleOfflineStatusChange(isOnline) {
+            const indicator = document.getElementById('offline-indicator');
+            
+            if (isOnline) {
+                indicator.classList.remove('visible');
+            } else {
+                indicator.classList.add('visible');
+            }
+        }
+        
+        /**
+         * 处理全局状态变化
+         */
+        function handleGlobalStateChange(componentName, state) {
+            // 根据组件和状态更新其他组件
+            console.log('全局状态变化:', componentName, state);
+        }
+        
+        // ====== UI控制函数 ======
+        
+        /**
+         * 显示每日洞察
+         */
+        function showDailyInsights() {
+            const insightsContainer = document.getElementById('insights-container');
+            const historyContainer = document.getElementById('history-container');
+            
+            insightsContainer.style.display = 'block';
+            historyContainer.style.display = 'none';
+        }
+        
+        /**
+         * 显示每周总结
+         */
+        function showWeeklySummary() {
+            const insightsContainer = document.getElementById('insights-container');
+            const historyContainer = document.getElementById('history-container');
+            
+            insightsContainer.style.display = 'none';
+            historyContainer.style.display = 'block';
+        }
+        
+        /**
+         * 显示更新通知
+         */
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'update-notification';
+            notification.innerHTML = `
+                <div style="background: rgba(0,0,0,0.9); color: white; padding: 12px 16px; border-radius: 12px; max-width: 300px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <span style="font-size: 20px;">🔄</span>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; font-size: 14px;">新版本可用</div>
+                            <div style="font-size: 12px; opacity: 0.8;">点击刷新页面以应用更新</div>
+                        </div>
+                        <button onclick="applyUpdate()" style="background: #007aff; color: white; border: none; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer;">刷新</button>
+                    </div>
+                </div>
+            `;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+        }
+        
+        /**
+         * 应用更新
+         */
+        function applyUpdate() {
+            window.location.reload();
+        }
+        
+        /**
+         * 初始化滚动进度指示器
+         */
+        function initScrollProgressIndicator() {
+            const scrollProgressBar = document.getElementById('scroll-progress-bar');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                
+                scrollProgressBar.style.width = scrollPercent + '%';
+            });
+        }
+        
+        /**
+         * 渲染洞察
+         */
+        function renderInsights(changes, newData) {
+            // 这里将调用InsightCard组件来渲染洞察列表
+            const insightsContainer = document.getElementById('insights-container');
+            
+            // 实际渲染逻辑将在组件中实现
+            console.log('渲染洞察:', newData);
+            
+            return Promise.resolve();
+        }
+    </script>
+</body>
+</html>
